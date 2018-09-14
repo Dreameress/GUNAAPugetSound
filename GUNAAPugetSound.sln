@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUNAAPugetSound", "GUNAAPugetSound\GUNAAPugetSound.csproj", "{2C8CF39D-4101-4845-88A0-70E1F2CC079D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C8CF39D-4101-4845-88A0-70E1F2CC079D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8CF39D-4101-4845-88A0-70E1F2CC079D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8CF39D-4101-4845-88A0-70E1F2CC079D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8CF39D-4101-4845-88A0-70E1F2CC079D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FF779FB-2ECD-409D-92A9-86DB79C991C3}
+	EndGlobalSection
+EndGlobal
