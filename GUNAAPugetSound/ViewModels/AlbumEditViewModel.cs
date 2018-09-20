@@ -10,5 +10,6 @@ namespace GUNAAPugetSound.ViewModels
     {
         public string AlbumName { get; set; }
         public string AlbumDesc { get; set; }
+        public string Id { get; set; }
     }
 }

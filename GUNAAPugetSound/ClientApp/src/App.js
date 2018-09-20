@@ -14,6 +14,11 @@ import { Calendar } from './components/Calendar';
 import { Login } from './components/Login';
 import { Register } from './components/Register';
 import { PhotoAlbums } from './components/PhotoAlbums';
+import { AddAlbum } from './components/Photos/AddAlbum';
+import { EditAlbum } from './components/Photos/EditAlbum';
+import { AlbumDetails } from './components/Photos/AlbumDetails';
+import { AddPhoto } from './components/Photos/AddPhoto';
+import { ShowPhotos } from './components/Photos/ShowPhotos';
 
 export default class App extends Component {
   displayName = App.name
@@ -34,6 +39,11 @@ export default class App extends Component {
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
           <Route path='/photoAlbums' component={PhotoAlbums} />
+          <Route path='/addAlbum' component={AddAlbum} />
+          <Route path='/editAlbum' component={EditAlbum} />
+          <Route path='/albumDetails' component={AlbumDetails} />
+          <Route path='/addPhoto' component={AddAlbum} />
+          <Route path='/showPhotos' component={ShowPhotos} />
       </Layout>
     );
   }

@@ -17,28 +17,25 @@ using Microsoft.Extensions.Options;
 
 namespace GUNAAPugetSound.Controllers
 {
+    [AllowAnonymous]
+    [ApiController]
     [Route("api/[controller]")]
     public class PhotoAlbumController : Controller
     {
         private IMapper _mapper;
-        private readonly AppSettings _appSettings;
-        private readonly IAlbumData _albumData;
-        private readonly IPhotoData _photoData;
+        private IAlbumData _albumData;
+        private IPhotoData _photoData;
         private IUserService _userService;
-        private GUNAADbContext _db;
         // GET: PhtotoAlbum
-        public PhotoAlbumController(
-            IUserService userService,
-            IMapper mapper,
-            IOptions<AppSettings> appSettings, IAlbumData albumData, IPhotoData photoData)
+        public PhotoAlbumController(IAlbumData albumData, IPhotoData photoData, IUserService userService, IMapper mapper)
         {
             _userService = userService;
             _mapper = mapper;
-            _appSettings = appSettings.Value;
             _albumData = albumData;
             _photoData = photoData;
         }
 
+        [AllowAnonymous]
         [HttpGet("[action]")]
         public IActionResult GetAll()
         {
@@ -48,27 +45,27 @@ namespace GUNAAPugetSound.Controllers
             return Ok(photosDTo);
         }
 
-        [HttpGet("[action]")]
-        public IActionResult GetById(Guid id)
+        [HttpPost("[action]")]
+        public IActionResult GetById(DeleteDto dto)
         {
-            var photoAlbum = _albumData.Get(id);
-            var albumDto = _mapper.Map<Album>(photoAlbum);
+            var model = _albumData.Get(new Guid(dto.Guid.Id));
+            var albumDto = _mapper.Map<Album>(model);
             return Ok(albumDto);
         }
 
         [HttpPost("[action]")]
-        public IActionResult Create(AlbumEditViewModel model, UserDto userDto)
+        public IActionResult Create(AlbumDto albumDto)
         {
-            var user = _userService.Authenticate(userDto.Username, userDto.Password);
-            var userId = user.Id;
-            //TODO: create a function that uses the userId to get all other data from Identity
-            var album = new Album(model.AlbumName, model.AlbumDesc);
+            var userDto = albumDto.User;
+            var model = albumDto.Model;
+
+            var album = new Album(model.AlbumName, model.AlbumDesc, userDto.Username, userDto.Username);
 
             try
             {
                 // save 
                 _albumData.Add(album);
-                return Ok();
+                return Ok(album);
             }
             catch (AppException ex)
             {
@@ -78,18 +75,28 @@ namespace GUNAAPugetSound.Controllers
         }
 
         [HttpPut("[action]")]
-        public IActionResult Edit(Guid id, AlbumEditViewModel input)
+        public IActionResult Edit(AlbumDto albumDto)
         {
 
             try
             {
-                var model = _albumData.Get(id);
-                if (model == null)
+
+                var userDto = albumDto.User;
+                var model = albumDto.Model;
+
+
+                if (albumDto.Guid == null) return Ok();
+                var album = _albumData.Get(albumDto.Guid.Value);
+                if (album == null)
                 {
                     return BadRequest(new { message = "No Album Found." });
                 }
+
+                album.LastEditBy = userDto.Username;
+                album.AlbumDesc = model.AlbumDesc;
+                album.AlbumName = model.AlbumName;
+
                 // save 
-                var album = new Album(input.AlbumName, input.AlbumDesc, id);
                 _albumData.Edit(album);
                 return Ok();
             }
@@ -101,59 +108,28 @@ namespace GUNAAPugetSound.Controllers
         }
 
 
-        [HttpGet("[action]")]
-        public IActionResult Delete(Guid id)
+        [HttpDelete("[action]")]
+        public IActionResult Delete(DeleteDto dto)
         {
-            var model = _albumData.Get(id);
+            var model = _albumData.Get(new Guid(dto.Guid.Id));
             if (model == null)
             {
                 return BadRequest(new { message = "Album does not exist." });
             }
             _albumData.Delete(model);
-            return Ok();
+            return Ok(new { message = "Album deleted!"});
 
         }
 
-        public IActionResult Details(Guid id)
+        public ActionResult ShowPhotoAlbum(Guid albumGuid)
         {
-            var model = _albumData.Get(id);
-            if (model == null)
-            {
-                BadRequest("Album Does Not Exist");
-            }
-            return Ok(model);
+            string filter = null;
+            int page = 1;
+            int pageSize = 16;
+
+            var photos = _photoData.GetAllByAlbumId(albumGuid);
+            return Ok(photos);
         }
-
-        //public ActionResult ShowPhotoAlbum(Guid albumGuid, string filter = null, int page = 1, int pageSize = 16)
-        //{
-
-        //    PhotoAlbumViewModel model;
-        //    if (!_photoData.GetAllByAlbumId(albumGuid).Any())
-        //    {
-        //        model = new PhotoAlbumViewModel() { NoPhotos = true, SelectedAlbum = _albumData.Get(albumGuid) };
-        //        return View(model);
-        //    }
-        //    model = new PhotoAlbumViewModel
-        //    {
-        //        SelectedAlbum = _albumData.Get(albumGuid),
-        //        Photos = _photoData.GetAllByAlbumId(albumGuid),
-        //        NoPhotos = false
-        //    };
-        //    //model.Records.Content =
-        //    //    _photoData.GetAllByAlbumId(albumGuid)
-        //    //        .OrderByDescending(x => x.CreatedOn)
-        //    //        .Skip((page - 1)*pageSize)
-        //    //        .Take(pageSize)
-        //    //        .ToList();
-
-
-        //    model.TotalRecords = model.Photos.Count(x => filter == null || (x.Description.Contains(filter)));
-
-        //    model.CurrentPage = page;
-        //    model.PageSize = pageSize;
-
-        //    return View(model);
-        //}
 
         //public ActionResult AddPhoto()
         //{

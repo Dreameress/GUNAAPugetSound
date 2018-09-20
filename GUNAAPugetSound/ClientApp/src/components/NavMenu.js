@@ -17,20 +17,23 @@ export class NavMenu extends Component {
   displayName = NavMenu.name
   constructor(props) {
     super(props);
-    this.state = { authenticated: null };
+    this.state = { initial: 'state', authenticated: null };
     this.Auth = new AuthService();
     this.checkAuthentication = this.checkAuthentication.bind(this);
-    this.checkAuthentication();
     this.logout = this.logout.bind(this);
    
     
   }
 
    checkAuthentication() {
-      const authenticated = this.Auth.loggedIn();
-      if (authenticated !== this.state.authenticated) {
-        this.state = { authenticated: authenticated };
+    //if (this.state.authenticated === null) return null;
+      const loggedIn = this.Auth.loggedIn();
+      if (loggedIn !== this.state.authenticated) {
+        this.setState({ authenticated: loggedIn});
       }
+   }
+   componentWillMount(){
+    this.checkAuthentication();
    }
 
    componentDidUpdate() {
@@ -38,10 +41,7 @@ export class NavMenu extends Component {
   }
 
   render() {
-    if(this.state == null )
-    {
-      this.state = { authenticated: null };
-    }
+    if (this.state.authenticated === null) return null;
 
     var loginButton;
     if(this.state.authenticated) {
@@ -53,7 +53,7 @@ export class NavMenu extends Component {
       <nav id="navHeader" className="navbar navbar-default">
       <div className="container-fluid">
       <div>
-          <NavLink to="/home">
+          <NavLink to="/">
               <img className="visible-lg visible-md" id="headerWeb" style={navBackground} src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif" alt="gunaa sprite" />
               <img className="visible-sm" id="headerTablet" style={navBackground} src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif" alt="" />
               <img className="visible-xs" id="headerMobile" style={navBackground} src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif" alt="" />
@@ -155,7 +155,9 @@ export class NavMenu extends Component {
   logout()
   {
     this.Auth.logout();
-    this.state = { authenticated : false };
+    this.setState({ authenticated: false });
+    //this.props.history.push('/');
+   
    
   }
 

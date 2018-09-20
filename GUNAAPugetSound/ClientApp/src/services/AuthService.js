@@ -1,4 +1,6 @@
+import React, { Component } from 'react';
 import decode from 'jwt-decode';
+import {Redirect } from 'react-router-dom';
 export default class AuthService {
     // Initializing important variables
     constructor(domain) {
@@ -23,8 +25,8 @@ export default class AuthService {
             })
         })
         .then(response => response.json()).then(res => {
-            this.setToken(res.token); // Setting the token in localStorages
-            this.props.history.goBack();
+            this.setToken(res.token, res.username); // Setting the token in localStorages
+            return Promise.resolve(res);
             })
         .catch(err => {
             alert(err);
@@ -84,9 +86,11 @@ export default class AuthService {
         }
     }
 
-    setToken(idToken) {
+    setToken(idToken, idUser) {
         // Saves user token to localStorage
         localStorage.setItem('id_token', idToken)
+        //Saves username to localstorage
+        localStorage.setItem('id_user', idUser)
     }
 
     getToken() {
@@ -94,9 +98,16 @@ export default class AuthService {
         return localStorage.getItem('id_token')
     }
 
+    getUserId()
+    {
+        return localStorage.getItem('id_user');
+    }
+
     logout() {
         // Clear user token and profile data from localStorage
         localStorage.removeItem('id_token');
+        localStorage.removeItem('id_user');
+        window.location.reload();
     }
 
     getProfile() {

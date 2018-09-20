@@ -28,7 +28,7 @@ namespace GUNAAPugetSound.Models
         Album() { }
 
         //come back here and modify so that author is collected once member registration is formed
-        public Album(string name, string desc, string createdBy = "Sabrina Smith", string lastEditBy = "")
+        public Album(string name, string desc, string createdBy, string lastEditBy = "")
         {
             AlbumName = name;
             AlbumDesc = desc;
@@ -40,15 +40,12 @@ namespace GUNAAPugetSound.Models
             this.EnforceValidity();
         }
 
-        public Album(string name, string desc, Guid id, string createdBy = "Sabrina Smith", string lastEditBy = "")
+        public Album(string name, string desc, string lastEditBy)
         {
             AlbumName = name;
             AlbumDesc = desc;
-            CreateTime = DateTime.Now;
             EditTime = DateTime.Now;
-            CreatedBy = createdBy;
             LastEditBy = lastEditBy;
-            Id = id;
         }
 
 

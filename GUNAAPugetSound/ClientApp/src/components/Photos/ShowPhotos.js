@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Gallery from 'react-photo-gallery';
 import {NavLink, Link, Redirect } from 'react-router-dom';
-import AuthService from '../services/AuthService';
-import PhotoService from '../services/PhotoService';
+import AuthService from '../../services/AuthService';
+import PhotoService from '../../services/PhotoService';
 
-export class PhotoAlbums extends Component {
-  displayName = PhotoAlbums.name
+export class ShowPhotos extends Component {
+  displayName = ShowPhotos.name
 
   constructor(props) {
     super(props);
@@ -21,7 +22,7 @@ export class PhotoAlbums extends Component {
     fetch('api/PhotoAlbum/GetAll')
       .then(response => response.json())
       .then(data => {
-        this.setState({ albums: data, loading: false });
+        this.setState({ photos: data, loading: false });
       });
   }
 
@@ -40,23 +41,34 @@ export class PhotoAlbums extends Component {
     this.checkAuthentication();
   }
 
-  static renderAddAlbum() {
+  static renderAddPhotos() {
     return (
       <div className="authorized-options">
               <div className="auth-album-container">
-                  <NavLink to={'/addAlbum'} className="btn btn-default btn-xs navbar-btn">Add Album<i className="fa fa-plus" aria-hidden="true"></i></NavLink>
+                  <NavLink to={'/photoAlbums'} class="btn btn-default btn-xs navbar-btn" style={{padding: 7}}>Back to Photo Albums<i class="fa fa-camera" aria-hidden="true"></i></NavLink>
               </div>
-          </div>
+      </div>
+    );
+  }
+
+  static renderAuthorizedAddPhotos() {
+    return (
+      <div className="authorized-options">
+              <div className="auth-album-container">
+                  <NavLink to={'/addPhotos'} className="btn btn-default btn-xs navbar-btn">Add Photo(s)<i className="fa fa-plus" aria-hidden="true"></i></NavLink>
+                  <NavLink to={'/photoAlbums'} class="btn btn-default btn-xs navbar-btn" style={{padding: 7}}>Back to Photo Albums<i class="fa fa-camera" aria-hidden="true"></i></NavLink>
+              </div>
+      </div>
     );
   }
 
 
   render() {
 
-    var albumText = this.state.albums.length > 0 ? "You must be logged in to add photos." : "No photo albums have been added as of yet.";
+    var photoText = this.state.photos.length > 0 ? "You must be logged in to add photos." : "No photo albums have been added as of yet.";
     let contents = this.Auth.loggedIn()
-      ? PhotoAlbums.renderAddAlbum()
-      : <p><em> {albumText }</em></p>;
+      ? ShowPhotos.renderAddPhotos()
+      : <p><em> {photoText }</em></p>;
     let albums = this.state.albums;
 
     return (
@@ -65,36 +77,13 @@ export class PhotoAlbums extends Component {
       <h4 className="red-header">Captured Moments from the GUNAA Events, Meetings, Fundraisers, and more</h4>
         <div className="panel-body  golden-content">
           <div className="albumsConainer">
-          {albums.map((album, index) =>
-    <div className="photoAlbumItem" key={index}>
-     
-        <div  >
-          <NavLink  to={'/showPhotos'} className="leader-panel" >
-          <h3>
-                    <strong>{album.albumName}</strong>
-          </h3>
-          <p>{album.createTime}</p>
-        </NavLink>
-        </div>
-      
-              {  this.Auth.loggedIn() && this.state.albums.length > 0
-      ?    <div className="auth-album-detail-container">
-      <a id={album.id}  onClick={this.albumDetails.bind(this)} className="btn btn-default" >Details</a>
-      <a id={album.id} className="btn btn-default" onClick={this.editAlbum.bind(this)} >Edit </a>
-      <a id={album.id} type="submit" onClick={this.deleteAlbum.bind(this)} className="btn btn-default">Delete</a>
-      </div>
-      : <p><em></em></p>}
-             
-                
+          <Gallery photos={this.state.photos} />
           </div>
-            
-           )}
-           </div>
-
-         {contents}
-  
-      </div>
-       
+          {photoText}
+        </div>
+      {this.Auth.loggedIn()
+      ? ShowPhotos.renderAuthorizedAddPhotos()
+      : ShowPhotos.renderAddPhotos()}
     </div>
     );
   }

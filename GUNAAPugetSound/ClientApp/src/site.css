@@ -330,7 +330,7 @@ body {
 }
 
 
-.auth-album-detail-container > a {
+.auth-album-detail-container > a, .auth-album-detail-container > input {
     font-size: 11px;
 }
 

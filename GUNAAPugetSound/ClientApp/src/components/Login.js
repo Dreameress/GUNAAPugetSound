@@ -18,7 +18,7 @@ export class Login extends Component {
   async checkAuthentication() {
     const authenticated = this.Auth.loggedIn();
       if (authenticated !== this.state.authenticated) {
-        this.state.authenticated = authenticated;
+        this.setState({ authenticated: authenticated});
       }
   }
 
@@ -27,14 +27,12 @@ export class Login extends Component {
   }
 
   componentWillMount(){
-    if(this.Auth.loggedIn())
-         this.props.history.replace('/');
+    this.checkAuthentication();    
     }
 
   render() {
-    if (this.state.authenticated === null) return null;
-    return this.state.authenticated ?
-    <Redirect to={{ pathname: '/' }}/> : (
+    //if (this.state.authenticated === null) return null;
+    return (
       <div className="panel-heading text-center">
         <h1>Login</h1>
         <div className="panel-body">
@@ -86,7 +84,18 @@ export class Login extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
 
-     this.Auth.login(this.state.username, this.state.password);
+     this.Auth.login(this.state.username, this.state.password).then(res =>
+        {
+            this.setState({ authenticated: true});
+            if(this.props.history != null){
+              this.props.history.goBack();
+            }
+            else
+            {
+              <Redirect to='/' />
+            }
+            
+        });
    
   }
 };

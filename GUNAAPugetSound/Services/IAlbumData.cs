@@ -16,14 +16,14 @@ namespace GUNAAPugetSound.Services
         int Commit();
     }
 
-    public class SqlAlbumData : IAlbumData
+    public class AlbumData : IAlbumData
     {
-        private readonly GUNAADbContext _context;
+        private GUNAADbContext _context;
 
-        public SqlAlbumData(GUNAADbContext context)
+        public AlbumData(GUNAADbContext context)
         {
             _context = context;
-            Initialize();
+            //Initialize();
         }
 
         public void Initialize()
@@ -38,7 +38,7 @@ namespace GUNAAPugetSound.Services
         }
         public IEnumerable<Album> GetAll()
         {
-            return _context.Albums.ToList();
+            return _context.Albums;
         }
 
 

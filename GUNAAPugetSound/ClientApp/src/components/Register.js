@@ -76,11 +76,15 @@ export class Register extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
 
-    var success = this.Auth.register(this.state.username, this.state.password);
-    if(success != null)
-    {
-      return this.props.history.push('/home')
-    }
+    this.Auth.register(this.state.username, this.state.password).then(res =>
+      {
+        if(res.message != null)
+        {
+          this.setState({ authenticated: true});
+        }
+          
+      });;
+  
     
   }
 };
