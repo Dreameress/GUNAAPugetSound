@@ -8,7 +8,7 @@ export class AddPhoto extends Component {
   displayName = AddPhoto.name
   constructor(props) {
     super(props);
-    this.state = { albumName: '', albumDesc: '', authenticated: null, loading: true };
+    this.state = { photoDesc: '', files: [], authenticated: null, loading: true };
     this.handleChange = this.handleChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.Auth = new AuthService();
@@ -33,30 +33,30 @@ export class AddPhoto extends Component {
     return this.state.authenticated === false ?
     <Redirect to={{ pathname: '/' }}/> : (
       <div className="panel-heading text-center">
-        <h1>Create Album</h1>
+         <h1>Upload Images</h1>
         <div className="panel-body edit-album text-center" >
     
             <form className="form-horizontal">
-
               <div className="form-group">
-                <label className="col-md-2 control-label" >Album Name:</label>
-                <div className="col-md-10">
-                  <input name="albumName"
+                <label className="control-label col-sm-3">Album Description</label>
+                <div class="col-sm-5">
+                  <input name="photoDesc"
                     type="text"
-                    onChange={this.handleChange} className="form-control valid" />
+                    onChange={this.handleChange} className="form-control valid" id="photoDesc" type="text" />
                 </div>
               </div>
               <div className="form-group">
-                <label className="col-md-2 control-label">Album Description</label>
-                <div className="col-md-10">
-                  <input name="albumDesc"
-                    type="text"
-                    onChange={this.handleChange} className="form-control valid" id="AlbumDesc" type="text" />
+                <label className="control-label col-sm-3">Album Description</label>
+                <div class="col-sm-5">
+                  <input name="files" multiple="multiple"
+                    type="file" accept=".jpg, .png, .gif"
+                    onChange={this.handleChange} className="form-control valid" id="photoDesc" />
                 </div>
               </div>
               <div className="form-group">
-                <div className="col-md-offset-1 col-md-10">
+              <div className="col-md-offset-1 col-md-10">
                   <input onClick={this.handleFormSubmit.bind(this)} style={{ margin: 0 }} type="submit" value="Save" className="btn btn-default" />
+                  <NavLink to='/albumPhotos' class="btn btn-default btn-xs navbar-btn" style={{padding: 7}}>Back to Photo Albums<i class="fa fa-camera" aria-hidden="true"></i></NavLink>
                 </div>
               </div>
             </form>
@@ -77,7 +77,6 @@ export class AddPhoto extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    //var userId = this.Auth.getProfile();
     var user = this.Auth.getUserId();
     const AppUser = 
     {
@@ -85,14 +84,14 @@ export class AddPhoto extends Component {
       password: ''
     }
 
-    const AlbumModel = 
+    const PhotoModel = 
     {
-      albumDesc: this.state.albumDesc,
-      albumName: this.state.albumName
+      photoDesc: this.state.photoDesc,
+      files: this.state.files
     }
 
-     this.PhotoServ.addAlbum(AppUser, AlbumModel).then(res => {
-       this.props.history.push('/photoAlbums');
+     this.PhotoServ.addPhoto(AppUser, PhotoModel).then(res => {
+       this.props.history.push('/albumPhotos');
     
   });
    

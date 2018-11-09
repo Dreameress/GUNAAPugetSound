@@ -55,8 +55,9 @@ export class AddAlbum extends Component {
                 </div>
               </div>
               <div className="form-group">
-                <div className="col-md-offset-1 col-md-10">
+              <div className="col-md-offset-1 col-md-10">
                   <input onClick={this.handleFormSubmit.bind(this)} style={{ margin: 0 }} type="submit" value="Save" className="btn btn-default" />
+                  <NavLink to='/photoAlbums' class="btn btn-default btn-xs navbar-btn" style={{padding: 7}}>Back to Photo Albums<i class="fa fa-camera" aria-hidden="true"></i></NavLink>
                 </div>
               </div>
             </form>

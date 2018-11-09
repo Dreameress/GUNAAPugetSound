@@ -12,19 +12,16 @@ namespace GUNAAPugetSound.Models
 
         public Guid AlbumId { get; set; }
 
-        [Display(Name = "Decription")]
         [Required]
         public String Description { get; set; }
 
-        [Display(Name = "Image Path")]
         public String ImagePath { get; set; }
 
-        [Display(Name = "Thumb Path")]
         public String ThumbPath { get; set; }
 
-
-        [Display(Name = "Created On")]
         public DateTime CreatedOn { get; set; }
+
+        public string AddedBy { get; set; }
 
         [NotMapped]
         public List<string> PhotoList { get; set; }
@@ -38,13 +35,14 @@ namespace GUNAAPugetSound.Models
             Id = Randomness.Guid();
         }
 
-        public Photo(Guid albumId, string description, string imagePath, string thumbPath, string createdBy = "Sabrina Smith")
+        public Photo(Guid albumId, string description, string imagePath, string thumbPath, string createdBy)
         {
             Description = description;
             AlbumId = albumId;
             ThumbPath = thumbPath;
             ImagePath = imagePath;
             CreatedOn = DateTime.Now;
+            AddedBy = createdBy;
             Id = Randomness.Guid();
         }
     }

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Drawing;
+using System.Net.Http.Headers;
 using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -12,6 +15,8 @@ using GUNAAPugetSound.Models;
 using GUNAAPugetSound.Services;
 using GUNAAPugetSound.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -26,13 +31,15 @@ namespace GUNAAPugetSound.Controllers
         private IAlbumData _albumData;
         private IPhotoData _photoData;
         private IUserService _userService;
+        private IHostingEnvironment _hostingEnvironment;
         // GET: PhtotoAlbum
-        public PhotoAlbumController(IAlbumData albumData, IPhotoData photoData, IUserService userService, IMapper mapper)
+        public PhotoAlbumController(IAlbumData albumData, IPhotoData photoData, IUserService userService, IMapper mapper, IHostingEnvironment hostingEnvironment)
         {
             _userService = userService;
             _mapper = mapper;
             _albumData = albumData;
             _photoData = photoData;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         [AllowAnonymous]
@@ -42,6 +49,15 @@ namespace GUNAAPugetSound.Controllers
 
             var photoAlbums = _albumData.GetAll();
             var photosDTo = _mapper.Map<IList<Album>>(photoAlbums);
+            return Ok(photosDTo);
+        }
+
+        [AllowAnonymous]
+        [HttpPost("[action]")]
+        public IActionResult GetAllPhotos(DeleteDto dto)
+        {
+            var photos = _photoData.GetAll().Where(x => x.AlbumId == new Guid(dto.Guid.Id));
+            var photosDTo = _mapper.Map<IList<Photo>>(photos);
             return Ok(photosDTo);
         }
 
@@ -66,6 +82,77 @@ namespace GUNAAPugetSound.Controllers
                 // save 
                 _albumData.Add(album);
                 return Ok(album);
+            }
+            catch (AppException ex)
+            {
+                // return error message if there was an exception
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("[action]"), DisableRequestSizeLimit]
+        public IActionResult CreatePhotos(PhotoDto photoDto)
+        {
+            var userDto = photoDto.User;
+            var model = photoDto.Model;
+
+            //var album = new Photo(model.AlbumName, model.AlbumDesc, userDto.Username, userDto.Username);
+
+            try
+            {
+                var photoFileList = photoDto.Files as IList<IFormFile> ?? photoDto.Files.ToList();
+                // save 
+                foreach (var file in photoFileList)
+                {
+                    if (file.Length > 0)
+                    {
+                        var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+
+                        //Assigning Unique Filename (Guid)
+                        var uniquteFileName = Guid.NewGuid().ToString();
+
+                        //Getting file Extension
+                        var extension = System.IO.Path.GetExtension(file.FileName).ToLower();
+
+                        // concating  FileName + FileExtension
+                        var finalName = uniquteFileName + extension;
+
+                        // Combines two strings into a path.
+                        fileName = Path.Combine(_hostingEnvironment.WebRootPath, "GalleryImages") + $@"\{finalName}";
+
+                        // if you want to store path of folder in database
+                        var thumbPath = $"/GalleryImages/thumbs/{fileName}{extension}";
+                        var imagePath = $"/GalleryImages/{fileName}{extension}";
+
+                        using (FileStream fs = System.IO.File.Create(fileName))
+                        {
+                            file.CopyTo(fs);
+                            fs.Flush();
+                        }
+
+                        var photo = new Photo(new Guid(model.AlbumId), model.PhotoDesc, imagePath, thumbPath, userDto.Username);
+                        //Save to db
+                        _photoData.Add(photo);
+
+                        //string webRootPath = _hostingEnvironment.WebRootPath;
+                        //string newPath = Path.Combine(webRootPath, folderName);
+                        //if (!Directory.Exists(newPath))
+                        //{
+                        //    Directory.CreateDirectory(newPath);
+                        //}
+                        //if (file.Length > 0)
+                        //{
+                        //    string fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                        //    string fullPath = Path.Combine(newPath, fileName);
+                        //    using (var stream = new FileStream(fullPath, FileMode.Create))
+                        //    {
+                        //        file.CopyTo(stream);
+                        //    }
+                        //}
+
+                    }
+                }
+                return Ok("successfully added all photos");
             }
             catch (AppException ex)
             {
@@ -121,13 +208,14 @@ namespace GUNAAPugetSound.Controllers
 
         }
 
-        public ActionResult ShowPhotoAlbum(Guid albumGuid)
+        [HttpPost("[action]")]
+        public ActionResult ShowPhotoAlbum(DeleteDto album)
         {
             string filter = null;
             int page = 1;
             int pageSize = 16;
 
-            var photos = _photoData.GetAllByAlbumId(albumGuid);
+            var photos = _photoData.GetAllByAlbumId(new Guid(album.Guid.Id));
             return Ok(photos);
         }
 

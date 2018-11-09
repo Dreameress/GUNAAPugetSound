@@ -9,7 +9,7 @@ export class ShowPhotos extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { albums: [], loading: true, authenticated: null };
+    this.state = { photos: [], loading: true, authenticated: null };
     this.deleteAlbum = this.deleteAlbum.bind(this);
     this.editAlbum = this.editAlbum.bind(this);
     this.albumDetails = this.albumDetails.bind(this);
@@ -18,12 +18,20 @@ export class ShowPhotos extends Component {
     this.PhotoService = new PhotoService();
     //this.checkAuthentication();
     //this.PhotoService.getAll();
+    var id = this.PhotoService.getPhotoAlbumId();
+    const Guid = 
+    {
+    Id: id
+    }
+    this.PhotoService.getPhotosById(Guid).then(data => {
+      this.setState({ photos: data, loading: false });
+    });;
 
-    fetch('api/PhotoAlbum/GetAll')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ photos: data, loading: false });
-      });
+    // fetch('api/PhotoAlbum/GetAll')
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     this.setState({  });
+    //   });
   }
 
   async checkAuthentication() {
@@ -45,7 +53,7 @@ export class ShowPhotos extends Component {
     return (
       <div className="authorized-options">
               <div className="auth-album-container">
-                  <NavLink to={'/photoAlbums'} class="btn btn-default btn-xs navbar-btn" style={{padding: 7}}>Back to Photo Albums<i class="fa fa-camera" aria-hidden="true"></i></NavLink>
+                  <NavLink to={'/photoAlbums'} className="btn btn-default btn-xs navbar-btn" style={{marginLeft: 5}}>Back to Photo Albums<i className="fa fa-camera" aria-hidden="true"></i></NavLink>
               </div>
       </div>
     );
@@ -54,10 +62,14 @@ export class ShowPhotos extends Component {
   static renderAuthorizedAddPhotos() {
     return (
       <div className="authorized-options">
-              <div className="auth-album-container">
+      <div className="col-md-offset-1 col-md-10">
+                  <NavLink to={'/addPhotos'} className="btn btn-default btn-xs navbar-btn">Add Photo(s)<i className="fa fa-plus" aria-hidden="true"></i></NavLink>
+                  <NavLink to='/photoAlbums' className="btn btn-default btn-xs navbar-btn" style={{marginLeft: 5}}>Back to Photo Albums<i className="fa fa-camera" aria-hidden="true"></i></NavLink>
+                </div>
+              {/* <div className="auth-album-container">
                   <NavLink to={'/addPhotos'} className="btn btn-default btn-xs navbar-btn">Add Photo(s)<i className="fa fa-plus" aria-hidden="true"></i></NavLink>
                   <NavLink to={'/photoAlbums'} class="btn btn-default btn-xs navbar-btn" style={{padding: 7}}>Back to Photo Albums<i class="fa fa-camera" aria-hidden="true"></i></NavLink>
-              </div>
+              </div> */}
       </div>
     );
   }
@@ -65,11 +77,13 @@ export class ShowPhotos extends Component {
 
   render() {
 
-    var photoText = this.state.photos.length > 0 ? "You must be logged in to add photos." : "No photo albums have been added as of yet.";
+    var photoText = this.state.photos.length > 0 ? "No photos have been added as of yet." : "";
+    photoText = this.Auth.loggedIn() ? photoText + " You must be logged in to add photos." : photoText;
     let contents = this.Auth.loggedIn()
       ? ShowPhotos.renderAddPhotos()
       : <p><em> {photoText }</em></p>;
     let albums = this.state.albums;
+    var gallery =  this.state.photos.length > 0 ?  <Gallery photos={this.state.photos} /> : photoText;
 
     return (
     <div className="panel-heading text-center  golden-content">
@@ -77,9 +91,8 @@ export class ShowPhotos extends Component {
       <h4 className="red-header">Captured Moments from the GUNAA Events, Meetings, Fundraisers, and more</h4>
         <div className="panel-body  golden-content">
           <div className="albumsConainer">
-          <Gallery photos={this.state.photos} />
+            {gallery}
           </div>
-          {photoText}
         </div>
       {this.Auth.loggedIn()
       ? ShowPhotos.renderAuthorizedAddPhotos()

@@ -32,6 +32,30 @@ export default class PhotoService {
 
     }
 
+    getPhotosById(Guid)
+    {
+        return fetch(`${this.domain}/GetAllPhotos`,  {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                Guid
+            })
+        })
+        .then(response => response.json()).then(res => {
+            var test = res;
+            var promise = Promise.resolve(res);
+            return test;
+            })
+        .catch(err => {
+            alert(err);
+          });
+
+    }
+
+
     addAlbum(User, Model) {
         // Get a token from api server using the fetch api
         return fetch(`${this.domain}/Create`,  {
@@ -56,10 +80,68 @@ export default class PhotoService {
 
     }
 
+    addPhoto(User, Model) {
+        // Get a token from api server using the fetch api
+        return fetch(`${this.domain}/CreatePhotos`,  {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                User,
+                Model
+            })
+        })
+        .then(response => response.json()).then(res => {
+            var test = res;
+            var promise = Promise.resolve(res);
+            return test;
+            })
+        .catch(err => {
+            alert(err);
+          });
+
+    }
+
+
     editAlbum(User, Model, Guid) {
 
         // Get a token from api server using the fetch api
         return fetch(`${this.domain}/Edit`,  {
+            method: 'PUT',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                User,
+                Model,
+                Guid
+            })
+        })
+        .then(res => {
+            if(res.ok)
+            {
+                var test = res;
+                var promise = Promise.resolve(res);
+                return test;
+            }else if(res.message != null)
+            {
+                return res.message;//Do something with the error
+            }
+           
+            })
+        .catch(err => {
+            alert(err);
+          });
+
+    }
+
+    editPhoto(User, Model, Guid) {
+
+        // Get a token from api server using the fetch api
+        return fetch(`${this.domain}/EditPhoto`,  {
             method: 'PUT',
             headers: {
               'Accept': 'application/json',
@@ -97,28 +179,5 @@ export default class PhotoService {
     getPhotoAlbumId() {
         // Retrieves the user token from localStorage
         return localStorage.getItem('current_album_token')
-    }
-
-    
-    delete(Guid) {
-        // Get a token from api server using the fetch api
-        return fetch(`${this.domain}/Delete`, {
-            method: 'DELETE',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                Guid
-            })
-        })
-        .then(response => response.json()).then(res => {
-            //this.props.history.push('/photoAlbums');
-            return Promise.resolve(res);
-            })
-        .catch(err => {
-            alert(err);
-          });
-
     }
 }
