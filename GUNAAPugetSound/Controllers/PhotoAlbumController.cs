@@ -46,60 +46,88 @@ namespace GUNAAPugetSound.Controllers
         [HttpGet("[action]")]
         public IActionResult GetAll()
         {
+            try
+            {
+                var photoAlbums = _albumData.GetAll();
+                var photosDTo = _mapper.Map<IList<Album>>(photoAlbums);
+                return Ok(photosDTo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
-            var photoAlbums = _albumData.GetAll();
-            var photosDTo = _mapper.Map<IList<Album>>(photoAlbums);
-            return Ok(photosDTo);
+            
         }
 
         [AllowAnonymous]
         [HttpPost("[action]")]
         public IActionResult GetAllPhotos(DeleteDto dto)
         {
-            var photos = _photoData.GetAll().Where(x => x.AlbumId == new Guid(dto.Guid.Id));
-            var photosDTo = _mapper.Map<IList<Photo>>(photos);
-            return Ok(photosDTo);
+            try
+            {
+                var photos = _photoData.GetAllByAlbumId(new Guid(dto.Guid.Id));
+                var photosDTo = _mapper.Map<IList<Photo>>(photos);
+                return Ok(photosDTo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+           
         }
 
         [HttpPost("[action]")]
         public IActionResult GetById(DeleteDto dto)
         {
-            var model = _albumData.Get(new Guid(dto.Guid.Id));
-            var albumDto = _mapper.Map<Album>(model);
-            return Ok(albumDto);
+            try
+            {
+                var model = _albumData.Get(new Guid(dto.Guid.Id));
+                var albumDto = _mapper.Map<Album>(model);
+                return Ok(albumDto);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         [HttpPost("[action]")]
         public IActionResult Create(AlbumDto albumDto)
         {
-            var userDto = albumDto.User;
-            var model = albumDto.Model;
-
-            var album = new Album(model.AlbumName, model.AlbumDesc, userDto.Username, userDto.Username);
-
             try
             {
+                var userDto = albumDto.User;
+                var model = albumDto.Model;
+
+                var album = new Album(model.AlbumName, model.AlbumDesc, userDto.Username, userDto.Username);
+
+
                 // save 
                 _albumData.Add(album);
                 return Ok(album);
+
+
             }
-            catch (AppException ex)
+            catch (Exception ex)
             {
-                // return error message if there was an exception
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(ex.Message);
             }
+          
         }
 
         [HttpPost("[action]"), DisableRequestSizeLimit]
         public IActionResult CreatePhotos(PhotoDto photoDto)
         {
-            var userDto = photoDto.User;
-            var model = photoDto.Model;
-
-            //var album = new Photo(model.AlbumName, model.AlbumDesc, userDto.Username, userDto.Username);
+          
 
             try
             {
+                var userDto = photoDto.User;
+                var model = photoDto.Model;
+
+                //var album = new Photo(model.AlbumName, model.AlbumDesc, userDto.Username, userDto.Username);
                 var photoFileList = photoDto.Files as IList<IFormFile> ?? photoDto.Files.ToList();
                 // save 
                 foreach (var file in photoFileList)
@@ -198,6 +226,16 @@ namespace GUNAAPugetSound.Controllers
         [HttpDelete("[action]")]
         public IActionResult Delete(DeleteDto dto)
         {
+            try
+            {
+                var photos = _photoData.GetAllByAlbumId(new Guid(dto.Guid.Id));
+                var photosDTo = _mapper.Map<IList<Photo>>(photos);
+                return Ok(photosDTo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
             var model = _albumData.Get(new Guid(dto.Guid.Id));
             if (model == null)
             {
@@ -211,12 +249,20 @@ namespace GUNAAPugetSound.Controllers
         [HttpPost("[action]")]
         public ActionResult ShowPhotoAlbum(DeleteDto album)
         {
-            string filter = null;
-            int page = 1;
-            int pageSize = 16;
+            try
+            {
+                string filter = null;
+                int page = 1;
+                int pageSize = 16;
 
-            var photos = _photoData.GetAllByAlbumId(new Guid(album.Guid.Id));
-            return Ok(photos);
+                var photos = _photoData.GetAllByAlbumId(new Guid(album.Guid.Id));
+                return Ok(photos);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+         
         }
 
         //public ActionResult AddPhoto()

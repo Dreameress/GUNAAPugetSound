@@ -38,10 +38,12 @@ namespace GUNAAPugetSound.Services
         {
             try
             {
+                var allPhotos = GetAll();
                 return _context.Photos.Where(r => r.AlbumId == albumGuid).ToList();
             }
-            catch
+            catch(Exception ex)
             {
+                var error = ex + " " + ex.Message + " " + ex.StackTrace; 
                 return null;
             }
         }

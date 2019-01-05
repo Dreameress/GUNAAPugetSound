@@ -5528,11 +5528,23 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
         }
 
     .navbar-default .navbar-nav > li > .active ,
+    #mobileMenuDiv > div > div > .active,
     .navbar-default .navbar-nav > li > a:hover,
     .navbar-default .navbar-nav > li > a:focus {
         color: #D54133;
         background-color: #e7e7e7;
     }
+
+    #mobileMenuDiv > div > div > a > img 
+    {
+        margin: 0 auto;
+    }
+    #mobileMenuDiv > div > div > a  
+    {
+        margin: 0 auto;
+        min-width: 65px;
+    }
+    
 
     .navbar-default .navbar-nav > .disabled > a,
     .navbar-default .navbar-nav > .disabled > a:hover,

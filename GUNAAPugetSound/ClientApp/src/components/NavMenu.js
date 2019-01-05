@@ -3,6 +3,7 @@ import {NavLink, Link } from 'react-router-dom';
 import AuthService from '../services/AuthService';
 const img = '../dist/wwwroot/content/images/gunaasprites.png';
 
+
 var navBackground = {
     backgroundImage: 'url(' + img + ')',
     backgroundRepeat: 'no-repeat'
@@ -13,16 +14,23 @@ var loginStyle = {
     maxWidth: '830px'
 };
 
+var navMenuClass = null;
+var navHeaderClass = null; 
+
+var openMobileMenu = "openMobileMenu visible-xs";
+var closedMobileMenu = "closedMobileMenu";
+var openMobileHeader = "openMobileHeader navbar navbar-default";
+var closedMobileHeader = "closedMobileHeader navbar navbar-default";
+
 export class NavMenu extends Component {
   displayName = NavMenu.name
   constructor(props) {
     super(props);
-    this.state = { initial: 'state', authenticated: null };
+    this.state = { initial: 'state', authenticated: null, toggled: false  };
     this.Auth = new AuthService();
     this.checkAuthentication = this.checkAuthentication.bind(this);
     this.logout = this.logout.bind(this);
-   
-    
+    this.toggleMobileNavMenu = this.toggleMobileNavMenu.bind(this);
   }
 
    checkAuthentication() {
@@ -32,17 +40,31 @@ export class NavMenu extends Component {
         this.setState({ authenticated: loggedIn});
       }
    }
+
+   toggleMobileNavMenu()
+   {
+       if(this.state.toggled)
+       { this.setState({toggled : false})}
+       else
+       { this.setState({toggled : true})}
+        navMenuClass = this.state.toggled ? openMobileMenu : closedMobileMenu;
+        navHeaderClass = this.state.toggled ? openMobileHeader : closedMobileHeader;
+      
+     
+   }
    componentWillMount(){
     this.checkAuthentication();
    }
 
    componentDidUpdate() {
     this.checkAuthentication();
+    //this.checkToggle();
   }
 
   render() {
     if (this.state.authenticated === null) return null;
-
+    navMenuClass = this.state.toggled ? openMobileMenu : closedMobileMenu;
+    navHeaderClass = this.state.toggled ? openMobileHeader : closedMobileHeader;
     var loginButton;
     if(this.state.authenticated) {
       loginButton = this.renderLoggedIn();
@@ -50,7 +72,7 @@ export class NavMenu extends Component {
       loginButton = this.renderLoggedOut();
      }
     return (
-      <nav id="navHeader" className="navbar navbar-default">
+      <nav id="navHeader" className={navHeaderClass}>
       <div className="container-fluid">
       <div>
           <NavLink to="/">
@@ -99,49 +121,49 @@ export class NavMenu extends Component {
   </div>
 
   <div id="mobile-nav" className="visible-xs">
-      <a id="mobileMenuButton"><span></span></a>
-      <div id="navMobileContainer" className="visible-xs " >
+      <a id="mobileMenuButton"  onClick={this.toggleMobileNavMenu}><span></span></a>
+      <div id="navMobileContainer" className={navMenuClass}  >
           <div id="mobileMenuDiv" className="visible-xs">
               <div className="row">
                   <div className="col-xs-4">
-                      <NavLink to='/' asp-controller="Home" asp-action="Index"><img src="../dist/wwwroot/content/images/home3.svg" width="50" height="50" className="visible-xs" alt="" /></NavLink>
-                      <NavLink to='/' id="mIconHome" className="visible-xs mobileItem" asp-controller="Home" asp-action="Index">HOME<span className="sr-only">(current)</span></NavLink>
+                      <NavLink exact to={'/'} activeClassName='active' ><img src="../dist/wwwroot/content/images/home3.svg" width="50" height="50" className="visible-xs" alt="" /></NavLink>
+                      <NavLink exact to={'/'} activeClassName='active' id="mIconHome" className="visible-xs mobileItem" >HOME<span className="sr-only">(current)</span></NavLink>
                   </div>
                   <div className="col-xs-4">
-                      <NavLink to='/officers' asp-controller="Home" asp-action="Officers"><img src="../dist/wwwroot/content/images/star-full.svg" width="50" height="50" /></NavLink>
-                      <NavLink to='/officers' id="mIconOfficers" className="visible-xs mobileItem" asp-controller="Home" asp-action="Officers">OFFICERS</NavLink>
+                      <NavLink to={'/officers'}><img src="../dist/wwwroot/content/images/star-full.svg" width="50" height="50" /></NavLink>
+                      <NavLink to={'/officers'} id="mIconOfficers" className="visible-xs mobileItem" >OFFICERS</NavLink>
                   </div>
                   <div className="col-xs-4">
-                      <NavLink to='/committees' asp-controller="Home" asp-action="Committees"><img asp-controller="Home" asp-action="Committees" src="../dist/wwwroot/content/images/tree.svg" width="50" height="50" /></NavLink>
-                      <NavLink to='/committees' id="mIconCommittees" className="visible-xs mobileItem" asp-controller="Home" asp-action="Committees">COMMITTEES</NavLink>
-                  </div>
-              </div>
-              <div className="row">
-                  <div className="col-xs-4">
-                      <NavLink to='/about' asp-controller="Home" asp-action="About"><img src="../dist/wwwroot/content/images/bubble.svg" width="50" height="50" /></NavLink>
-                      <NavLink to='/about' id="mIconAbout" className="visible-xs mobileItem" asp-controller="Home" asp-action="About">ABOUT</NavLink>
-                  </div>
-                  <div className="col-xs-4">
-                      <NavLink to='/membership' asp-controller="Home" asp-action="Membership"><img src="../dist/wwwroot/content/images/key.svg" width="50" height="50" /></NavLink>
-                      <NavLink to='/membership' id="mIconMembership" className="visible-xs mobileItem" asp-controller="Home" asp-action="Membership">MEMBERSHIP</NavLink>
-                  </div>
-                  <div className="col-xs-4">
-                      <NavLink to='/scholarship' asp-controller="Home" asp-action="Scholarship"><img src="../dist/wwwroot/content/images/pencil.svg" width="50" height="50" /></NavLink>
-                      <NavLink to='/scholarship' id="mIconScholarship" className="visible-xs mobileItem" asp-controller="Home" asp-action="Scholarship">SCHOLARSHIP</NavLink>
+                      <NavLink to={'/committees'}><img asp-controller="Home" asp-action="Committees" src="../dist/wwwroot/content/images/tree.svg" width="50" height="50" /></NavLink>
+                      <NavLink to={'/committees'} id="mIconCommittees" className="visible-xs mobileItem" >COMMITTEES</NavLink>
                   </div>
               </div>
               <div className="row">
                   <div className="col-xs-4">
-                      <NavLink to='/calendar' asp-controller="Home" asp-action="Calendar"><img src="../dist/wwwroot/content/images/calendar.svg" width="50" height="50" /></NavLink>
-                      <NavLink to='/calendar' id="mIconCal" className="visible-xs mobileItem" asp-controller="Home" asp-action="Calendar">CALENDAR</NavLink>
+                      <NavLink to={'/about'}><img src="../dist/wwwroot/content/images/bubble.svg" width="50" height="50" /></NavLink>
+                      <NavLink to={'/about'} id="mIconAbout" className="visible-xs mobileItem" asp-controller="Home" asp-action="About">ABOUT</NavLink>
                   </div>
                   <div className="col-xs-4">
-                      <NavLink to='/photoAlbums' asp-controller="Home" asp-action="Photos"><img src="../dist/wwwroot/content/images/camera.svg" width="50" height="50" /></NavLink>
-                      <NavLink to='/photoAlbums' id="mIconPhotos" className="visible-xs mobileItem" asp-controller="Home" asp-action="Photos">PHOTOS</NavLink>
+                      <NavLink to={'/membership'}><img src="../dist/wwwroot/content/images/key.svg" width="50" height="50" /></NavLink>
+                      <NavLink to={'/membership'} id="mIconMembership" className="visible-xs mobileItem" >MEMBERSHIP</NavLink>
                   </div>
                   <div className="col-xs-4">
-                      <NavLink to='/contact' asp-controller="Home" asp-action="Contact"><img src="../dist/wwwroot/content/images/envelop.svg" width="50" height="50" /></NavLink>
-                      <NavLink to='/contact' id="mIconContact" className="visible-xs mobileItem" asp-controller="Home" asp-action="Contact">CONTACT</NavLink>
+                      <NavLink to={'/scholarship'}><img src="../dist/wwwroot/content/images/pencil.svg" width="50" height="50" /></NavLink>
+                      <NavLink to={'/scholarship'} id="mIconScholarship" className="visible-xs mobileItem" >SCHOLARSHIP</NavLink>
+                  </div>
+              </div>
+              <div className="row">
+                  <div className="col-xs-4">
+                      <NavLink to={'/calendar'}><img src="../dist/wwwroot/content/images/calendar.svg" width="50" height="50" /></NavLink>
+                      <NavLink to={'/calendar'} id="mIconCal" className="visible-xs mobileItem" >CALENDAR</NavLink>
+                  </div>
+                  <div className="col-xs-4">
+                      <NavLink to={'/photoAlbums'}><img src="../dist/wwwroot/content/images/camera.svg" width="50" height="50" /></NavLink>
+                      <NavLink to={'/photoAlbums'} id="mIconPhotos" className="visible-xs mobileItem" >PHOTOS</NavLink>
+                  </div>
+                  <div className="col-xs-4">
+                      <NavLink to={'/contact'}><img src="../dist/wwwroot/content/images/envelop.svg" width="50" height="50" /></NavLink>
+                      <NavLink to={'/contact'} id="mIconContact" className="visible-xs mobileItem">CONTACT</NavLink>
                   </div>
               </div>
           </div>
