@@ -63,12 +63,12 @@ export class ShowPhotos extends Component {
     return (
       <div className="authorized-options">
       <div className="col-md-offset-1 col-md-10">
-                  <NavLink to={'/addPhotos'} className="btn btn-default btn-xs navbar-btn">Add Photo(s)<i className="fa fa-plus" aria-hidden="true"></i></NavLink>
-                  <NavLink to='/photoAlbums' className="btn btn-default btn-xs navbar-btn" style={{marginLeft: 5}}>Back to Photo Albums<i className="fa fa-camera" aria-hidden="true"></i></NavLink>
+                  <NavLink to={'/addPhoto'} className="btn btn-default btn-xs navbar-btn">Add Photo(s)<i className="fa fa-plus" aria-hidden="true"></i></NavLink>
+                  <NavLink to={'/photoAlbums'} className="btn btn-default btn-xs navbar-btn" style={{marginLeft: 5}}>Back to Photo Albums<i className="fa fa-camera" aria-hidden="true"></i></NavLink>
                 </div>
               {/* <div className="auth-album-container">
                   <NavLink to={'/addPhotos'} className="btn btn-default btn-xs navbar-btn">Add Photo(s)<i className="fa fa-plus" aria-hidden="true"></i></NavLink>
-                  <NavLink to={'/photoAlbums'} class="btn btn-default btn-xs navbar-btn" style={{padding: 7}}>Back to Photo Albums<i class="fa fa-camera" aria-hidden="true"></i></NavLink>
+                  <NavLink to={'/photoAlbums'} className="btn btn-default btn-xs navbar-btn" style={{padding: 7}}>Back to Photo Albums<i className="fa fa-camera" aria-hidden="true"></i></NavLink>
               </div> */}
       </div>
     );
@@ -77,7 +77,7 @@ export class ShowPhotos extends Component {
 
   render() {
 
-    var photoText = this.state.photos.length > 0 ? "No photos have been added as of yet." : "";
+    var photoText = this.state.photos.length == 0 ? "No photos have been added as of yet." : "Loading";
     photoText = this.Auth.loggedIn() ? photoText + " You must be logged in to add photos." : photoText;
     let contents = this.Auth.loggedIn()
       ? ShowPhotos.renderAddPhotos()

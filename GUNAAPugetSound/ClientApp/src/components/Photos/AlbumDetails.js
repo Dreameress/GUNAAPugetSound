@@ -45,9 +45,9 @@ export class AlbumDetails extends Component {
 
           <div>Date Created: {this.state.createTime} | Last Edit: {this.state.editTime}</div>
           <div>Description:  {this.state.albumDesc}</div>
-          <div class="authorized-options">
-            <div class="unauth-photo-container">
-              <NavLink to='/photoAlbums' class="btn btn-default btn-xs navbar-btn">Back to Photo Albums<i class="fa fa-camera" aria-hidden="true"></i></NavLink>
+          <div className="authorized-options">
+            <div className="unauth-photo-container">
+              <NavLink to='/photoAlbums' className="btn btn-default btn-xs navbar-btn">Back to Photo Albums<i className="fa fa-camera" aria-hidden="true"></i></NavLink>
             </div>
           </div>
         </div>

@@ -42,7 +42,7 @@ export default class App extends Component {
           <Route path='/addAlbum' component={AddAlbum} />
           <Route path='/editAlbum' component={EditAlbum} />
           <Route path='/albumDetails' component={AlbumDetails} />
-          <Route path='/addPhoto' component={AddAlbum} />
+          <Route path='/addPhoto' component={AddPhoto} />
           <Route path='/showPhotos' component={ShowPhotos} />
       </Layout>
     );

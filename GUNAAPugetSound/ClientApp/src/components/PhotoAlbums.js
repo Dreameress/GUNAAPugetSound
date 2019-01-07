@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {NavLink, Link, Redirect } from 'react-router-dom';
 import AuthService from '../services/AuthService';
 import PhotoService from '../services/PhotoService';
+import { Loading } from './Loading';
 
 export class PhotoAlbums extends Component {
   displayName = PhotoAlbums.name
@@ -50,6 +51,38 @@ export class PhotoAlbums extends Component {
     );
   }
 
+  static renderShowAlbumSection(albums, canvas){
+    return(
+      <div className="albumsConainer">
+      {albums.map((album, index) =>
+        <div className="photoAlbumItem" key={index}>
+ 
+          <div  >
+            <NavLink  to={'/showPhotos'} className="leader-panel" >
+              <h3>
+              <strong>{album.albumName}</strong>
+              </h3>
+              <p>{album.createTime}</p>
+            </NavLink>
+          </div>
+  
+          {  canvas.state.authenticated && albums.length > 0
+  ?    <div className="auth-album-detail-container">
+  <a id={album.id}  onClick={canvas.albumDetails.bind(canvas)} className="btn btn-default" >Details</a>
+  <a id={album.id} className="btn btn-default" onClick={canvas.editAlbum.bind(canvas)} >Edit </a>
+  <a id={album.id} type="submit" onClick={canvas.deleteAlbum.bind(canvas)} className="btn btn-default">Delete</a>
+  </div>
+  :<p></p>}
+         
+            
+      </div>
+        
+       )}
+       </div>
+    );
+
+  }
+
 
   render() {
 
@@ -58,43 +91,16 @@ export class PhotoAlbums extends Component {
       ? PhotoAlbums.renderAddAlbum()
       : <p><em> {albumText }</em></p>;
     let albums = this.state.albums;
+    let photoAlbumsView = this.state.loading ? <Loading /> : PhotoAlbums.renderShowAlbumSection(this.state.albums, this);
 
     return (
     <div className="panel-heading text-center  golden-content">
       <h1>Photos</h1>
       <h4 className="red-header">Captured Moments from the GUNAA Events, Meetings, Fundraisers, and more</h4>
         <div className="panel-body  golden-content">
-          <div className="albumsConainer">
-          {albums.map((album, index) =>
-    <div className="photoAlbumItem" key={index}>
-     
-        <div  >
-          <NavLink  to={'/showPhotos'} className="leader-panel" >
-          <h3>
-                    <strong>{album.albumName}</strong>
-          </h3>
-          <p>{album.createTime}</p>
-        </NavLink>
+          {photoAlbumsView}
+          {contents}
         </div>
-      
-              {  this.Auth.loggedIn() && this.state.albums.length > 0
-      ?    <div className="auth-album-detail-container">
-      <a id={album.id}  onClick={this.albumDetails.bind(this)} className="btn btn-default" >Details</a>
-      <a id={album.id} className="btn btn-default" onClick={this.editAlbum.bind(this)} >Edit </a>
-      <a id={album.id} type="submit" onClick={this.deleteAlbum.bind(this)} className="btn btn-default">Delete</a>
-      </div>
-      : <p><em></em></p>}
-             
-                
-          </div>
-            
-           )}
-           </div>
-
-         {contents}
-  
-      </div>
-       
     </div>
     );
   }

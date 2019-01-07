@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 
@@ -85,6 +86,12 @@ namespace GUNAAPugetSound
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAlbumData, AlbumData>();
             services.AddScoped<IPhotoData, SqlPhotoData>();
+
+            services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
+                options.HttpsPort = 443;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -129,6 +136,7 @@ namespace GUNAAPugetSound
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
+
             });
         }
     }
