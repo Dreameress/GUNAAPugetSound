@@ -5,7 +5,12 @@ export class Contact extends Component {
 
   render() {
     return (
-        <div><div className="panel-body golden-content">
+        <div>
+              <div className="panel-heading text-center  golden-content">
+                <h1>Contact Us</h1>
+            </div>
+            <div className="panel-body golden-content">
+        
         <address className="text-center  golden-content">
             <strong>Grambling University National Alumni Association</strong><br />
             <strong>Puget Sound Chapter</strong><br />

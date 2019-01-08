@@ -170,6 +170,28 @@ export default class PhotoService {
           });
 
     }
+    
+    deleteAlbum(Guid)
+    {
+        //  // Get a token from api server using the fetch api
+        return fetch(`${this.domain}/Delete`, {
+            method:'DELETE',
+            headers: {
+                'Accept':'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                Guid})
+          }).then(response =>
+              
+              response.json()).then(res => {
+                  return Promise.resolve(res);
+              })
+              .catch(err => {
+                  alert(err);
+              });
+            
+    }
 
     setPhotoAlbumId(id) {
         // Saves user token to localStorage

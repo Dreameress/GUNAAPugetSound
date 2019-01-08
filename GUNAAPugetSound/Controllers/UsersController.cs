@@ -41,19 +41,6 @@ namespace GUNAAPugetSound.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("[action]")]
-        public IEnumerable<SampleDataController.WeatherForecast> WeatherForecasts()
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new SampleDataController.WeatherForecast
-            {
-                DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            });
-        }
-
-        [AllowAnonymous]
         [HttpPost("[action]")]
         public IActionResult Login(UserDto userDto)
         {
