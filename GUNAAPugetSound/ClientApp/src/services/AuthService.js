@@ -4,11 +4,11 @@ import {Redirect } from 'react-router-dom';
 export default class AuthService {
     // Initializing important variables
     constructor(domain) {
-        this.domain = domain || 'https://localhost:44320/api/Users' // API server domain
-        this.fetch = this.fetch.bind(this) // React binding stuff
-        this.login = this.login.bind(this)
-        this.register = this.register.bind(this)
-        this.getProfile = this.getProfile.bind(this)
+        this.domain = domain || 'https://localhost:44330/api/Users' // API server domain
+      this.fetch = this.fetch.bind(this); // React binding stuff
+      this.login = this.login.bind(this);
+      this.register = this.register.bind(this);
+      this.getProfile = this.getProfile.bind(this);
     }
 
     login(username, password) {
@@ -48,11 +48,11 @@ export default class AuthService {
             })
         })
         .then(response => response.json()).then(res => {
-            if(res.token != null)
+            if(res.token !== null)
             {
                 this.setToken(res.token); // Setting the token in localStorages
             }
-            if(res.message == null)
+            if(res.message === null)
             {
                 res.message = "Something went wrong."
             }

@@ -2,6 +2,59 @@
 {
     height: calc(100vh - 100px);
 }
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.calandar-modal-input-readonly {
+    display: block;
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+
+.calendar-modal-button {
+    display: inline-block;
+    margin: auto;
+    height: 40px;
+    width: 100px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    color: #551711;
+    border: 1px solid #e58880;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    background: #e58880;
+    margin: 15px;
+}
+
+.calendar-modal {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    height: 50%;
+    width: 50%;
+    max-width: 500px;
+    margin: auto;
+}
 
 .rbc-btn {
     color: inherit;

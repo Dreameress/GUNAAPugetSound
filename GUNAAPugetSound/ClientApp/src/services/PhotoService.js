@@ -4,7 +4,7 @@ import AuthService from '../services/AuthService';
 export default class PhotoService {
     // Initializing important variables
     constructor(domain, props) {
-        this.domain = domain || 'https://localhost:44320/api/PhotoAlbum' // API server domain
+        this.domain = domain || 'https://localhost:44330/api/PhotoAlbum' // API server domain
         this.Auth = new AuthService();
         this.fetch = this.Auth.fetch.bind(this) // React binding stuff
     }
@@ -126,7 +126,7 @@ export default class PhotoService {
                 var test = res;
                 var promise = Promise.resolve(res);
                 return test;
-            }else if(res.message != null)
+            }else if(res.message !== null)
             {
                 return res.message;//Do something with the error
             }
@@ -159,7 +159,7 @@ export default class PhotoService {
                 var test = res;
                 var promise = Promise.resolve(res);
                 return test;
-            }else if(res.message != null)
+            }else if(res.message !== null)
             {
                 return res.message;//Do something with the error
             }
