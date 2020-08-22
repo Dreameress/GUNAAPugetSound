@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Loading } from './Loading';
+import { Loading } from '../components/Loading';
 
 export class Officers extends Component {
   displayName = Officers.name

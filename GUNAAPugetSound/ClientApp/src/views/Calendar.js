@@ -5,6 +5,7 @@ import ReactModal from 'react-modal';
 import BigCalendar from 'react-big-calendar';
 import events from '../Events';
 import moment from 'moment';
+import { Loading } from '../components/Loading';
 
 const localizer = BigCalendar.momentLocalizer(moment);
 const showCalendar = {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {NavLink, Link, Redirect } from 'react-router-dom';
 import AuthService from '../services/AuthService';
 import PhotoService from '../services/PhotoService';
-import { Loading } from './Loading';
+import { Loading } from '../components/Loading';
 
 export class PhotoAlbums extends Component {
   displayName = PhotoAlbums.name
