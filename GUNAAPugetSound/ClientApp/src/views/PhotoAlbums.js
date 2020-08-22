@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {NavLink, Link, Redirect } from 'react-router-dom';
 import AuthService from '../services/AuthService';
 import PhotoService from '../services/PhotoService';
+import { Loading } from '../components/Loading';
 
 export class PhotoAlbums extends Component {
   displayName = PhotoAlbums.name
@@ -51,6 +52,8 @@ export class PhotoAlbums extends Component {
   }
 
 
+
+
   render() {
 
     var albumText = this.state.albums.length > 0 ? "You must be logged in to add photos." : "No photo albums have been added as of yet.";
@@ -58,43 +61,41 @@ export class PhotoAlbums extends Component {
       ? PhotoAlbums.renderAddAlbum()
       : <p><em> {albumText }</em></p>;
     let albums = this.state.albums;
+    
 
     return (
     <div className="panel-heading text-center  golden-content">
       <h1>Photos</h1>
       <h4 className="red-header">Captured Moments from the GUNAA Events, Meetings, Fundraisers, and more</h4>
         <div className="panel-body  golden-content">
-          <div className="albumsConainer">
-          {albums.map((album, index) =>
-    <div className="photoAlbumItem" key={index}>
-     
+          {this.state.loading ? <Loading /> :   
+     <div className="albumsConainer">
+        {albums.map((album, index) =>
+        <div className="photoAlbumItem" key={index}>
         <div  >
           <NavLink  to={'/showPhotos'} className="leader-panel" >
-          <h3>
-                    <strong>{album.albumName}</strong>
-          </h3>
-          <p>{album.createTime}</p>
-        </NavLink>
+            <h3>
+            <strong>{album.albumName}</strong>
+            </h3>
+            <p>{album.createTime}</p>
+          </NavLink>
         </div>
-      
-              {  this.Auth.loggedIn() && this.state.albums.length > 0
-      ?    <div className="auth-album-detail-container">
-      <a id={album.id}  onClick={this.albumDetails.bind(this)} className="btn btn-default" >Details</a>
-      <a id={album.id} className="btn btn-default" onClick={this.editAlbum.bind(this)} >Edit </a>
-      <a id={album.id} type="submit" onClick={this.deleteAlbum.bind(this)} className="btn btn-default">Delete</a>
-      </div>
-      : <p><em></em></p>}
-             
-                
-          </div>
-            
-           )}
-           </div>
 
-         {contents}
-  
-      </div>
+        {  this.Auth.loggedIn()  && this.state.albums.length > 0
+?    <div className="auth-album-detail-container">
+<a id={album.id}  onClick={this.albumDetails.bind(this)} className="btn btn-default" >Details</a>
+<a id={album.id} className="btn btn-default" onClick={this.editAlbum.bind(this)} >Edit </a>
+<a id={album.id} type="submit" onClick={this.deleteAlbum.bind(this)} className="btn btn-default">Delete</a>
+</div>
+:<p></p>}
        
+          
+    </div>
+      
+     )}
+     </div>}
+          {contents}
+        </div>
     </div>
     );
   }
@@ -121,7 +122,7 @@ export class PhotoAlbums extends Component {
         Id: index
     }
     var self = this;
-    this.PhotoService.delete(guid, this).then(res => {
+    this.PhotoService.deleteAlbum(guid, this).then(res => {
       self.setState({ loading: true });
       fetch('api/PhotoAlbum/GetAll')
       .then(response => response.json())

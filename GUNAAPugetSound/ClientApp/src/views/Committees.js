@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Loading } from '../components/Loading';
 
 export class Committees extends Component {
   displayName = Committees.name
@@ -35,7 +36,7 @@ export class Committees extends Component {
 
   render() {
     let contents = this.state.loading
-      ? <p><em>Loading...</em></p>
+      ? <Loading />
       : Committees.renderCommitteesSection(this.state.members);
 
     return (

@@ -78,7 +78,7 @@ export class Register extends Component {
 
     this.Auth.register(this.state.username, this.state.password).then(res =>
       {
-        if(res.message != null)
+        if(res.message !== null)
         {
           this.setState({ authenticated: true});
         }

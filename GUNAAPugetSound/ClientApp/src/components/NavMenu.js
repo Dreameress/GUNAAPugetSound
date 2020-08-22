@@ -105,7 +105,7 @@ export class NavMenu extends Component {
                   <NavLink to={'/photoAlbums'} className="visible-lg visible-md visible-sm">PHOTOS</NavLink>
               </li>
               <li>
-                  <NavLink to={'/about'} className="visible-lg visible-md visible-sm" href="/Home/NavLinkbout">ABOUT</NavLink>
+                  <NavLink to={'/about'} className="visible-lg visible-md visible-sm" >ABOUT</NavLink>
               </li>
               <li>
                   <NavLink to={'/contact'} className="visible-lg visible-md visible-sm">CONTACT</NavLink>

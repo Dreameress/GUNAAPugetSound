@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
-import { Home } from './components/Home';
+import { Home } from './views/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
-import { Contact } from './components/Contact';
-import { About } from './components/About';
-import { Membership } from './components/Membership';
-import { Scholarship } from './components/Scholarship';
-import { Officers } from './components/Officers';
-import { Committees } from './components/Committees';
-import { Calendar } from './components/Calendar';
-import { Login } from './components/Login';
-import { Register } from './components/Register';
-import { PhotoAlbums } from './components/PhotoAlbums';
+import { Contact } from './views/Contact';
+import { About } from './views/About';
+import { Membership } from './views/Membership';
+import { Scholarship } from './views/Scholarship';
+import { Officers } from './views/Officers';
+import { Committees } from './views/Committees';
+import { Calendar } from './views/Calendar';
+import { Login } from './views/Login';
+import { Register } from './views/Register';
+import { PhotoAlbums } from './views/PhotoAlbums';
 import { AddAlbum } from './components/Photos/AddAlbum';
 import { EditAlbum } from './components/Photos/EditAlbum';
 import { AlbumDetails } from './components/Photos/AlbumDetails';
@@ -42,7 +42,7 @@ export default class App extends Component {
           <Route path='/addAlbum' component={AddAlbum} />
           <Route path='/editAlbum' component={EditAlbum} />
           <Route path='/albumDetails' component={AlbumDetails} />
-          <Route path='/addPhoto' component={AddAlbum} />
+          <Route path='/addPhoto' component={AddPhoto} />
           <Route path='/showPhotos' component={ShowPhotos} />
       </Layout>
     );

@@ -228,21 +228,19 @@ namespace GUNAAPugetSound.Controllers
         {
             try
             {
-                var photos = _photoData.GetAllByAlbumId(new Guid(dto.Guid.Id));
-                var photosDTo = _mapper.Map<IList<Photo>>(photos);
-                return Ok(photosDTo);
+                var model = _albumData.Get(new Guid(dto.Guid.Id));
+                if (model == null)
+                {
+                    return BadRequest(new { message = "Album does not exist." });
+                }
+                _albumData.Delete(model);
+                return Ok(new { message = "Album deleted!" });
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-            var model = _albumData.Get(new Guid(dto.Guid.Id));
-            if (model == null)
-            {
-                return BadRequest(new { message = "Album does not exist." });
-            }
-            _albumData.Delete(model);
-            return Ok(new { message = "Album deleted!"});
+           
 
         }
 

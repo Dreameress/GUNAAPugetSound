@@ -2,6 +2,7 @@ import './index.css';
 import './site.css';
 import './material.css';
 import './bootstrap.css';
+import 'font-awesome/css/font-awesome.min.css'; 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
