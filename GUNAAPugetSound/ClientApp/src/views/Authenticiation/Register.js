@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {NavLink, Link, Redirect } from 'react-router-dom';
-import decode from 'jwt-decode';
-import AuthService from '../services/AuthService';
+import AuthService from '../../shared/services/AuthService';
 
 export class Register extends Component {
   displayName = Register.name

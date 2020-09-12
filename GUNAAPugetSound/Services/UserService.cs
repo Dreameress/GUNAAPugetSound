@@ -11,6 +11,7 @@ namespace GUNAAPugetSound.Services
     public interface IUserService
     {
         User Authenticate(string username, string password);
+        ResponseModel<UserModel> Get(long UserId);
         IEnumerable<User> GetAll();
         User GetById(int id);
         User Create(User user, string password);
@@ -20,7 +21,7 @@ namespace GUNAAPugetSound.Services
 
     public class UserService : IUserService
     {
-        private GUNAADbContext _context;
+        private readonly GUNAADbContext _context;
 
         public UserService(GUNAADbContext context)
         {
@@ -46,6 +47,48 @@ namespace GUNAAPugetSound.Services
             return user;
         }
 
+        public ResponseModel<UserModel> Get(long UserId)
+        {
+            ResponseModel<UserModel> response = new ResponseModel<UserModel>();
+
+            try
+            {
+                UserModel user = (from UM in _context.ApplicationUsersMaster
+                    where UM.UserId == UserId
+                    select new UserModel
+                    {
+                        UserId = UM.UserId,
+                        FirstName = UM.FirstName,
+                        LastName = UM.LastName,
+                        Email = UM.Email,
+                        PhoneNumber = UM.PhoneNumber,
+                        UserName = UM.UserName
+                    }).FirstOrDefault();
+                List<string> roleNames = (from UM in _context.ApplicationUsersMaster
+                    join UR in _context.ApplicationUserRoles on UM.UserId equals UR.UserId
+                    join RM in _context.ApplicationRolesMaster on UR.RoleId equals RM.RoleId
+                    where UM.UserId == UserId
+                    select RM.RoleName).ToList();
+                if (user != null)
+                {
+                    user.UserRoles = roleNames;
+                    response.Data = user;
+                    return response;
+                }
+                else
+                {
+                    response.IsSuccess = false;
+                    response.Message = "User Not Found!";
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public IEnumerable<User> GetAll()
         {
             return _context.Users;
@@ -65,8 +108,7 @@ namespace GUNAAPugetSound.Services
             if (_context.Users.Any(x => x.Username == user.Username))
                 throw new AppException("Username \"" + user.Username + "\" is already taken");
 
-            byte[] passwordHash, passwordSalt;
-            CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            CreatePasswordHash(password, out var passwordHash, out var passwordSalt);
 
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
@@ -99,8 +141,7 @@ namespace GUNAAPugetSound.Services
             // update password if it was entered
             if (!string.IsNullOrWhiteSpace(password))
             {
-                byte[] passwordHash, passwordSalt;
-                CreatePasswordHash(password, out passwordHash, out passwordSalt);
+                CreatePasswordHash(password, out var passwordHash, out var passwordSalt);
 
                 user.PasswordHash = passwordHash;
                 user.PasswordSalt = passwordSalt;
@@ -127,11 +168,9 @@ namespace GUNAAPugetSound.Services
             if (password == null) throw new ArgumentNullException("password");
             if (string.IsNullOrWhiteSpace(password)) throw new ArgumentException("Value cannot be empty or whitespace only string.", "password");
 
-            using (var hmac = new System.Security.Cryptography.HMACSHA512())
-            {
-                passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            }
+            using var hmac = new System.Security.Cryptography.HMACSHA512();
+            passwordSalt = hmac.Key;
+            passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
         }
 
         private static bool VerifyPasswordHash(string password, byte[] storedHash, byte[] storedSalt)

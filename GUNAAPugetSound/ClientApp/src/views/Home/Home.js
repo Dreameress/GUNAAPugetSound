@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Header} from '../components/common/Header';
+import {Header} from '../../shared/components/Header/Header';
 export class Home extends Component {
   displayName = Home.name
   constructor(props) {

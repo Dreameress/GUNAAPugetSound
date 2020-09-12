@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Loading } from '../components/Loading';
+import { Loading } from '../../shared/components/Loading';
 
 export class Committees extends Component {
   displayName = Committees.name

@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './views/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
-import { Contact } from './views/Contact';
-import { About } from './views/About';
-import { Membership } from './views/Membership';
-import { Scholarship } from './views/Scholarship';
-import { Officers } from './views/Officers';
-import { Committees } from './views/Committees';
-import { Calendar } from './views/Calendar';
-import { Login } from './views/Login';
-import { Register } from './views/Register';
-import { PhotoAlbums } from './views/PhotoAlbums';
-import { AddAlbum } from './components/Photos/AddAlbum';
-import { EditAlbum } from './components/Photos/EditAlbum';
-import { AlbumDetails } from './components/Photos/AlbumDetails';
-import { AddPhoto } from './components/Photos/AddPhoto';
-import { ShowPhotos } from './components/Photos/ShowPhotos';
+import { Layout } from './shared/components/Layout';
+import { Home } from './views/Home/Home';
+import { FetchData } from './shared/components/FetchData';
+import { Counter } from './shared/components/Counter';
+import { Contact } from './views/ContactUs/Contact';
+import { About } from './views/About/About';
+import { Membership } from './views/Membership/Membership';
+import { Scholarship } from './views/Scholarship/Scholarship';
+import { Officers } from './views/Officers/Officers';
+import { Committees } from './views/Committees/Committees';
+import { Calendar } from './views/Calendar/Calendar';
+import { Login } from './views/Authenticiation/Login';
+import { Register } from './views/Authenticiation/Register';
+import { PhotoAlbums } from './views/Photos/PhotoAlbums';
+import { AddAlbum } from './views/Photos/AddAlbum';
+import { EditAlbum } from './views/Photos/EditAlbum';
+import { AlbumDetails } from './views/Photos/AlbumDetails';
+import { AddPhoto } from './views/Photos/AddPhoto';
+import { ShowPhotos } from   './views/Photos/ShowPhotos';
 
 export default class App extends Component {
   displayName = App.name

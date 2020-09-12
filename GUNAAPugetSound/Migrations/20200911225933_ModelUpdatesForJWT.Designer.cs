@@ -4,14 +4,16 @@ using GUNAAPugetSound.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GUNAAPugetSound.Migrations
 {
     [DbContext(typeof(GUNAADbContext))]
-    partial class GUNAADbContextModelSnapshot : ModelSnapshot
+    [Migration("20200911225933_ModelUpdatesForJWT")]
+    partial class ModelUpdatesForJWT
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {NavLink, Link, Redirect } from 'react-router-dom';
-import AuthService from '../services/AuthService';
-import PhotoService from '../services/PhotoService';
-import { Loading } from '../components/Loading';
+import AuthService from '../../shared/services/AuthService';
+import PhotoService from '../../shared/services/PhotoService';
+import { Loading } from '../../shared/components/Loading';
 
 export class PhotoAlbums extends Component {
   displayName = PhotoAlbums.name

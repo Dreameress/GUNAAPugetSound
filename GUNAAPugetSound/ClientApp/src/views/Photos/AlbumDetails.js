@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import decode from 'jwt-decode';
-import AuthService from '../../services/AuthService';
-import PhotoService from '../../services/PhotoService';
+import AuthService from '../../shared/services/AuthService';
+import PhotoService from '../../shared/services/PhotoService';
 import {NavLink, Link, Redirect } from 'react-router-dom';
 
 export class AlbumDetails extends Component {

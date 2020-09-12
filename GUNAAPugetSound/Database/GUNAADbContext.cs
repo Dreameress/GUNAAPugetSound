@@ -1,5 +1,4 @@
-﻿using System;
-using GUNAAPugetSound.Entities;
+﻿using GUNAAPugetSound.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -26,7 +25,11 @@ namespace GUNAAPugetSound.Models
         public virtual DbSet<Member> Members { get; set; }
         public virtual DbSet<MigrationHistory> MigrationHistory { get; set; }
         public virtual DbSet<Photo> Photos { get; set; }
-        public DbSet<User> Users { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<ApplicationUsersMaster> ApplicationUsersMaster { get; set; }
+        public virtual DbSet<ApplicationUserRoles> ApplicationUserRoles { get; set; }
+        public virtual DbSet<ApplicationRolesMaster> ApplicationRolesMaster { get; set; }
+        public virtual DbSet<RefreshToken> UsersRefreshToken { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -39,6 +42,57 @@ namespace GUNAAPugetSound.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<RefreshToken>(entity =>
+            {
+                entity.Property(e => e.JwtId).IsRequired();
+
+                entity.Property(e => e.Token).IsRequired();
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.RefreshToken)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_RefreshToken_ApplicationUsersMaster");
+            });
+
+            modelBuilder.Entity<ApplicationRolesMaster>(entity =>
+            {
+                entity.HasKey(e => e.RoleId);
+            });
+
+            modelBuilder.Entity<ApplicationUserRoles>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.RoleId })
+                    .HasName("PK_ApplicationUserRoles_1");
+
+                entity.HasIndex(e => e.UserId);
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.UserRoles)
+                    .HasForeignKey(d => d.RoleId);
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.UserRoles)
+                    .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<ApplicationUsersMaster>(entity =>
+            {
+                entity.HasKey(e => e.UserId);
+
+                entity.Property(e => e.Email).IsRequired();
+
+                entity.Property(e => e.FirstName).IsRequired();
+
+                entity.Property(e => e.LastName).IsRequired();
+
+                entity.Property(e => e.Password).IsRequired();
+
+                entity.Property(e => e.PhoneNumber).IsRequired();
+
+                entity.Property(e => e.UserName).IsRequired();
+            });
+
             modelBuilder.Entity<Album>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();

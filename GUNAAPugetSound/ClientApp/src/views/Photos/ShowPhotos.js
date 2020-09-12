@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Gallery from 'react-photo-gallery';
 import {NavLink, Link, Redirect } from 'react-router-dom';
-import AuthService from '../../services/AuthService';
-import PhotoService from '../../services/PhotoService';
+import AuthService from '../../shared/services/AuthService';
+import PhotoService from '../../shared/services/PhotoService';
 
 export class ShowPhotos extends Component {
   displayName = ShowPhotos.name

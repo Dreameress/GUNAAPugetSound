@@ -17,7 +17,6 @@ namespace GUNAAPugetSound.Models
         [Display(Name = "Album Description")]
         public string AlbumDesc { get; set; }
 
-
         public DateTime CreateTime { get; set; }
 
         public DateTime EditTime { get; set; }

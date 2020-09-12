@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import decode from 'jwt-decode';
-import AuthService from '../services/AuthService';
+import AuthService from '../../shared/services/AuthService';
 import {NavLink, Link, Redirect } from 'react-router-dom';
 
 export class Login extends Component {

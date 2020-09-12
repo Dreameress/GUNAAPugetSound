@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Drawing;
 using System.Net.Http.Headers;
-using System.Net.Mime;
-using System.Threading.Tasks;
 using AutoMapper;
 using GUNAAPugetSound.DTOs;
-using GUNAAPugetSound.Entities;
 using GUNAAPugetSound.Helpers;
 using GUNAAPugetSound.Models;
 using GUNAAPugetSound.Services;
-using GUNAAPugetSound.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 
 namespace GUNAAPugetSound.Controllers
 {
@@ -27,19 +20,19 @@ namespace GUNAAPugetSound.Controllers
     [Route("api/[controller]")]
     public class PhotoAlbumController : Controller
     {
-        private IMapper _mapper;
-        private IAlbumData _albumData;
-        private IPhotoData _photoData;
-        private IUserService _userService;
-        private IHostingEnvironment _hostingEnvironment;
+        private readonly IMapper _mapper;
+        private readonly IAlbumData _albumData;
+        private readonly IPhotoData _photoData;
+        private readonly IUserService _userService;
+        private readonly IWebHostEnvironment _iWebHostEnvironment;
         // GET: PhtotoAlbum
-        public PhotoAlbumController(IAlbumData albumData, IPhotoData photoData, IUserService userService, IMapper mapper, IHostingEnvironment hostingEnvironment)
+        public PhotoAlbumController(IAlbumData albumData, IPhotoData photoData, IUserService userService, IMapper mapper, IWebHostEnvironment iWebHostEnvironment)
         {
             _userService = userService;
             _mapper = mapper;
             _albumData = albumData;
             _photoData = photoData;
-            _hostingEnvironment = hostingEnvironment;
+            _iWebHostEnvironment = iWebHostEnvironment;
         }
 
         [AllowAnonymous]
@@ -146,7 +139,7 @@ namespace GUNAAPugetSound.Controllers
                         var finalName = uniquteFileName + extension;
 
                         // Combines two strings into a path.
-                        fileName = Path.Combine(_hostingEnvironment.WebRootPath, "GalleryImages") + $@"\{finalName}";
+                        fileName = Path.Combine(_iWebHostEnvironment.WebRootPath, "GalleryImages") + $@"\{finalName}";
 
                         // if you want to store path of folder in database
                         var thumbPath = $"/GalleryImages/thumbs/{fileName}{extension}";

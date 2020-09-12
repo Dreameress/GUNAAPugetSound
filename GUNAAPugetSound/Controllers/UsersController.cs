@@ -19,16 +19,11 @@ namespace GUNAAPugetSound.Controllers
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class UsersController : Controller
+    public class UsersController : ControllerBase
     {
-        private IUserService _userService;
-        private IMapper _mapper;
+        private readonly IUserService _userService;
+        private readonly IMapper _mapper;
         private readonly AppSettings _appSettings;
-
-        private static string[] Summaries = {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
 
         public UsersController(
             IUserService userService,
@@ -153,6 +148,39 @@ namespace GUNAAPugetSound.Controllers
             var user = _userService.GetById(id);
             var userDto = _mapper.Map<UserDto>(user);
             return Ok(userDto);
+        }
+
+        [Route("getCurrentUser")]
+        [HttpGet]
+        [Authorize]
+        public IActionResult GetCurrentUser()
+        {
+            long UserId = GetUserIdFromToken();
+            var result = _userService.Get(UserId);
+            return Ok(result);
+        }
+
+        protected long GetUserIdFromToken()
+        {
+            long UserId = 0;
+            try
+            {
+                if (HttpContext.User.Identity.IsAuthenticated)
+                {
+                    if (HttpContext.User.Identity is ClaimsIdentity identity)
+                    {
+                        IEnumerable<Claim> claims = identity.Claims;
+                        string strUserId = identity.FindFirst("UserId").Value;
+                        long.TryParse(strUserId, out UserId);
+
+                    }
+                }
+                return UserId;
+            }
+            catch
+            {
+                return UserId;
+            }
         }
 
         [HttpPut("[action]")]
