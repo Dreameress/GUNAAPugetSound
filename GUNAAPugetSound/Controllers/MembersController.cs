@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using GUNAAPugetSound.Models;
+using GUNAAPugetSound.Entities;
+using GUNAAPugetSound.Entities.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,15 +14,15 @@ namespace GUNAAPugetSound.Controllers
     {
         public List<Member> MemberData => new[]
         {
+            new Member {NameFirst = "Charlene", NameLast = "F Davidson Jenkins", Id = Guid.NewGuid(), Position = OfficerRole.President.ToString()},
             new Member
-                ("Charlene", "F Davidson Jenkins", OfficerPosition.President),
-            new Member("Jeanie", "Nelson", OfficerPosition.Secretary),
-            new Member("Eva", "Edwards", OfficerPosition.Treasurer, CommitteeName.Hospitality),
-            new Member("Beverly", "Hopkins", OfficerPosition.Parliamentarian),
-            new Member("TBD", "", OfficerPosition.VicePresident),
-            new Member("Marcus", "Dabney", OfficerPosition.None, CommitteeName.ScholarshipChair),
-            new Member("Don", "Paul", OfficerPosition.None, CommitteeName.Fundraising),
-            new Member("Tammy", "Richardson", OfficerPosition.None, CommitteeName.Membership)
+            {NameFirst = "Jeanie", NameLast = "Nelson", Position = OfficerRole.Secretary.ToString()},
+            new Member{NameFirst = "Eva", NameLast = "Edwards", Position = OfficerRole.Treasurer.ToString(), Committee = CommitteeName.Hospitality.ToString()},
+            new Member{NameFirst = "Beverly", NameLast = "Hopkins", Position = OfficerRole.Parliamentarian.ToString()},
+            new Member{NameFirst = "TBD", NameLast = "", Position = OfficerRole.VicePresident.ToString()},
+            new Member{NameFirst = "Marcus", NameLast = "Dabney", Position = OfficerRole.None.ToString(), Committee = CommitteeName.ScholarshipChair.ToString()},
+            new Member{NameFirst = "Don", NameLast = "Paul", Position = OfficerRole.None.ToString(),Committee = CommitteeName.Fundraising.ToString()},
+            new Member{NameFirst = "Tammy",NameLast = "Richardson",Position = OfficerRole.None.ToString(),Committee = CommitteeName.Membership.ToString()}
 
         }.ToList();
 
@@ -35,7 +35,7 @@ namespace GUNAAPugetSound.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Member> Officers(int startDateIndex)
         {
-            return MemberData.OrderBy(x => x.Position).Where(y => y.Position != OfficerPosition.None.ToString());
+            return MemberData.OrderBy(x => x.Position).Where(y => y.Position != OfficerRole.None.ToString());
         }
 
         [HttpGet("[action]")]

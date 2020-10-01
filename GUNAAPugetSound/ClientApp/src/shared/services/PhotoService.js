@@ -195,11 +195,11 @@ export default class PhotoService {
 
     setPhotoAlbumId(id) {
         // Saves user token to localStorage
-        localStorage.setItem('current_album_token', id)
+        localStorage.setItem('current_album_token', id);
     }
 
     getPhotoAlbumId() {
         // Retrieves the user token from localStorage
-        return localStorage.getItem('current_album_token')
+        return localStorage.getItem('current_album_token');
     }
 }

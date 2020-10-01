@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using GUNAAPugetSound.Models;
+using GUNAAPugetSound.Entities;
 
 namespace GUNAAPugetSound.ViewModels
 {

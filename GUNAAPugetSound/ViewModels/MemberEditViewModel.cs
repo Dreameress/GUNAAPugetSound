@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using GUNAAPugetSound.Entities.Enums;
 using GUNAAPugetSound.Models;
 
 namespace GUNAAPugetSound.ViewModels
@@ -8,6 +9,6 @@ namespace GUNAAPugetSound.ViewModels
         [Required, MaxLength(80) ]
         public string NameFirst { get; set; }
         public string NameLast { get; set; }
-        public OfficerPosition Position { get; set; }
+        public OfficerRole Position { get; set; }
     }
 }

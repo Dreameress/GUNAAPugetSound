@@ -1,362 +1,146 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http.Headers;
-using AutoMapper;
-using GUNAAPugetSound.DTOs;
-using GUNAAPugetSound.Helpers;
-using GUNAAPugetSound.Models;
+using GUNAAPugetSound.Entities.Enums;
+using GUNAAPugetSound.Models.Photos;
 using GUNAAPugetSound.Services;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GUNAAPugetSound.Controllers
 {
-    [AllowAnonymous]
     [ApiController]
     [Route("api/[controller]")]
-    public class PhotoAlbumController : Controller
+    public class PhotoAlbumsController : BaseController
     {
-        private readonly IMapper _mapper;
-        private readonly IAlbumData _albumData;
-        private readonly IPhotoData _photoData;
-        private readonly IUserService _userService;
-        private readonly IWebHostEnvironment _iWebHostEnvironment;
-        // GET: PhtotoAlbum
-        public PhotoAlbumController(IAlbumData albumData, IPhotoData photoData, IUserService userService, IMapper mapper, IWebHostEnvironment iWebHostEnvironment)
+        private readonly IPhotoService _photoService;
+        public PhotoAlbumsController(IPhotoService photoService)
         {
-            _userService = userService;
-            _mapper = mapper;
-            _albumData = albumData;
-            _photoData = photoData;
-            _iWebHostEnvironment = iWebHostEnvironment;
+            _photoService = photoService;
         }
 
-        [AllowAnonymous]
-        [HttpGet("[action]")]
-        public IActionResult GetAll()
+        #region Get Photos & Albums
+        [HttpGet]
+        public ActionResult<PhotosResponse> GetPhotoById(Guid id)
         {
-            try
-            {
-                var photoAlbums = _albumData.GetAll();
-                var photosDTo = _mapper.Map<IList<Album>>(photoAlbums);
-                return Ok(photosDTo);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-
-            
+            PhotosResponse photo = _photoService.GetPhotoById(id);
+            return Ok(photo);
         }
 
-        [AllowAnonymous]
-        [HttpPost("[action]")]
-        public IActionResult GetAllPhotos(DeleteDto dto)
+        [HttpGet]
+        public ActionResult<IEnumerable<PhotosResponse>> GetAllPhotos()
         {
-            try
-            {
-                var photos = _photoData.GetAllByAlbumId(new Guid(dto.Guid.Id));
-                var photosDTo = _mapper.Map<IList<Photo>>(photos);
-                return Ok(photosDTo);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-           
+            IEnumerable<PhotosResponse> photos = _photoService.GetAllPhotos();
+            return Ok(photos);
         }
 
-        [HttpPost("[action]")]
-        public IActionResult GetById(DeleteDto dto)
+        [HttpGet]
+        public ActionResult<IEnumerable<PhotosResponse>> GetPhotosByAlbumId(Guid id)
         {
-            try
-            {
-                var model = _albumData.Get(new Guid(dto.Guid.Id));
-                var albumDto = _mapper.Map<Album>(model);
-                return Ok(albumDto);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            
+            IEnumerable<PhotosResponse> photos = _photoService.GetPhotosByAlbumId(id);
+            return Ok(photos);
         }
 
-        [HttpPost("[action]")]
-        public IActionResult Create(AlbumDto albumDto)
+        [HttpGet]
+        public ActionResult<PhotoAlbumResponse> GetAllPhotoAlbums(Guid id)
         {
-            try
-            {
-                var userDto = albumDto.User;
-                var model = albumDto.Model;
-
-                var album = new Album(model.AlbumName, model.AlbumDesc, userDto.Username, userDto.Username);
-
-
-                // save 
-                _albumData.Add(album);
-                return Ok(album);
-
-
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-          
+            PhotoAlbumResponse album = _photoService.GetAlbumByAlbumId(id);
+            return Ok(album);
         }
 
-        [HttpPost("[action]"), DisableRequestSizeLimit]
-        public IActionResult CreatePhotos(PhotoDto photoDto)
+        [HttpGet]
+        public ActionResult<IEnumerable<PhotoAlbumResponse>> GetAllPhotoAlbums()
         {
-          
-
-            try
-            {
-                var userDto = photoDto.User;
-                var model = photoDto.Model;
-
-                //var album = new Photo(model.AlbumName, model.AlbumDesc, userDto.Username, userDto.Username);
-                var photoFileList = photoDto.Files as IList<IFormFile> ?? photoDto.Files.ToList();
-                // save 
-                foreach (var file in photoFileList)
-                {
-                    if (file.Length > 0)
-                    {
-                        var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-
-                        //Assigning Unique Filename (Guid)
-                        var uniquteFileName = Guid.NewGuid().ToString();
-
-                        //Getting file Extension
-                        var extension = System.IO.Path.GetExtension(file.FileName).ToLower();
-
-                        // concating  FileName + FileExtension
-                        var finalName = uniquteFileName + extension;
-
-                        // Combines two strings into a path.
-                        fileName = Path.Combine(_iWebHostEnvironment.WebRootPath, "GalleryImages") + $@"\{finalName}";
-
-                        // if you want to store path of folder in database
-                        var thumbPath = $"/GalleryImages/thumbs/{fileName}{extension}";
-                        var imagePath = $"/GalleryImages/{fileName}{extension}";
-
-                        using (FileStream fs = System.IO.File.Create(fileName))
-                        {
-                            file.CopyTo(fs);
-                            fs.Flush();
-                        }
-
-                        var photo = new Photo(new Guid(model.AlbumId), model.PhotoDesc, imagePath, thumbPath, userDto.Username);
-                        //Save to db
-                        _photoData.Add(photo);
-
-                        //string webRootPath = _hostingEnvironment.WebRootPath;
-                        //string newPath = Path.Combine(webRootPath, folderName);
-                        //if (!Directory.Exists(newPath))
-                        //{
-                        //    Directory.CreateDirectory(newPath);
-                        //}
-                        //if (file.Length > 0)
-                        //{
-                        //    string fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                        //    string fullPath = Path.Combine(newPath, fileName);
-                        //    using (var stream = new FileStream(fullPath, FileMode.Create))
-                        //    {
-                        //        file.CopyTo(stream);
-                        //    }
-                        //}
-
-                    }
-                }
-                return Ok("successfully added all photos");
-            }
-            catch (AppException ex)
-            {
-                // return error message if there was an exception
-                return BadRequest(new { message = ex.Message });
-            }
+            IEnumerable<PhotoAlbumResponse> albums = _photoService.GetAllAlbums();
+            return Ok(albums);
         }
 
-        [HttpPut("[action]")]
-        public IActionResult Edit(AlbumDto albumDto)
+        #endregion
+
+        #region Create Albums & Add Photos
+
+        [Helpers.Authorize(Role.Admin)]
+        [HttpPost]
+        public ActionResult<PhotoAlbumResponse> CreateAlbum(CreateAlbumRequest model)
         {
+            // only admins can create albums
+            var album = _photoService.CreateAlbum(model, Account.Id);
+            return Ok(album);
+        }
 
-            try
-            {
+        [Helpers.Authorize(Role.Admin), DisableRequestSizeLimit]
+        [HttpPost]
+        public ActionResult<PhotosResponse> AddPhoto([Bind("ImageId,Title,ImageName")] AddPhotoRequest model)
+        {
+            // only admins can add a photo
+            var account = _photoService.CreatePhoto(model, Account.Id);
+            return Ok(account);
+        }
 
-                var userDto = albumDto.User;
-                var model = albumDto.Model;
+        [Helpers.Authorize(Role.Admin), DisableRequestSizeLimit]
+        [HttpPost]
+        public ActionResult<PhotosResponse> AddPhotos(List<AddPhotoRequest> model)
+        {
+            // only admins can add photos
+            var account = _photoService.CreatePhotos(model, Account.Id);
+            return Ok(account);
+        }
+        #endregion
+
+        #region Update Photos & Albums
 
 
-                if (albumDto.Guid == null) return Ok();
-                var album = _albumData.Get(albumDto.Guid.Value);
-                if (album == null)
-                {
-                    return BadRequest(new { message = "No Album Found." });
-                }
+        [Helpers.Authorize]
+        [HttpPut("{id:int}")]
+        public ActionResult<PhotoAlbumResponse> UpdateAlbum(int id, UpdatePhotoAlbumRequest model)
+        {
+            // only admins can update albums
+            if (Account.Role != Role.Admin)
+                return Unauthorized(new { message = "Unauthorized" });
 
-                album.LastEditBy = userDto.Username;
-                album.AlbumDesc = model.AlbumDesc;
-                album.AlbumName = model.AlbumName;
-
-                // save 
-                _albumData.Edit(album);
-                return Ok();
-            }
-            catch (AppException ex)
-            {
-                // return error message if there was an exception
-                return BadRequest(new { message = ex.Message });
-            }
+            var account = _photoService.UpdateAlbum(id, model, Account.Id);
+            return Ok(account);
         }
 
 
-        [HttpDelete("[action]")]
-        public IActionResult Delete(DeleteDto dto)
+        [Helpers.Authorize]
+        [HttpPut("{id:int}")]
+        public ActionResult<PhotosResponse> UpdatePhoto(int id, UpdatePhotosRequest model)
         {
-            try
-            {
-                var model = _albumData.Get(new Guid(dto.Guid.Id));
-                if (model == null)
-                {
-                    return BadRequest(new { message = "Album does not exist." });
-                }
-                _albumData.Delete(model);
-                return Ok(new { message = "Album deleted!" });
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-           
+            // only admins can update photos
+            if (Account.Role != Role.Admin)
+                return Unauthorized(new { message = "Unauthorized" });
 
+            var account = _photoService.UpdatePhoto(id, model, Account.Id);
+            return Ok(account);
+        }
+        #endregion
+
+        #region Delete Photos & Albums
+
+        [Helpers.Authorize]
+        [HttpDelete("{id:int}")]
+        public IActionResult DeletePhoto(Guid id)
+        {
+            // only admins can delete photos
+            if (Account.Role != Role.Admin)
+                return Unauthorized(new { message = "Unauthorized" });
+
+            _photoService.DeletePhoto(id);
+            return Ok(new { message = "Photo deleted successfully" });
         }
 
-        [HttpPost("[action]")]
-        public ActionResult ShowPhotoAlbum(DeleteDto album)
+        [Helpers.Authorize]
+        [HttpDelete("{id:int}")]
+        public IActionResult DeleteAlbum(Guid id)
         {
-            try
-            {
-                string filter = null;
-                int page = 1;
-                int pageSize = 16;
+            // only admins can delete albums
+            if (Account.Role != Role.Admin)
+                return Unauthorized(new { message = "Unauthorized" });
 
-                var photos = _photoData.GetAllByAlbumId(new Guid(album.Guid.Id));
-                return Ok(photos);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-         
+            _photoService.DeleteAlbum(id);
+            return Ok(new { message = "Photo Album deleted successfully" });
         }
 
-        //public ActionResult AddPhoto()
-        //{
-        //    var photo = new Photo();
-        //    return View(photo);
-        //}
-        //[HttpPost("[action]")]
-        //public ActionResult AddPhoto(Guid id, Photo photo, IEnumerable<HttpPostedFileBase> files)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return View();
-        //    var httpPostedFileBases = files as IList<HttpPostedFileBase> ?? files.ToList();
-        //    var count = httpPostedFileBases.Count();
-        //    var first = httpPostedFileBases.FirstOrDefault();
-        //    if (count == 0 || first == null)
-        //    {
-        //        ViewBag.error = "Please choose a file";
-        //        return View();
-        //    }
-
-        //    foreach (var file in httpPostedFileBases)
-        //    {
-        //        if (file.ContentLength == 0) continue;
-
-        //        var fileName = Guid.NewGuid().ToString();
-        //        var extension = System.IO.Path.GetExtension(file.FileName).ToLower();
-
-        //        using (var img = System.Drawing.Image.FromStream(file.InputStream))
-        //        {
-        //            var thumbPath = $"/GalleryImages/thumbs/{fileName}{extension}";
-        //            var imagePath = $"/GalleryImages/{fileName}{extension}";
-
-        //            // Save thumbnail size image, 100 x 100
-        //            SaveToFolder(img, fileName, extension, new Size(100, 100), thumbPath);
-
-        //            // Save large size image, 800 x 800
-        //            SaveToFolder(img, fileName, extension, new Size(600, 600), imagePath);
-        //            var model = new Photo(id, photo.Description, imagePath, thumbPath);
-        //            //Save to db
-        //            _photoData.Add(model);
-        //        }
-
-        //    }
-
-        //    return RedirectToAction("Photos", new { id = photo.Id });
-        //}
-
-        ////[HttpGet]
-        ////public ActionResult UploadImage()
-        ////{
-        ////    return View();
-        ////}
-        //[HttpPost("[action]")]
-        //public ActionResult UploadImageMethod()
-        //{
-        //    if (Request.Files.Count != 0)
-        //    {
-        //        for (int i = 0; i < Request.Files.Count; i++)
-        //        {
-        //            //HttpPostedFileBase file = Request.Files[i];
-        //            //int fileSize = file.ContentLength;
-        //            //string fileName = file.FileName;
-        //            //file.SaveAs(Server.MapPath("~/Uploaded_Files/" + fileName));
-        //            //Photo imageGallery = new Photo();
-        //            //imageGallery.Id = Guid.NewGuid();
-        //            //imageGallery.Name = fileName;
-        //            //imageGallery.ImagePath = "~/Upload_Files/" + fileName;
-        //            //db.ImageGallery.Add(imageGallery);
-        //            //db.SaveChanges();
-        //        }
-        //        return Content("Success");
-        //    }
-        //    return Content("failed");
-        //}
-
-        //public Size NewImageSize(Size imageSize, Size newSize)
-        //{
-        //    Size finalSize;
-        //    if (imageSize.Height > newSize.Height || imageSize.Width > newSize.Width)
-        //    {
-        //        double tempval;
-        //        if (imageSize.Height > imageSize.Width)
-        //            tempval = newSize.Height / (imageSize.Height * 1.0);
-        //        else
-        //            tempval = newSize.Width / (imageSize.Width * 1.0);
-
-        //        finalSize = new Size((int)(tempval * imageSize.Width), (int)(tempval * imageSize.Height));
-        //    }
-        //    else
-        //        finalSize = imageSize; // image is already small size
-
-        //    return finalSize;
-        //}
-        //private void SaveToFolder(MediaTypeNames.Image img, string fileName, string extension, Size newSize, string pathToSave)
-        //{
-        //    // Get new resolution
-        //    Size imgSize = NewImageSize(img.Size, newSize);
-        //    using (System.Drawing.Image newImg = new Bitmap(img, imgSize.Width, imgSize.Height))
-        //    {
-        //        newImg.Save(Server.MapPath(pathToSave), img.RawFormat);
-        //    }
-        //}
+        #endregion
     }
 }
     
