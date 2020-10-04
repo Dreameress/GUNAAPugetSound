@@ -1,0 +1,1 @@
+2020-10-04 03:10:14.8509 ERROR Something went wrong: {"message":"Unable to activate type \u0027GUNAAPugetSound.Entities.GUNAARepositoryContext\u0027. The following constructors are ambiguous:\r\nVoid .ctor(Microsoft.EntityFrameworkCore.DbContextOptions)\r\nVoid .ctor(Microsoft.Extensions.Configuration.IConfiguration)"}

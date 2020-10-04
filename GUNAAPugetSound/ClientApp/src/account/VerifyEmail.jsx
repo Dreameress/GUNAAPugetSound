@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 
-import { accountService, alertService } from '@/_services';
+import { accountService } from './../_services/account.service';
+import { alertService } from './../_services/alert.service';
 
 function VerifyEmail({ history }) {
     const EmailStatus = {
@@ -13,10 +14,10 @@ function VerifyEmail({ history }) {
     const [emailStatus, setEmailStatus] = useState(EmailStatus.Verifying);
 
     useEffect(() => {
-        const { token } = queryString.parse(location.search);
+        const { token } = queryString.parse(window.location.search);
 
         // remove token from url to prevent http referer leakage
-        history.replace(location.pathname);
+        history.replace(window.location.pathname);
 
         accountService.verifyEmail(token)
             .then(() => {

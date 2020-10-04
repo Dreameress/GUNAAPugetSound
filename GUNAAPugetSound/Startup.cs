@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using GUNAAPugetSound.Helpers;
 using GUNAAPugetSound.Services;
 using Microsoft.AspNetCore.Builder;
@@ -9,9 +10,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AutoMapper;
 using GUNAAPugetSound.Entities;
+using GUNAAPugetSound.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using GUNAAPugetSound.Middleware;
+using Microsoft.AspNetCore.HttpOverrides;
+using NLog;
 
 namespace GUNAAPugetSound
 {
@@ -19,6 +23,7 @@ namespace GUNAAPugetSound
     {
         public Startup(IConfiguration configuration)
         {
+            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = configuration;
         }
 
@@ -33,26 +38,22 @@ namespace GUNAAPugetSound
                 configuration.RootPath = "ClientApp/build";
             });
 
+            services.ConfigureCors();
+            //services.ConfigureIISIntegration();
+
             services.AddDbContext<GUNAADbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            //services.AddCors();
+
+            //services.ConfigureLoggerService();
+
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddMvc();
             services.AddSwaggerGen();
 
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-            //services.AddAutoMapper(typeof(Startup));
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy", builder =>
-                    builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader()
-                );
-            });
 
             // configure DI for application services
             services.AddScoped<IPhotoService, PhotosService>();
@@ -101,6 +102,10 @@ namespace GUNAAPugetSound
             app.UseSwagger();
             app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "ASP.NET Core Sign-up and Verification API"));
 
+            //app.UseForwardedHeaders(new ForwardedHeadersOptions
+            //{
+            //    ForwardedHeaders = ForwardedHeaders.All
+            //});
 
             app.UseRouting();
             // app.UseRequestLocalization();
@@ -110,8 +115,6 @@ namespace GUNAAPugetSound
             //app.UseAuthentication();
             //app.UseAuthorization();
 
-            // app.UseSession();
-            // app.UseResponseCaching();
 
             // global error handler
             app.UseMiddleware<ErrorHandlerMiddleware>();

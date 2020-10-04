@@ -1,0 +1,1582 @@
+2020-10-03 22:25:26.1308 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-03 22:25:26.2925 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-03 22:25:26.3005 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-03 22:25:26.3005 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-03 22:25:26.3222 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-03 22:25:26.3368 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-03 22:25:26.4035 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-03 22:25:26.4035 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-03 22:25:26.4152 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-03 22:25:26.4152 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-03 22:25:26.4259 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-03 22:25:26.4259 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-03 22:25:26.4259 Debug Auto loading done
+2020-10-03 22:25:26.4259 Info Message Template Auto Format enabled
+2020-10-03 22:25:26.4612 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.4612 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-03 22:25:26.4789 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-03 22:25:26.4789 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-03 22:25:26.4895 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.4895 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-03 22:25:26.4895 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.5055 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-03 22:25:26.5055 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-03 22:25:26.5055 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-03 22:25:26.5243 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-03 22:25:26.5243 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-03 22:25:26.5363 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.5363 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-03 22:25:26.5544 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.5544 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-03 22:25:26.5698 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-03 22:25:26.5698 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-03 22:25:26.5827 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.5827 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-03 22:25:26.5827 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-03 22:25:26.6020 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.6020 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-03 22:25:26.6020 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-03 22:25:26.6171 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-03 22:25:26.6171 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.6275 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-03 22:25:26.6275 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.6275 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-03 22:25:26.6275 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-03 22:25:26.6478 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-03 22:25:26.6478 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-03 22:25:26.6478 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-03 22:25:26.6644 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.6644 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-03 22:25:26.6751 Info Adding target FileTarget(Name=logfile)
+2020-10-03 22:25:26.6751 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-03 22:25:26.6751 Trace ParseRulesElement
+2020-10-03 22:25:26.7088 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-03 22:25:26.7088 Debug --- NLog configuration dump ---
+2020-10-03 22:25:26.7088 Debug Targets:
+2020-10-03 22:25:26.7257 Debug File Target[logfile]
+2020-10-03 22:25:26.7257 Debug Rules:
+2020-10-03 22:25:26.7257 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-03 22:25:26.7424 Debug --- End of NLog configuration dump ---
+2020-10-03 22:25:26.7424 Trace FindReachableObject<System.Object>:
+2020-10-03 22:25:26.7564 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-03 22:25:26.7564 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-03 22:25:26.7564 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-03 22:25:26.7710 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-03 22:25:26.7710 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-03 22:25:26.7710 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-03 22:25:26.7854 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-03 22:25:26.7854 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-03 22:25:26.7854 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-03 22:25:26.8016 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-03 22:25:26.8016 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-03 22:25:26.8016 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-03 22:25:26.8184 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-03 22:25:26.8184 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-03 22:25:26.8184 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-03 22:25:26.8347 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-03 22:25:26.8347 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-03 22:25:26.8465 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-03 22:25:26.8465 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-03 22:25:26.8465 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-03 22:25:26.8465 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-03 22:25:26.8670 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-03 22:25:26.8670 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-03 22:25:26.8791 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-03 22:25:26.8791 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-03 22:25:26.8965 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-03 22:25:26.8965 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-03 22:25:26.9151 Trace Initializing Layout Renderer: ${message}
+2020-10-03 22:25:26.9151 Trace Initializing Layout Renderer: ${literal}
+2020-10-03 22:25:26.9287 Trace Initializing Layout Renderer: ${level}
+2020-10-03 22:25:26.9287 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-03 22:25:26.9454 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:26.9454 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-03 22:25:26.9569 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-03 22:25:26.9569 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-03 22:25:26.9723 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-03 22:25:26.9723 Trace Initializing Layout Renderer: ${literal}
+2020-10-03 22:25:26.9723 Trace Initializing Layout Renderer: ${longdate}
+2020-10-03 22:25:26.9923 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-03 22:25:26.9923 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:27.0041 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-03 22:25:27.0041 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-03 22:25:27.0208 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-03 22:25:27.0208 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-03 22:25:27.0208 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-03 22:25:27.0389 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-03 22:25:27.0389 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-03 22:25:27.0389 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-03 22:25:27.0537 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-03 22:25:27.0537 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-03 22:25:27.0537 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-03 22:25:27.0692 Trace Initializing Layout Renderer: ${literal}
+2020-10-03 22:25:27.0692 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-03 22:25:27.0692 Trace Initializing Layout Renderer: ${literal}
+2020-10-03 22:25:27.0839 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-03 22:25:27.0839 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-03 22:25:27.0839 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-03 22:25:27.0987 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-03 22:25:27.0987 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-03 22:25:27.0987 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-03 22:25:27.1155 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-03 22:25:27.1155 Trace Initializing File Target[logfile]
+2020-10-03 22:25:27.1155 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-03 22:25:27.1331 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-03 22:25:27.1331 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-03 22:25:27.1438 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-03 22:25:27.1438 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-03 22:25:27.1438 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-03 22:25:27.1619 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-03 22:25:27.1619 Trace File Target[logfile] has 2 layouts
+2020-10-03 22:25:27.1754 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 02:59:02.3035 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 02:59:02.5081 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 02:59:02.5081 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 02:59:02.5313 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 02:59:02.5404 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 02:59:02.5404 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 02:59:02.6296 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 02:59:02.6296 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 02:59:02.6475 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 02:59:02.6475 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 02:59:02.6652 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 02:59:02.6652 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 02:59:02.6831 Debug Auto loading done
+2020-10-04 02:59:02.6921 Info Message Template Auto Format enabled
+2020-10-04 02:59:02.7233 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:02.7233 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 02:59:02.7487 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 02:59:02.7581 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 02:59:02.7581 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:02.7714 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 02:59:02.7714 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:02.7883 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 02:59:02.7883 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 02:59:02.8060 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 02:59:02.8060 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 02:59:02.8221 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 02:59:02.8221 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:02.8361 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 02:59:02.8361 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:02.8538 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 02:59:02.8647 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 02:59:02.8647 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 02:59:02.8803 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:02.8803 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 02:59:02.9002 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 02:59:02.9002 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:02.9174 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 02:59:02.9249 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 02:59:02.9249 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 02:59:02.9249 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:02.9465 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 02:59:02.9465 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:02.9632 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 02:59:02.9632 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 02:59:02.9810 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 02:59:02.9879 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 02:59:02.9879 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 02:59:03.0053 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:03.0053 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 02:59:03.0209 Info Adding target FileTarget(Name=logfile)
+2020-10-04 02:59:03.0209 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 02:59:03.0390 Trace ParseRulesElement
+2020-10-04 02:59:03.0705 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 02:59:03.0705 Debug --- NLog configuration dump ---
+2020-10-04 02:59:03.0866 Debug Targets:
+2020-10-04 02:59:03.0866 Debug File Target[logfile]
+2020-10-04 02:59:03.1041 Debug Rules:
+2020-10-04 02:59:03.1134 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 02:59:03.1134 Debug --- End of NLog configuration dump ---
+2020-10-04 02:59:03.1298 Trace FindReachableObject<System.Object>:
+2020-10-04 02:59:03.1298 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 02:59:03.1463 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 02:59:03.1463 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 02:59:03.1608 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 02:59:03.1608 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 02:59:03.1789 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 02:59:03.1789 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 02:59:03.1986 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 02:59:03.2067 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 02:59:03.2067 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 02:59:03.2232 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 02:59:03.2232 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 02:59:03.2372 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 02:59:03.2372 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 02:59:03.2561 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 02:59:03.2561 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 02:59:03.2717 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 02:59:03.2717 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 02:59:03.2903 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 02:59:03.2997 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 02:59:03.2997 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 02:59:03.3173 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 02:59:03.3173 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 02:59:03.3313 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 02:59:03.3313 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 02:59:03.3516 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 02:59:03.3648 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 02:59:03.3648 Trace Initializing Layout Renderer: ${message}
+2020-10-04 02:59:03.3832 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 02:59:03.4312 Trace Initializing Layout Renderer: ${level}
+2020-10-04 02:59:03.4746 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 02:59:03.5275 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:03.5448 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 02:59:03.5524 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 02:59:03.5762 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 02:59:03.6035 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 02:59:03.6140 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 02:59:03.6140 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 02:59:03.6323 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 02:59:03.6323 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:03.6482 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 02:59:03.6482 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 02:59:03.6629 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 02:59:03.6629 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 02:59:03.6629 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 02:59:03.6805 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 02:59:03.6805 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 02:59:03.6941 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 02:59:03.6941 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 02:59:03.7057 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 02:59:03.7057 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 02:59:03.7057 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 02:59:03.7251 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 02:59:03.7251 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 02:59:03.7251 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 02:59:03.7421 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 02:59:03.7421 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 02:59:03.7533 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 02:59:03.7533 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 02:59:03.7533 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 02:59:03.7721 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 02:59:03.7721 Trace Initializing File Target[logfile]
+2020-10-04 02:59:03.7859 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 02:59:03.7859 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 02:59:03.7859 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 02:59:03.8073 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 02:59:03.8073 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 02:59:03.8216 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 02:59:03.8216 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 02:59:03.8334 Trace File Target[logfile] has 2 layouts
+2020-10-04 02:59:03.8334 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 03:02:11.4441 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:02:11.5995 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 03:02:11.5995 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:02:11.6182 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:02:11.6182 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:02:11.6315 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:02:11.6706 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 03:02:11.6773 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:02:11.6773 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 03:02:11.6970 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:02:11.6970 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:02:11.7096 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 03:02:11.7096 Debug Auto loading done
+2020-10-04 03:02:11.7234 Info Message Template Auto Format enabled
+2020-10-04 03:02:11.7454 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:11.7532 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:02:11.7532 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:02:11.7747 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:02:11.7747 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:11.7909 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:02:11.7909 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:11.8029 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:02:11.8029 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:02:11.8166 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:02:11.8166 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:02:11.8166 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:02:11.8345 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:11.8345 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 03:02:11.8345 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:11.8522 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:02:11.8629 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 03:02:11.8629 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:02:11.8629 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:11.8805 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:02:11.8805 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:02:11.8929 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:11.8929 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:02:11.8929 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:02:11.9130 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:02:11.9130 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:11.9273 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:02:11.9273 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:11.9402 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:02:11.9402 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:02:11.9402 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:02:11.9575 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:02:11.9575 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:02:11.9575 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:11.9776 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:02:11.9776 Info Adding target FileTarget(Name=logfile)
+2020-10-04 03:02:11.9920 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 03:02:11.9920 Trace ParseRulesElement
+2020-10-04 03:02:12.0292 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 03:02:12.0380 Debug --- NLog configuration dump ---
+2020-10-04 03:02:12.0380 Debug Targets:
+2020-10-04 03:02:12.0509 Debug File Target[logfile]
+2020-10-04 03:02:12.0509 Debug Rules:
+2020-10-04 03:02:12.0687 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 03:02:12.0687 Debug --- End of NLog configuration dump ---
+2020-10-04 03:02:12.0896 Trace FindReachableObject<System.Object>:
+2020-10-04 03:02:12.0982 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 03:02:12.0982 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 03:02:12.1154 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:02:12.1154 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:02:12.1354 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:02:12.1354 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:02:12.1513 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:02:12.1597 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:02:12.1597 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:02:12.1755 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:02:12.1755 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:02:12.1907 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:02:12.1907 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:02:12.2078 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:02:12.2078 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:02:12.2262 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:02:12.2262 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:02:12.2400 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:02:12.2400 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:02:12.2400 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:02:12.2604 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:02:12.2604 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:02:12.2756 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 03:02:12.2756 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 03:02:12.2936 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 03:02:12.3023 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 03:02:12.3172 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 03:02:12.3172 Trace Initializing Layout Renderer: ${message}
+2020-10-04 03:02:12.3347 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:02:12.3347 Trace Initializing Layout Renderer: ${level}
+2020-10-04 03:02:12.3469 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 03:02:12.3469 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:12.3671 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:02:12.3671 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:02:12.3844 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:02:12.3936 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 03:02:12.3936 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:02:12.3936 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 03:02:12.4133 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:02:12.4133 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:12.4271 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:02:12.4271 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:02:12.4456 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:02:12.4456 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:02:12.4626 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:02:12.4626 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:02:12.4773 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:02:12.4773 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:02:12.4926 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:02:12.4926 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:02:12.5059 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:02:12.5059 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:02:12.5059 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 03:02:12.5262 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:02:12.5262 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:02:12.5410 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:02:12.5410 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:02:12.5565 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:02:12.5565 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:02:12.5698 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:02:12.5698 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:02:12.5839 Trace Initializing File Target[logfile]
+2020-10-04 03:02:12.5839 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 03:02:12.6017 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:02:12.6017 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:02:12.6180 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:02:12.6180 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:02:12.6347 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:02:12.6347 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:02:12.6473 Trace File Target[logfile] has 2 layouts
+2020-10-04 03:02:12.6473 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 03:09:08.1378 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:09:08.2699 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 03:09:08.2699 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:09:08.2868 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:09:08.2868 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:09:08.2868 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:09:08.3243 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 03:09:08.3243 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:09:08.3363 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 03:09:08.3363 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:09:08.3484 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:09:08.3484 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 03:09:08.3484 Debug Auto loading done
+2020-10-04 03:09:08.3677 Info Message Template Auto Format enabled
+2020-10-04 03:09:08.3930 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.4025 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:09:08.4156 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:09:08.4156 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:09:08.4289 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.4289 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:09:08.4404 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.4404 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:09:08.4404 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:09:08.4624 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:09:08.4624 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:09:08.4758 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:09:08.4758 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.4877 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 03:09:08.4877 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.4877 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:09:08.5109 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 03:09:08.5109 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:09:08.5233 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.5233 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:09:08.5356 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:09:08.5356 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.5356 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:09:08.5539 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:09:08.5539 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:09:08.5655 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.5655 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:09:08.5655 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.5851 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:09:08.5851 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:09:08.5969 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:09:08.5969 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:09:08.5969 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:09:08.6164 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.6164 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:09:08.6328 Info Adding target FileTarget(Name=logfile)
+2020-10-04 03:09:08.6328 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 03:09:08.6491 Trace ParseRulesElement
+2020-10-04 03:09:08.6715 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 03:09:08.6782 Debug --- NLog configuration dump ---
+2020-10-04 03:09:08.6782 Debug Targets:
+2020-10-04 03:09:08.6782 Debug File Target[logfile]
+2020-10-04 03:09:08.6971 Debug Rules:
+2020-10-04 03:09:08.7074 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 03:09:08.7074 Debug --- End of NLog configuration dump ---
+2020-10-04 03:09:08.7241 Trace FindReachableObject<System.Object>:
+2020-10-04 03:09:08.7241 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 03:09:08.7241 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 03:09:08.7416 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:09:08.7416 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:09:08.7564 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:09:08.7564 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:09:08.7564 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:09:08.7731 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:09:08.7731 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:09:08.7916 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:09:08.7916 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:09:08.8057 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:09:08.8057 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:09:08.8200 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:09:08.8200 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:09:08.8337 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:09:08.8337 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:09:08.8337 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:09:08.8502 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:09:08.8502 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:09:08.8637 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:09:08.8637 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:09:08.8637 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 03:09:08.8845 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 03:09:08.8845 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 03:09:08.9029 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 03:09:08.9148 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 03:09:08.9148 Trace Initializing Layout Renderer: ${message}
+2020-10-04 03:09:08.9302 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:09:08.9302 Trace Initializing Layout Renderer: ${level}
+2020-10-04 03:09:08.9439 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 03:09:08.9439 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:08.9607 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:09:08.9607 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:09:08.9746 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:09:08.9871 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 03:09:08.9871 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:09:08.9871 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 03:09:09.0071 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:09:09.0071 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:09.0228 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:09:09.0228 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:09:09.0413 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:09:09.0413 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:09:09.0569 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:09:09.0569 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:09:09.0730 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:09:09.0730 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:09:09.0849 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:09:09.0849 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:09:09.0973 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:09:09.0973 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:09:09.0973 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 03:09:09.1171 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:09:09.1171 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:09:09.1310 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:09:09.1310 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:09:09.1453 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:09:09.1453 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:09:09.1453 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:09:09.1637 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:09:09.1637 Trace Initializing File Target[logfile]
+2020-10-04 03:09:09.1804 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 03:09:09.1804 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:09:09.1978 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:09:09.2067 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:09:09.2067 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:09:09.2067 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:09:09.2292 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:09:09.2292 Trace File Target[logfile] has 2 layouts
+2020-10-04 03:09:09.2423 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 03:10:14.7894 Debug Targets for LoggerService.LoggerManager by level:
+2020-10-04 03:10:14.7894 Debug Trace =>
+2020-10-04 03:10:14.8064 Debug Debug => logfile
+2020-10-04 03:10:14.8064 Debug Info => logfile
+2020-10-04 03:10:14.8225 Debug Warn => logfile
+2020-10-04 03:10:14.8225 Debug Error => logfile
+2020-10-04 03:10:14.8390 Debug Fatal => logfile
+2020-10-04 03:10:14.8697 Debug FileTarget(Name=logfile): Preparing for new file 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/2020-10-04_logfile.txt'
+2020-10-04 03:10:14.8848 Debug Creating file appender: D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/2020-10-04_logfile.txt
+2020-10-04 03:10:14.8848 Trace Opening D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/2020-10-04_logfile.txt with allowFileSharedWriting=False
+2020-10-04 03:11:52.9930 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:11:53.1170 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 03:11:53.1170 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:11:53.1357 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:11:53.1357 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:11:53.1484 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:11:53.1699 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 03:11:53.1764 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:11:53.1764 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 03:11:53.1953 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:11:53.1953 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:11:53.2085 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 03:11:53.2085 Debug Auto loading done
+2020-10-04 03:11:53.2085 Info Message Template Auto Format enabled
+2020-10-04 03:11:53.2434 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.2434 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:11:53.2619 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:11:53.2691 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:11:53.2691 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.2691 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:11:53.2860 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.2860 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:11:53.3017 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:11:53.3017 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:11:53.3017 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:11:53.3220 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:11:53.3220 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.3331 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 03:11:53.3331 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.3331 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:11:53.3549 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 03:11:53.3549 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:11:53.3668 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.3668 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:11:53.3779 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:11:53.3779 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.3779 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:11:53.3950 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:11:53.3950 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:11:53.3950 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.4138 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:11:53.4138 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.4138 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:11:53.4298 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:11:53.4298 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:11:53.4429 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:11:53.4429 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:11:53.4429 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.4594 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:11:53.4594 Info Adding target FileTarget(Name=logfile)
+2020-10-04 03:11:53.4723 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 03:11:53.4723 Trace ParseRulesElement
+2020-10-04 03:11:53.4985 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 03:11:53.5048 Debug --- NLog configuration dump ---
+2020-10-04 03:11:53.5048 Debug Targets:
+2020-10-04 03:11:53.5048 Debug File Target[logfile]
+2020-10-04 03:11:53.5236 Debug Rules:
+2020-10-04 03:11:53.5236 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 03:11:53.5379 Debug --- End of NLog configuration dump ---
+2020-10-04 03:11:53.5379 Trace FindReachableObject<System.Object>:
+2020-10-04 03:11:53.5523 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 03:11:53.5523 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 03:11:53.5668 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:11:53.5668 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:11:53.5825 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:11:53.5825 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:11:53.5825 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:11:53.5997 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:11:53.5997 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:11:53.6159 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:11:53.6159 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:11:53.6299 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:11:53.6299 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:11:53.6299 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:11:53.6464 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:11:53.6464 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:11:53.6464 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:11:53.6636 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:11:53.6636 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:11:53.6748 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:11:53.6748 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:11:53.6748 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:11:53.6939 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 03:11:53.6939 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 03:11:53.7108 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 03:11:53.7108 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 03:11:53.7287 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 03:11:53.7287 Trace Initializing Layout Renderer: ${message}
+2020-10-04 03:11:53.7415 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:11:53.7415 Trace Initializing Layout Renderer: ${level}
+2020-10-04 03:11:53.7535 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 03:11:53.7535 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.7535 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:11:53.7724 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:11:53.7724 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:11:53.7888 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 03:11:53.7888 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:11:53.8045 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 03:11:53.8045 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:11:53.8165 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.8165 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:11:53.8165 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:11:53.8358 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:11:53.8482 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:11:53.8482 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:11:53.8482 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:11:53.8671 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:11:53.8671 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:11:53.8786 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:11:53.8786 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:11:53.8786 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:11:53.8959 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:11:53.8959 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 03:11:53.8959 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:11:53.9114 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:11:53.9114 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:11:53.9114 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:11:53.9294 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:11:53.9294 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:11:53.9431 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:11:53.9431 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:11:53.9592 Trace Initializing File Target[logfile]
+2020-10-04 03:11:53.9592 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 03:11:53.9716 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:11:53.9716 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:11:53.9716 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:11:53.9892 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:11:53.9892 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:11:53.9892 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:11:54.0082 Trace File Target[logfile] has 2 layouts
+2020-10-04 03:11:54.0082 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 03:12:21.4133 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:12:21.5496 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 03:12:21.5496 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:12:21.5717 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:12:21.5717 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:12:21.5838 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:12:21.6077 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 03:12:21.6135 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:12:21.6135 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 03:12:21.6135 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:12:21.6329 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:12:21.6329 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 03:12:21.6463 Debug Auto loading done
+2020-10-04 03:12:21.6463 Info Message Template Auto Format enabled
+2020-10-04 03:12:21.6748 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:21.6836 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:12:21.6964 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:12:21.6964 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:12:21.7090 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:21.7090 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:12:21.7090 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:21.7258 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:12:21.7258 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:12:21.7387 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:12:21.7387 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:12:21.7387 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:12:21.7581 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:21.7581 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 03:12:21.7690 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:21.7690 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:12:21.7854 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 03:12:21.7854 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:12:21.7854 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:21.8033 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:12:21.8033 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:12:21.8165 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:21.8165 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:12:21.8165 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:12:21.8338 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:12:21.8338 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:21.8338 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:12:21.8526 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:21.8526 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:12:21.8646 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:12:21.8646 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:12:21.8801 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:12:21.8801 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:12:21.8970 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:21.8970 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:12:21.9167 Info Adding target FileTarget(Name=logfile)
+2020-10-04 03:12:21.9167 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 03:12:21.9305 Trace ParseRulesElement
+2020-10-04 03:12:21.9560 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 03:12:21.9560 Debug --- NLog configuration dump ---
+2020-10-04 03:12:21.9729 Debug Targets:
+2020-10-04 03:12:21.9729 Debug File Target[logfile]
+2020-10-04 03:12:21.9729 Debug Rules:
+2020-10-04 03:12:21.9955 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 03:12:21.9955 Debug --- End of NLog configuration dump ---
+2020-10-04 03:12:22.0134 Trace FindReachableObject<System.Object>:
+2020-10-04 03:12:22.0194 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 03:12:22.0194 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 03:12:22.0194 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:12:22.0364 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:12:22.0364 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:12:22.0507 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:12:22.0507 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:12:22.0663 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:12:22.0663 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:12:22.0835 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:12:22.0835 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:12:22.0970 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:12:22.0970 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:12:22.1143 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:12:22.1143 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:12:22.1143 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:12:22.1324 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:12:22.1324 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:12:22.1324 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:12:22.1490 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:12:22.1490 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:12:22.1636 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:12:22.1636 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 03:12:22.1805 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 03:12:22.1924 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 03:12:22.1924 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 03:12:22.2162 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 03:12:22.2237 Trace Initializing Layout Renderer: ${message}
+2020-10-04 03:12:22.2237 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:12:22.2237 Trace Initializing Layout Renderer: ${level}
+2020-10-04 03:12:22.2448 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 03:12:22.2561 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:22.2561 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:12:22.2689 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:12:22.2689 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:12:22.2863 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 03:12:22.2863 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:12:22.3014 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 03:12:22.3014 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:12:22.3166 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:22.3166 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:12:22.3322 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:12:22.3322 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:12:22.3322 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:12:22.3557 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:12:22.3633 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:12:22.3633 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:12:22.3633 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:12:22.3817 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:12:22.3817 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:12:22.3972 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:12:22.3972 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:12:22.4140 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 03:12:22.4140 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:12:22.4269 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:12:22.4269 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:12:22.4420 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:12:22.4420 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:12:22.4559 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:12:22.4559 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:12:22.4559 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:12:22.4748 Trace Initializing File Target[logfile]
+2020-10-04 03:12:22.4748 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 03:12:22.4908 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:12:22.4908 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:12:22.5030 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:12:22.5030 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:12:22.5030 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:12:22.5221 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:12:22.5221 Trace File Target[logfile] has 2 layouts
+2020-10-04 03:12:22.5392 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 03:14:19.6038 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:14:19.7956 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 03:14:19.8065 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:14:19.8238 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:14:19.8364 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:14:19.8364 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:14:19.8755 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 03:14:19.8829 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:14:19.8829 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 03:14:19.8998 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:14:19.8998 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:14:19.9141 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 03:14:19.9141 Debug Auto loading done
+2020-10-04 03:14:19.9267 Info Message Template Auto Format enabled
+2020-10-04 03:14:19.9564 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:19.9564 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:14:19.9819 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:14:19.9900 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:14:19.9900 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.0050 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:14:20.0050 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.0050 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:14:20.0258 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:14:20.0258 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:14:20.0413 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:14:20.0413 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:14:20.0559 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.0559 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 03:14:20.0703 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.0703 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:14:20.0895 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 03:14:20.0895 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:14:20.1018 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.1018 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:14:20.1136 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:14:20.1136 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.1136 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:14:20.1355 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:14:20.1355 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:14:20.1498 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.1498 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:14:20.1657 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.1657 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:14:20.1811 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:14:20.1811 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:14:20.1991 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:14:20.2068 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:14:20.2068 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.2227 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:14:20.2227 Info Adding target FileTarget(Name=logfile)
+2020-10-04 03:14:20.2388 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 03:14:20.2388 Trace ParseRulesElement
+2020-10-04 03:14:20.2754 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 03:14:20.2846 Debug --- NLog configuration dump ---
+2020-10-04 03:14:20.2846 Debug Targets:
+2020-10-04 03:14:20.2846 Debug File Target[logfile]
+2020-10-04 03:14:20.3064 Debug Rules:
+2020-10-04 03:14:20.3064 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 03:14:20.3197 Debug --- End of NLog configuration dump ---
+2020-10-04 03:14:20.3197 Trace FindReachableObject<System.Object>:
+2020-10-04 03:14:20.3340 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 03:14:20.3340 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 03:14:20.3340 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:14:20.3511 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:14:20.3511 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:14:20.3631 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:14:20.3631 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:14:20.3631 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:14:20.3826 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:14:20.3826 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:14:20.3968 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:14:20.3968 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:14:20.4118 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:14:20.4118 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:14:20.4251 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:14:20.4251 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:14:20.4251 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:14:20.4426 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:14:20.4426 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:14:20.4559 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:14:20.4559 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:14:20.4559 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:14:20.4783 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 03:14:20.4783 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 03:14:20.4975 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 03:14:20.5073 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 03:14:20.5190 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 03:14:20.5190 Trace Initializing Layout Renderer: ${message}
+2020-10-04 03:14:20.5190 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:14:20.5391 Trace Initializing Layout Renderer: ${level}
+2020-10-04 03:14:20.5391 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 03:14:20.5573 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.5573 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:14:20.5704 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:14:20.5704 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:14:20.5885 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 03:14:20.5885 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:14:20.6023 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 03:14:20.6023 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:14:20.6153 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.6153 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:14:20.6369 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:14:20.6463 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:14:20.6463 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:14:20.6609 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:14:20.6609 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:14:20.6778 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:14:20.6778 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:14:20.6946 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:14:20.6946 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:14:20.7113 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:14:20.7113 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:14:20.7271 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 03:14:20.7271 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:14:20.7413 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:14:20.7413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:14:20.7568 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:14:20.7568 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:14:20.7568 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:14:20.7745 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:14:20.7745 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:14:20.7884 Trace Initializing File Target[logfile]
+2020-10-04 03:14:20.7884 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 03:14:20.8005 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:14:20.8005 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:14:20.8005 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:14:20.8224 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:14:20.8224 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:14:20.8353 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:14:20.8353 Trace File Target[logfile] has 2 layouts
+2020-10-04 03:14:20.8525 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 03:15:11.2189 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:15:11.3538 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 03:15:11.3627 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:15:11.3627 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:15:11.3821 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:15:11.3821 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:15:11.4125 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 03:15:11.4125 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:15:11.4255 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 03:15:11.4255 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:15:11.4455 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:15:11.4455 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 03:15:11.4589 Debug Auto loading done
+2020-10-04 03:15:11.4589 Info Message Template Auto Format enabled
+2020-10-04 03:15:11.4888 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:11.4888 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:15:11.5138 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:15:11.5224 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:15:11.5224 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:11.5359 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:15:11.5359 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:11.5493 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:15:11.5493 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:15:11.5687 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:15:11.5687 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:15:11.5687 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:15:11.5884 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:11.5968 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 03:15:11.5968 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:11.5968 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:15:11.6266 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 03:15:11.6332 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:15:11.6332 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:11.6456 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:15:11.6456 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:15:11.6628 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:11.6628 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:15:11.6767 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:15:11.6767 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:15:11.6767 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:11.6973 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:15:11.6973 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:11.7114 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:15:11.7114 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:15:11.7266 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:15:11.7266 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:15:11.7419 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:15:11.7419 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:11.7555 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:15:11.7555 Info Adding target FileTarget(Name=logfile)
+2020-10-04 03:15:11.7734 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 03:15:11.7734 Trace ParseRulesElement
+2020-10-04 03:15:11.8079 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 03:15:11.8159 Debug --- NLog configuration dump ---
+2020-10-04 03:15:11.8159 Debug Targets:
+2020-10-04 03:15:11.8159 Debug File Target[logfile]
+2020-10-04 03:15:11.8334 Debug Rules:
+2020-10-04 03:15:11.8334 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 03:15:11.8487 Debug --- End of NLog configuration dump ---
+2020-10-04 03:15:11.8487 Trace FindReachableObject<System.Object>:
+2020-10-04 03:15:11.8658 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 03:15:11.8658 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 03:15:11.8658 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:15:11.8846 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:15:11.8846 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:15:11.8967 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:15:11.8967 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:15:11.9104 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:15:11.9104 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:15:11.9250 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:15:11.9250 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:15:11.9409 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:15:11.9409 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:15:11.9560 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:15:11.9560 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:15:11.9560 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:15:11.9773 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:15:11.9773 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:15:11.9885 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:15:11.9885 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:15:11.9885 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:15:12.0098 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:15:12.0098 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 03:15:12.0227 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 03:15:12.0227 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 03:15:12.0389 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 03:15:12.0511 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 03:15:12.0511 Trace Initializing Layout Renderer: ${message}
+2020-10-04 03:15:12.0678 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:15:12.0678 Trace Initializing Layout Renderer: ${level}
+2020-10-04 03:15:12.0822 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 03:15:12.0822 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:12.0988 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:15:12.0988 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:15:12.1119 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:15:12.1119 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 03:15:12.1288 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:15:12.1288 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 03:15:12.1439 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:15:12.1439 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:12.1627 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:15:12.1627 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:15:12.1810 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:15:12.1810 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:15:12.1960 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:15:12.1960 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:15:12.2069 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:15:12.2069 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:15:12.2218 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:15:12.2218 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:15:12.2218 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:15:12.2424 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:15:12.2424 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 03:15:12.2548 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:15:12.2548 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:15:12.2548 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:15:12.2760 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:15:12.2760 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:15:12.2894 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:15:12.2894 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:15:12.3038 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:15:12.3038 Trace Initializing File Target[logfile]
+2020-10-04 03:15:12.3221 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 03:15:12.3221 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:15:12.3346 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:15:12.3346 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:15:12.3530 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:15:12.3530 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:15:12.3697 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:15:12.3786 Trace File Target[logfile] has 2 layouts
+2020-10-04 03:15:12.3786 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 03:20:48.2317 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:20:48.3505 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 03:20:48.3505 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:20:48.3685 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:20:48.3685 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:20:48.3830 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:20:48.4043 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 03:20:48.4111 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:20:48.4111 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 03:20:48.4267 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:20:48.4267 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:20:48.4267 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 03:20:48.4450 Debug Auto loading done
+2020-10-04 03:20:48.4450 Info Message Template Auto Format enabled
+2020-10-04 03:20:48.4727 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:48.4727 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:20:48.4920 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:20:48.4920 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:20:48.5043 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:48.5043 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:20:48.5043 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:48.5248 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:20:48.5248 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:20:48.5401 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:20:48.5401 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:20:48.5547 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:20:48.5547 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:48.5687 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 03:20:48.5687 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:48.5848 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:20:48.5848 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 03:20:48.6022 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:20:48.6022 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:48.6149 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:20:48.6149 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:20:48.6331 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:48.6331 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:20:48.6482 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:20:48.6482 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:20:48.6626 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:48.6626 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:20:48.6744 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:48.6744 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:20:48.6744 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:20:48.6936 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:20:48.6936 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:20:48.6936 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:20:48.7136 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:48.7136 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:20:48.7272 Info Adding target FileTarget(Name=logfile)
+2020-10-04 03:20:48.7272 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 03:20:48.7399 Trace ParseRulesElement
+2020-10-04 03:20:48.7660 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 03:20:48.7738 Debug --- NLog configuration dump ---
+2020-10-04 03:20:48.7738 Debug Targets:
+2020-10-04 03:20:48.7883 Debug File Target[logfile]
+2020-10-04 03:20:48.7883 Debug Rules:
+2020-10-04 03:20:48.8020 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 03:20:48.8020 Debug --- End of NLog configuration dump ---
+2020-10-04 03:20:48.8188 Trace FindReachableObject<System.Object>:
+2020-10-04 03:20:48.8188 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 03:20:48.8325 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 03:20:48.8325 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:20:48.8325 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:20:48.8513 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:20:48.8513 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:20:48.8677 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:20:48.8677 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:20:48.8836 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:20:48.8836 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:20:48.8992 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:20:48.8992 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:20:48.9120 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:20:48.9120 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:20:48.9250 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:20:48.9250 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:20:48.9250 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:20:48.9437 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:20:48.9437 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:20:48.9567 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:20:48.9567 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:20:48.9733 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:20:48.9733 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 03:20:48.9873 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 03:20:48.9873 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 03:20:49.0043 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 03:20:49.0193 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 03:20:49.0193 Trace Initializing Layout Renderer: ${message}
+2020-10-04 03:20:49.0193 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:20:49.0415 Trace Initializing Layout Renderer: ${level}
+2020-10-04 03:20:49.0415 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 03:20:49.0585 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:49.0585 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:20:49.0724 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:20:49.0724 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:20:49.0878 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 03:20:49.0878 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:20:49.0997 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 03:20:49.0997 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:20:49.1152 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:49.1152 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:20:49.1152 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:20:49.1351 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:20:49.1351 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:20:49.1463 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:20:49.1463 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:20:49.1631 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:20:49.1631 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:20:49.1776 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:20:49.1776 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:20:49.1947 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:20:49.1947 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:20:49.2118 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 03:20:49.2118 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:20:49.2266 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:20:49.2266 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:20:49.2445 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:20:49.2528 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:20:49.2528 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:20:49.2528 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:20:49.2736 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:20:49.2736 Trace Initializing File Target[logfile]
+2020-10-04 03:20:49.2909 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 03:20:49.2909 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:20:49.3056 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:20:49.3156 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:20:49.3156 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:20:49.3156 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:20:49.3373 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:20:49.3373 Trace File Target[logfile] has 2 layouts
+2020-10-04 03:20:49.3545 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 03:23:21.8565 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:23:21.9638 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 03:23:21.9638 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:23:21.9797 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:23:21.9797 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:23:21.9921 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:23:22.0109 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 03:23:22.0109 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:23:22.0233 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 03:23:22.0233 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:23:22.0351 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:23:22.0351 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 03:23:22.0351 Debug Auto loading done
+2020-10-04 03:23:22.0507 Info Message Template Auto Format enabled
+2020-10-04 03:23:22.0704 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.0704 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:23:22.0882 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:23:22.0882 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:23:22.0993 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.0993 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:23:22.0993 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.1156 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:23:22.1156 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:23:22.1281 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:23:22.1281 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:23:22.1281 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:23:22.1466 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.1466 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 03:23:22.1466 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.1624 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:23:22.1624 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 03:23:22.1782 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:23:22.1782 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.1782 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:23:22.1963 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:23:22.1963 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.2070 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:23:22.2070 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:23:22.2070 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:23:22.2227 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.2227 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:23:22.2227 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.2392 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:23:22.2392 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:23:22.2542 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:23:22.2542 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:23:22.2542 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:23:22.2747 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.2747 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:23:22.2871 Info Adding target FileTarget(Name=logfile)
+2020-10-04 03:23:22.2871 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 03:23:22.3035 Trace ParseRulesElement
+2020-10-04 03:23:22.3273 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 03:23:22.3358 Debug --- NLog configuration dump ---
+2020-10-04 03:23:22.3358 Debug Targets:
+2020-10-04 03:23:22.3474 Debug File Target[logfile]
+2020-10-04 03:23:22.3474 Debug Rules:
+2020-10-04 03:23:22.3474 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 03:23:22.3661 Debug --- End of NLog configuration dump ---
+2020-10-04 03:23:22.3661 Trace FindReachableObject<System.Object>:
+2020-10-04 03:23:22.3800 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 03:23:22.3800 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 03:23:22.3800 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:23:22.3961 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:23:22.3961 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:23:22.3961 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:23:22.4114 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:23:22.4114 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:23:22.4114 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:23:22.4275 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:23:22.4275 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:23:22.4275 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:23:22.4431 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:23:22.4431 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:23:22.4431 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:23:22.4590 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:23:22.4590 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:23:22.4590 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:23:22.4737 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:23:22.4737 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:23:22.4737 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:23:22.4901 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:23:22.4901 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 03:23:22.4901 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 03:23:22.5081 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 03:23:22.5081 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 03:23:22.5258 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 03:23:22.5258 Trace Initializing Layout Renderer: ${message}
+2020-10-04 03:23:22.5377 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:23:22.5377 Trace Initializing Layout Renderer: ${level}
+2020-10-04 03:23:22.5497 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 03:23:22.5497 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.5497 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:23:22.5701 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:23:22.5701 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:23:22.5840 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 03:23:22.5840 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:23:22.5840 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 03:23:22.6004 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:23:22.6004 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.6004 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:23:22.6162 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:23:22.6162 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:23:22.6162 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:23:22.6315 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:23:22.6315 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:23:22.6315 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:23:22.6479 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:23:22.6479 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:23:22.6479 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:23:22.6629 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:23:22.6629 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:23:22.6629 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 03:23:22.6791 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:23:22.6791 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:23:22.6791 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:23:22.6946 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:23:22.6946 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:23:22.6946 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:23:22.7103 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:23:22.7103 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:23:22.7103 Trace Initializing File Target[logfile]
+2020-10-04 03:23:22.7275 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 03:23:22.7275 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:23:22.7379 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:23:22.7379 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:23:22.7379 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:23:22.7542 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:23:22.7542 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:23:22.7542 Trace File Target[logfile] has 2 layouts
+2020-10-04 03:23:22.7760 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 03:36:58.7785 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:36:58.9213 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 03:36:58.9289 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:36:58.9421 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:36:58.9421 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:36:58.9576 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:36:58.9819 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 03:36:58.9894 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:36:58.9894 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 03:36:59.0092 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:36:59.0092 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:36:59.0258 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 03:36:59.0258 Debug Auto loading done
+2020-10-04 03:36:59.0399 Info Message Template Auto Format enabled
+2020-10-04 03:36:59.0651 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.0651 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:36:59.0871 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:36:59.0871 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:36:59.1030 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.1030 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:36:59.1183 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.1183 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:36:59.1321 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:36:59.1321 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:36:59.1480 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:36:59.1480 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:36:59.1629 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.1629 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 03:36:59.1629 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.1810 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:36:59.1950 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 03:36:59.1950 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:36:59.2107 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.2107 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:36:59.2282 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:36:59.2282 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.2453 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:36:59.2528 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:36:59.2528 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:36:59.2528 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.2746 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:36:59.2746 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.2869 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:36:59.2869 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:36:59.3011 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:36:59.3011 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:36:59.3011 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:36:59.3209 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.3209 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:36:59.3323 Info Adding target FileTarget(Name=logfile)
+2020-10-04 03:36:59.3323 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 03:36:59.3323 Trace ParseRulesElement
+2020-10-04 03:36:59.3671 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 03:36:59.3671 Debug --- NLog configuration dump ---
+2020-10-04 03:36:59.3796 Debug Targets:
+2020-10-04 03:36:59.3796 Debug File Target[logfile]
+2020-10-04 03:36:59.3796 Debug Rules:
+2020-10-04 03:36:59.4010 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 03:36:59.4010 Debug --- End of NLog configuration dump ---
+2020-10-04 03:36:59.4187 Trace FindReachableObject<System.Object>:
+2020-10-04 03:36:59.4254 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 03:36:59.4254 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 03:36:59.4254 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:36:59.4459 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:36:59.4459 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:36:59.4569 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:36:59.4569 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:36:59.4569 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:36:59.4750 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:36:59.4750 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:36:59.4750 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:36:59.4943 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:36:59.4943 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:36:59.5089 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:36:59.5089 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:36:59.5216 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:36:59.5216 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:36:59.5338 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:36:59.5338 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:36:59.5338 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:36:59.5530 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:36:59.5530 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:36:59.5678 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 03:36:59.5678 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 03:36:59.5823 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 03:36:59.5823 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 03:36:59.6067 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 03:36:59.6132 Trace Initializing Layout Renderer: ${message}
+2020-10-04 03:36:59.6132 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:36:59.6302 Trace Initializing Layout Renderer: ${level}
+2020-10-04 03:36:59.6302 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 03:36:59.6504 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.6504 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:36:59.6625 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:36:59.6625 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:36:59.6781 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 03:36:59.6781 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:36:59.6781 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 03:36:59.6976 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:36:59.6976 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.7105 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:36:59.7105 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:36:59.7218 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:36:59.7218 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:36:59.7218 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:36:59.7388 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:36:59.7388 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:36:59.7388 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:36:59.7573 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:36:59.7573 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:36:59.7689 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:36:59.7689 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:36:59.7689 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 03:36:59.7873 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:36:59.7873 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:36:59.7873 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:36:59.8048 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:36:59.8048 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:36:59.8194 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:36:59.8194 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:36:59.8344 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:36:59.8344 Trace Initializing File Target[logfile]
+2020-10-04 03:36:59.8485 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 03:36:59.8485 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:36:59.8485 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:36:59.8676 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:36:59.8676 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:36:59.8827 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:36:59.8827 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:36:59.8972 Trace File Target[logfile] has 2 layouts
+2020-10-04 03:36:59.8972 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-10-04 03:40:44.3907 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:40:44.5592 Debug Found assembly location directory: 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-10-04 03:40:44.5666 Debug Search for auto loading files in location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:40:44.5666 Debug Start auto loading, location: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1
+2020-10-04 03:40:44.5859 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:40:44.5859 Info Loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-10-04 03:40:44.6153 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-10-04 03:40:44.6153 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-10-04 03:40:44.6322 Info Auto loading assembly file: D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-10-04 03:40:44.6322 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:40:44.6493 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-10-04 03:40:44.6493 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-10-04 03:40:44.6648 Debug Auto loading done
+2020-10-04 03:40:44.6648 Info Message Template Auto Format enabled
+2020-10-04 03:40:44.6969 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:44.7058 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:40:44.7232 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:40:44.7232 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:40:44.7416 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:44.7416 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:40:44.7595 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:44.7690 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:40:44.7847 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:40:44.7847 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:40:44.8035 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:40:44.8147 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:40:44.8147 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:44.8147 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-10-04 03:40:44.8375 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:44.8375 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:40:44.8605 Debug Setting 'NLog.Targets.FileTarget.name' to 'logfile'
+2020-10-04 03:40:44.8700 Debug Setting 'NLog.Targets.FileTarget.fileName' to 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:40:44.8783 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:44.8783 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:40:44.8949 Debug Setting 'NLog.Targets.FileTarget.layout' to '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:40:44.8949 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:44.9121 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:40:44.9121 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-10-04 03:40:44.9325 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2020-10-04 03:40:44.9413 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:44.9413 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:40:44.9556 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:44.9556 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:40:44.9757 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:40:44.9757 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:40:44.9916 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:40:44.9916 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:40:45.0076 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:45.0076 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:40:45.0243 Info Adding target FileTarget(Name=logfile)
+2020-10-04 03:40:45.0243 Debug Registered target logfile: NLog.Targets.FileTarget
+2020-10-04 03:40:45.0417 Trace ParseRulesElement
+2020-10-04 03:40:45.0753 Debug Watching path 'D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound' filter 'nlog.config' for changes.
+2020-10-04 03:40:45.0867 Debug --- NLog configuration dump ---
+2020-10-04 03:40:45.0867 Debug Targets:
+2020-10-04 03:40:45.1067 Debug File Target[logfile]
+2020-10-04 03:40:45.1202 Debug Rules:
+2020-10-04 03:40:45.1322 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]
+2020-10-04 03:40:45.1322 Debug --- End of NLog configuration dump ---
+2020-10-04 03:40:45.1529 Trace FindReachableObject<System.Object>:
+2020-10-04 03:40:45.1622 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ logfile ]'
+2020-10-04 03:40:45.1622 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-10-04 03:40:45.1795 Trace  Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:40:45.1795 Trace   Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:40:45.1962 Trace   Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:40:45.1962 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:40:45.2107 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:40:45.2107 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:40:45.2278 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:40:45.2375 Trace   Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:40:45.2375 Trace   Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:40:45.2534 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:40:45.2534 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:40:45.2696 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:40:45.2696 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:40:45.2874 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:40:45.2874 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:40:45.3027 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:40:45.3027 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:40:45.3169 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:40:45.3169 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:40:45.3329 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:40:45.3329 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-10-04 03:40:45.3466 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-10-04 03:40:45.3466 Info Validating config: TargetNames=logfile, ConfigItems=14, FilePath=D:\Projects\GUNAAPugetSound\GUNAAReact\GUNAAPugetSound\GUNAAPugetSound/nlog.config
+2020-10-04 03:40:45.3645 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-10-04 03:40:45.3781 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-10-04 03:40:45.3781 Trace Initializing Layout Renderer: ${message}
+2020-10-04 03:40:45.3952 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:40:45.3952 Trace Initializing Layout Renderer: ${level}
+2020-10-04 03:40:45.4127 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2020-10-04 03:40:45.4247 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:45.4247 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:40:45.4247 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:40:45.4464 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:40:45.4561 Trace Initializing Layout Renderer: ${uppercase}
+2020-10-04 03:40:45.4561 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:40:45.4561 Trace Initializing Layout Renderer: ${longdate}
+2020-10-04 03:40:45.4786 Trace Initializing '${longdate} ${level:uppercase=true} ${message}'
+2020-10-04 03:40:45.4786 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:45.4937 Trace Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:40:45.4937 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:40:45.5097 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-10-04 03:40:45.5097 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:40:45.5246 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-10-04 03:40:45.5246 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-10-04 03:40:45.5401 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-10-04 03:40:45.5401 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:40:45.5576 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-10-04 03:40:45.5666 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:40:45.5666 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-10-04 03:40:45.5856 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:40:45.5856 Trace Initializing Layout Renderer: ${shortdate}
+2020-10-04 03:40:45.6034 Trace Initializing Layout Renderer: ${literal}
+2020-10-04 03:40:45.6034 Trace Initializing 'D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'
+2020-10-04 03:40:45.6209 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-10-04 03:40:45.6294 Trace Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:40:45.6294 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-10-04 03:40:45.6440 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:40:45.6440 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2020-10-04 03:40:45.6440 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-10-04 03:40:45.6666 Trace Initializing File Target[logfile]
+2020-10-04 03:40:45.6757 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-10-04 03:40:45.6757 Trace Scanning FileTarget 'File Target[logfile]'
+2020-10-04 03:40:45.6922 Trace  Scanning Property FileName ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt'' NLog.Layouts
+2020-10-04 03:40:45.6922 Trace  Scanning SimpleLayout ''D:/Projects/GUNAAPugetSound/GUNAAReact/GUNAAPugetSound/logs/${shortdate}_logfile.txt''
+2020-10-04 03:40:45.6922 Trace  Scanning Property Layout ''${longdate} ${level:uppercase=true} ${message}'' NLog.Layouts
+2020-10-04 03:40:45.7126 Trace  Scanning SimpleLayout ''${longdate} ${level:uppercase=true} ${message}''
+2020-10-04 03:40:45.7126 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-10-04 03:40:45.7285 Trace File Target[logfile] has 2 layouts
+2020-10-04 03:40:45.7394 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory

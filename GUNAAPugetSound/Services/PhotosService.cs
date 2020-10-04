@@ -1,25 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net.Mime;
 using System.Threading.Tasks;
 using AutoMapper;
-using GUNAAPugetSound.DTOs;
 using GUNAAPugetSound.Entities;
 using GUNAAPugetSound.Helpers;
-using GUNAAPugetSound.Models.Accounts;
 using GUNAAPugetSound.Models.Photos;
 using GUNAAPugetSound.Utilities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Microsoft.Net.Http.Headers;
-using Org.BouncyCastle.Asn1.Ocsp;
 
 namespace GUNAAPugetSound.Services
 {

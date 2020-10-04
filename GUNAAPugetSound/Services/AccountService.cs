@@ -11,7 +11,6 @@ using GUNAAPugetSound.Entities;
 using GUNAAPugetSound.Entities.Enums;
 using GUNAAPugetSound.Helpers;
 using GUNAAPugetSound.Models.Accounts;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 

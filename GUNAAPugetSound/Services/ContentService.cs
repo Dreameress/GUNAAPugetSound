@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using GUNAAPugetSound.Entities;
 using GUNAAPugetSound.Helpers;
-using GUNAAPugetSound.Models;
 using GUNAAPugetSound.Models.Content;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Options;

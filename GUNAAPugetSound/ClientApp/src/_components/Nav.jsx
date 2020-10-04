@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 
-import { Role } from '@/_helpers';
-import { accountService } from '@/_services';
+import { Role } from './../_helpers/role';
+import { accountService } from './../_services/account.service';
 
 function Nav() {
     const [user, setUser] = useState({});

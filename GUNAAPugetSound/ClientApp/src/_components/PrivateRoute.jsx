@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-import { accountService } from '@/_services';
+import { accountService } from './../_services/account.service';
 
 function PrivateRoute({ component: Component, roles, ...rest }) {
     return (

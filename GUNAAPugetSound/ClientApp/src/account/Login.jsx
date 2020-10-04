@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
-import { accountService, alertService } from '@/_services';
+import { accountService } from './../_services/account.service';
+import { alertService } from './../_services/alert.service';
 
 function Login({ history, location }) {
     const initialValues = {
@@ -22,7 +23,7 @@ function Login({ history, location }) {
         alertService.clear();
         accountService.login(email, password)
             .then(() => {
-                const { from } = location.state || { from: { pathname: "/" } };
+                const { from } = window.location.state || { from: { pathname: "/" } };
                 history.push(from);
             })
             .catch(error => {

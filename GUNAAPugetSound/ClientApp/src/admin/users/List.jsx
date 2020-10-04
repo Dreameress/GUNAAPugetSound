@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { accountService } from '@/_services';
+import { accountService } from './../../_services/account.service';
 
 function List({ match }) {
     const { path } = match;

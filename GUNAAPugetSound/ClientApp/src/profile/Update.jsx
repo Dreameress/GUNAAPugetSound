@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
-import { accountService, alertService } from '@/_services';
+import { accountService } from './../_services/account.service';
+import { alertService } from './../_services/alert.service';
 
 function Update({ history }) {
     const user = accountService.userValue;
@@ -50,7 +51,7 @@ function Update({ history }) {
 
     const [isDeleting, setIsDeleting] = useState(false);
     function onDelete() {
-        if (confirm('Are you sure?')) {
+        if (window.confirm('Are you sure?')) {
             setIsDeleting(true);
             accountService.delete(user.id)
                 .then(() => alertService.success('Account deleted successfully'));

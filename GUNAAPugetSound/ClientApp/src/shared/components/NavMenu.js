@@ -87,7 +87,7 @@ export class NavMenu extends Component {
                   <NavLink exact to={'/'} activeClassName='active' className="visible-lg visible-md visible-sm" >HOME</NavLink>
               </li>
               <li>
-                  <NavLink to={'/calendar'} className="visible-lg visible-md visible-sm">CALENDAR</NavLink>
+                  <NavLink to="/calendar" className="visible-lg visible-md visible-sm">CALENDAR</NavLink>
               </li>
               <li>
                   <NavLink to={'/officers'} className="visible-lg visible-md visible-sm">OFFICERS</NavLink>
