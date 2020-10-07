@@ -57,7 +57,6 @@ namespace GUNAAPugetSound
 
             // configure DI for application services
             services.AddScoped<IPhotoService, PhotosService>();
-            services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IContentService, ContentService>();
             services.AddScoped<IEventsService, EventsService>();

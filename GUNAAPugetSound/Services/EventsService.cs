@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using GUNAAPugetSound.Models.Events;
+using Entities.DTOs.Events;
 
 namespace GUNAAPugetSound.Services
 {

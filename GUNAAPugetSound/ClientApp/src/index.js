@@ -1,17 +1,17 @@
-import './index.css';
-import './site.css';
-import './material.css';
-import './bootstrap.css';
+import './styles/index.css';
+import './styles/site.css';
+import './styles/material.css';
+import './styles/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css'; 
-import './styles.less';
+import './styles/styles.less';
 
 
 import React from 'react';
 import { Router } from 'react-router-dom';
 import { render } from 'react-dom';
 
-import { history } from './_helpers';
-import { accountService } from './_services';
+import { history } from './helpers';
+import { accountService } from './services';
 import { App } from './App';
 
 import registerServiceWorker from './registerServiceWorker';

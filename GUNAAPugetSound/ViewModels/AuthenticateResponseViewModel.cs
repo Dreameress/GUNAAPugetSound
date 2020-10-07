@@ -1,4 +1,5 @@
-﻿using GUNAAPugetSound.Entities;
+﻿using Entities.Models;
+using GUNAAPugetSound.Entities;
 
 namespace GUNAAPugetSound.ViewModels
 {

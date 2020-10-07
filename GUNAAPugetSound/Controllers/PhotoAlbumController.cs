@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Entities.DTOs.Photos;
 using GUNAAPugetSound.Entities.Enums;
-using GUNAAPugetSound.Models.Photos;
 using GUNAAPugetSound.Services;
 using Microsoft.AspNetCore.Mvc;
 

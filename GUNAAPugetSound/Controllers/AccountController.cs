@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using AutoMapper;
+using Contracts;
+using Entities.DTOs.Accounts;
+using Entities.Models;
 using GUNAAPugetSound.Entities.Enums;
-using GUNAAPugetSound.Models.Accounts;
-using GUNAAPugetSound.Services;
+using GUNAAPugetSound.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using BC = BCrypt.Net.BCrypt;
 
 namespace GUNAAPugetSound.Controllers
 {
@@ -12,16 +16,31 @@ namespace GUNAAPugetSound.Controllers
     [Route("api/[controller]")]
     public class AccountController : BaseController
     {
-        private readonly IAccountService _accountService;
+        private ILoggerManager _logger;
+        private IRepositoryWrapper _repository;
+        private IMapper _mapper;
+        private readonly AppSettings _appSettings;
+        private readonly IEmailService _emailService;
 
-        public AccountController( IAccountService accountService)
+        public AccountController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper, AppSettings appSettings, IEmailService emailService)
         {
-            _accountService = accountService;
+            _logger = logger;
+            _repository = repository;
+            _mapper = mapper;
+            _appSettings = appSettings;
+            _emailService = emailService;
         }
         [HttpPost("authenticate")]
         public ActionResult<AuthenticateResponse> Authenticate(AuthenticateRequest model)
         {
-            var response = _accountService.Authenticate(model, IpAddress());
+            var account = _repository.Account.GetAccountByEmail(model.Email);
+
+            if (account == null || !account.IsVerified || !BC.Verify(model.Password, account.PasswordHash))
+                throw new AppException("Email or password is incorrect");
+            _repository.Account.Authenticate(IpAddress(), _appSettings.Secret, ref account, out string jwtToken, out RefreshToken refreshToken);
+            var response = _mapper.Map<AuthenticateResponse>(account);
+            response.JwtToken = jwtToken;
+            response.RefreshToken = refreshToken.Token;
             SetTokenCookie(response.RefreshToken);
             return Ok(response);
         }
@@ -30,7 +49,10 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<AuthenticateResponse> RefreshToken()
         {
             var refreshToken = Request.Cookies["refreshToken"];
-            var response = _accountService.RefreshToken(refreshToken, IpAddress());
+            var account = _repository.Account.RefreshToken(refreshToken, IpAddress(), _appSettings.Secret, out string jwtToken, out RefreshToken newRefreshToken);
+            var response = _mapper.Map<AuthenticateResponse>(account);
+            response.JwtToken = jwtToken;
+            response.RefreshToken = newRefreshToken.Token;
             SetTokenCookie(response.RefreshToken);
             return Ok(response);
         }
@@ -49,42 +71,66 @@ namespace GUNAAPugetSound.Controllers
             if (!Account.OwnsToken(token) && Account.Role != Role.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
-            _accountService.RevokeToken(token, IpAddress());
+            _repository.Account.RevokeToken(token, IpAddress());
             return Ok(new { message = "Token revoked" });
         }
 
         [HttpPost("register")]
         public IActionResult Register(RegisterRequest model)
         {
-            _accountService.Register(model, Request.Headers["origin"]);
+            // map model to new account object
+            var registered =  _repository.Account.AccountExists(model.Email);
+            if (registered)
+            {
+                _repository.Account.SendAlreadyRegisteredEmail(model.Email, Request.Headers["origin"], _emailService);
+                return Ok(new
+                {
+                    message =
+                        "You have already registered your account. Please check your email again for verification instructions"
+                });
+            }
+
+            var account = _mapper.Map<Account>(model); 
+            // hash password
+            account.PasswordHash = BC.HashPassword(model.Password);
+
+            _repository.Account.Register(model, Request.Headers["origin"], account, _emailService);
             return Ok(new { message = "Registration successful, please check your email for verification instructions" });
         }
 
         [HttpPost("verify-email")]
         public IActionResult VerifyEmail(VerifyEmailRequest model)
         {
-            _accountService.VerifyEmail(model.Token);
+            var account = _repository.Account.VerifyEmail(model.Token);
+            if (account == null) throw new AppException("Verification failed");
+            _repository.Account.SaveVerificationToken(model.Token, ref account);
             return Ok(new { message = "Verification successful, you can now login" });
         }
 
         [HttpPost("forgot-password")]
         public IActionResult ForgotPassword(ForgotPasswordRequest model)
         {
-            _accountService.ForgotPassword(model, Request.Headers["origin"]);
+            _repository.Account.ForgotPassword(model, Request.Headers["origin"], _emailService);
             return Ok(new { message = "Please check your email for password reset instructions" });
         }
 
         [HttpPost("validate-reset-token")]
         public IActionResult ValidateResetToken(ValidateResetTokenRequest model)
         {
-            _accountService.ValidateResetToken(model);
+            var account = _repository.Account.ValidateResetToken(model.Token);
+            if (account == null)
+                throw new AppException("Invalid token");
             return Ok(new { message = "Token is valid" });
         }
 
         [HttpPost("reset-password")]
         public IActionResult ResetPassword(ResetPasswordRequest model)
         {
-            _accountService.ResetPassword(model);
+            var account = _repository.Account.ValidateResetToken(model.Token);
+            if (account == null)
+                throw new AppException("Invalid token");
+
+            _repository.Account.ResetPassword(model, account);
             return Ok(new { message = "Password reset successful, you can now login" });
         }
 
@@ -92,7 +138,7 @@ namespace GUNAAPugetSound.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<AccountResponse>> GetAll()
         {
-            var accounts = _accountService.GetAll();
+            var accounts = _mapper.Map<IList<AccountResponse>>(_repository.Account.GetAll());
             return Ok(accounts);
         }
 
@@ -104,7 +150,7 @@ namespace GUNAAPugetSound.Controllers
             if (id != Account.Id && Account.Role != Role.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
-            var account = _accountService.GetById(id);
+            var account = _repository.Account.GetById(id);
             return Ok(account);
         }
 
@@ -112,8 +158,19 @@ namespace GUNAAPugetSound.Controllers
         [HttpPost]
         public ActionResult<AccountResponse> Create(CreateRequest model)
         {
-            var account = _accountService.Create(model);
-            return Ok(account);
+            // validate
+            if (_repository.Account.AccountExists(model.Email))
+                throw new AppException($"Email '{model.Email}' is already registered");
+
+            // map model to new account object
+            var account = _mapper.Map<Account>(model);
+
+            // hash password
+            account.PasswordHash = BC.HashPassword(model.Password);
+
+            _repository.Account.Create(account);
+            var accountResponse = _mapper.Map<AccountResponse>(account);
+            return Ok(accountResponse);
         }
 
         [Helpers.Authorize]
@@ -127,9 +184,20 @@ namespace GUNAAPugetSound.Controllers
             // only admins can update role
             if (Account.Role != Role.Admin)
                 model.Role = null;
+            var account = _repository.Account.GetById(id);
+            // validate
+            if (account.Email != model.Email && _repository.Account.AccountExists(model.Email))
+                throw new AppException($"Email '{model.Email}' is already taken");
+            // hash password if it was entered
+            if (!string.IsNullOrEmpty(model.Password))
+                account.PasswordHash = BC.HashPassword(model.Password);
 
-            var account = _accountService.Update(id, model);
-            return Ok(account);
+            // copy model to account and save
+            _mapper.Map(model, account);
+
+            _repository.Account.Update(account);
+            var accountResponse =_mapper.Map<AccountResponse>(account);
+            return Ok(accountResponse);
         }
 
         [Helpers.Authorize]
@@ -140,7 +208,8 @@ namespace GUNAAPugetSound.Controllers
             if (id != Account.Id && Account.Role != Role.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
-            _accountService.Delete(id);
+            var account = _repository.Account.GetById(id);
+            _repository.Account.Delete(account);
             return Ok(new { message = "Account deleted successfully" });
         }
 
@@ -163,22 +232,6 @@ namespace GUNAAPugetSound.Controllers
             else
                 return HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
         }
-
-        [TempData]
-        public string ErrorMessage { get; set; }
-
-
-
-        //[HttpGet]
-        //[AllowAnonymous]
-        //public async Task<IActionResult> Login(string returnUrl = null)
-        //{
-        //    // Clear the existing external cookie to ensure a clean login process
-        //    await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
-        //    return Ok();
-        //}
-
-      
 
     }
 }

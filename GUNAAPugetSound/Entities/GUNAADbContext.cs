@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace GUNAAPugetSound.Entities
@@ -11,10 +12,10 @@ namespace GUNAAPugetSound.Entities
             Configuration = configuration;
         }
 
-        //public GUNAADbContext(DbContextOptions<GUNAADbContext> options)
-        //    : base(options)
-        //{
-        //}
+        public GUNAADbContext(DbContextOptions<GUNAADbContext> options)
+            : base(options)
+        {
+        }
 
         public  DbSet<Album> Albums { get; set; }
         public  DbSet<Photo> Photos { get; set; }

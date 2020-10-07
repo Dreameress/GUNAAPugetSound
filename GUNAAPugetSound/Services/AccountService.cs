@@ -7,10 +7,11 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using AutoMapper;
+using Entities.DTOs.Accounts;
+using Entities.Models;
 using GUNAAPugetSound.Entities;
 using GUNAAPugetSound.Entities.Enums;
 using GUNAAPugetSound.Helpers;
-using GUNAAPugetSound.Models.Accounts;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 

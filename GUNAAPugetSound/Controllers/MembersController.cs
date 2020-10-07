@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Entities.Models;
 using GUNAAPugetSound.Entities;
 using GUNAAPugetSound.Entities.Enums;
 using Microsoft.AspNetCore.Authorization;

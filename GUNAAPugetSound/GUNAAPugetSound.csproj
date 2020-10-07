@@ -42,17 +42,29 @@
 
  <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="Entities\**" />
+    <Compile Remove="Models\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="Entities\**" />
+    <Content Remove="Models\**" />
+    <EmbeddedResource Remove="Entities\**" />
+    <EmbeddedResource Remove="Models\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="Entities\**" />
+    <None Remove="Models\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
  <ItemGroup>
    <Compile Remove="Controllers\HomeController.cs" />
+   <Compile Remove="Services\AccountService.cs" />
  </ItemGroup>
 
  <ItemGroup>
+   <ProjectReference Include="..\Contracts\Contracts.csproj" />
+   <ProjectReference Include="..\Entities\Entities.csproj" />
    <ProjectReference Include="..\LoggerService\LoggerService.csproj" />
+   <ProjectReference Include="..\Repositiory\Repository.csproj" />
  </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
+using Entities.DTOs.Accounts;
+using Entities.Models;
 using GUNAAPugetSound.Entities;
-using GUNAAPugetSound.Models.Accounts;
 
 namespace GUNAAPugetSound.Helpers
 {

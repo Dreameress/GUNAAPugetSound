@@ -1,34 +1,34 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Route, Switch, Redirect, useLocation } from 'react-router-dom';
 
-import { Layout } from './shared/components/Layout';
-import { Home } from './views/Home/Home';
-import { FetchData } from './shared/components/FetchData';
-import { Counter } from './shared/components/Counter';
-import { Contact } from './views/ContactUs/Contact';
-import { About } from './views/About/About';
-import { Membership } from './views/Membership/Membership';
-import { Scholarship } from './views/Scholarship/Scholarship';
-import { Officers } from './views/Officers/Officers';
-import { Committees } from './views/Committees/Committees';
-import { Calendar } from './views/Calendar/Calendar';
-import { Login } from './views/Authenticiation/Login';
-import { Register } from './views/Authenticiation/Register';
-import { PhotoAlbums } from './views/Photos/PhotoAlbums';
-import { AddAlbum } from './views/Photos/AddAlbum';
-import { EditAlbum } from './views/Photos/EditAlbum';
-import { AlbumDetails } from './views/Photos/AlbumDetails';
-import { AddPhoto } from './views/Photos/AddPhoto';
-import { ShowPhotos } from './views/Photos/ShowPhotos';
+import { Layout } from './components/_shared/Layout';
+import { Home } from './components/pages/Home/Home';
+import { FetchData } from './components/_shared/FetchData';
+import { Counter } from './components/_shared/Counter';
+import { Contact } from './components/pages/ContactUs/Contact';
+import { About } from './components/pages/About/About';
+import { Membership } from './components/pages/Membership/Membership';
+import { Scholarship } from './components/pages/Scholarship/Scholarship';
+import { Officers } from './components/pages/Officers/Officers';
+import { Committees } from './components/pages/Committees/Committees';
+import { Calendar } from './components/pages/Calendar/Calendar';
+import { Login } from './components/pages/Authenticiation/Login';
+import { Register } from './components/pages/Authenticiation/Register';
+import { PhotoAlbums } from './components/pages/Photos/PhotoAlbums';
+import { AddAlbum } from './components/pages/Photos/AddAlbum';
+import { EditAlbum } from './components/pages/Photos/EditAlbum';
+import { AlbumDetails } from './components/pages/Photos/AlbumDetails';
+import { AddPhoto } from './components/pages/Photos/AddPhoto';
+import { ShowPhotos } from './components/pages/Photos/ShowPhotos';
 
-import { Role } from './_helpers/role';
-import { accountService } from './_services/account.service';
-import { Alert } from './_components/Alert';
-import { Nav } from './_components/Nav';
-import { PrivateRoute } from './_components/PrivateRoute';
-import { Profile } from './profile/Profile';
-import { Admin } from './admin/Admin';
-import { Account } from './account/Account';
+import { Role } from './helpers/role';
+import { accountService } from './services/account.service';
+import { Alert } from './components/_shared/Alert';
+import { Nav } from './components/_shared/Nav';
+import { PrivateRoute } from './components/_shared/PrivateRoute';
+import { Profile } from './components/pages/Profile/Profile';
+import { Admin } from './components/pages/Admin/Admin';
+import { Account } from './components/pages/Account/Account';
 
 function App() {
   const { pathname } = useLocation();  
@@ -45,7 +45,7 @@ function App() {
         <Alert />
         <Switch>
           <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
-          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/admin" roles={[Role.Admin]} component={Admin} />
           <Route path="/account" component={Account} />

@@ -11,9 +11,9 @@ namespace Repository
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        protected GUNAARepositoryContext RepositoryContext { get; set; }
+        protected GUNAADbContext RepositoryContext { get; set; }
 
-        protected RepositoryBase(GUNAARepositoryContext repositoryContext)
+        protected RepositoryBase(GUNAADbContext repositoryContext)
         {
             this.RepositoryContext = repositoryContext;
         }

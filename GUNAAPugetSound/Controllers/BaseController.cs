@@ -1,4 +1,5 @@
 ﻿using System;
+using Entities.Models;
 using GUNAAPugetSound.Entities;
 using Microsoft.AspNetCore.Mvc;
 

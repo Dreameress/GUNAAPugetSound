@@ -1,8 +1,8 @@
 ﻿using System;
 using AutoMapper;
+using Entities.DTOs.Content;
 using GUNAAPugetSound.Entities;
 using GUNAAPugetSound.Helpers;
-using GUNAAPugetSound.Models.Content;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Options;
 
