@@ -1,5 +1,4 @@
 ﻿using Contracts;
-using Entities;
 using GUNAAPugetSound.Entities;
 
 namespace Repository
@@ -9,14 +8,20 @@ namespace Repository
         private readonly GUNAADbContext _repoContext;
         private IAccountManager _account;
         private IAlbumManager _album;
+        private ICommitteeManager _committee;
         private IContentManager _content;
         private IEventManager _event;
+        private IOfficerManager _officer;
         private IPhotoManager _photo;
-        private IEmailService _emailService;
 
         public IAccountManager Account => _account ??= new AccountManager(_repoContext);
+ 
         public IAlbumManager Album => _album ??= new AlbumManager(_repoContext);
-
+        public ICommitteeManager CommitteeMember
+        {
+            get => _committee ??= new CommitteeManager(_repoContext);
+            set { }
+        }
         public IContentManager Content
         {
             get => _content ??= new ContentManager(_repoContext);
@@ -26,6 +31,12 @@ namespace Repository
         public IEventManager Event
         {
             get => _event ??= new EventManager(_repoContext);
+            set { }
+        }
+
+        public IOfficerManager Officer
+        {
+            get => _officer ??= new OfficerManager(_repoContext);
             set { }
         }
 
@@ -45,5 +56,6 @@ namespace Repository
         {
             _repoContext.SaveChanges();
         }
+
     }
 }

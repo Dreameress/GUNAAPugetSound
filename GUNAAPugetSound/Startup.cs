@@ -45,7 +45,7 @@ namespace GUNAAPugetSound
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            //services.ConfigureLoggerService();
+            services.ConfigureLoggerService();
 
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -53,13 +53,7 @@ namespace GUNAAPugetSound
             services.AddSwaggerGen();
 
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-
-
-            // configure DI for application services
-            services.AddScoped<IPhotoService, PhotosService>();
-            services.AddScoped<IEmailService, EmailService>();
-            services.AddScoped<IContentService, ContentService>();
-            services.AddScoped<IEventsService, EventsService>();
+            services.ConfigureRepositoryWrapper();
 
             services.AddHttpsRedirection(options =>
             {

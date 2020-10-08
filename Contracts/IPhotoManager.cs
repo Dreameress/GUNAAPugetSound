@@ -13,7 +13,6 @@ namespace Contracts
         IEnumerable<Photo> GetAllPhotos();
         void CreatePhoto(Photo photo, int accountId);
         void CreatePhotos(List<Photo> photos, int accountId);
-        void UpdatePhoto(Photo photo, int accountId);
         void DeletePhoto(Photo photo);
     }
 }

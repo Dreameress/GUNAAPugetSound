@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Contracts;
 using Entities.DTOs.Photos;
 using Entities.Models;
 using GUNAAPugetSound.Entities;

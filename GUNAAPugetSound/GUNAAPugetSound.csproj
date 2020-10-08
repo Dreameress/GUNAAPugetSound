@@ -43,14 +43,18 @@
  <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Compile Remove="Entities\**" />
+    <Compile Remove="Migrations\**" />
     <Compile Remove="Models\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="Entities\**" />
+    <Content Remove="Migrations\**" />
     <Content Remove="Models\**" />
     <EmbeddedResource Remove="Entities\**" />
+    <EmbeddedResource Remove="Migrations\**" />
     <EmbeddedResource Remove="Models\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="Entities\**" />
+    <None Remove="Migrations\**" />
     <None Remove="Models\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>

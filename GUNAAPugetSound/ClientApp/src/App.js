@@ -12,7 +12,7 @@ import { Scholarship } from './components/pages/Scholarship/Scholarship';
 import { Officers } from './components/pages/Officers/Officers';
 import { Committees } from './components/pages/Committees/Committees';
 import { Calendar } from './components/pages/Calendar/Calendar';
-import { Login } from './components/pages/Authenticiation/Login';
+import { Login } from './components/pages/Account/Login';
 import { Register } from './components/pages/Authenticiation/Register';
 import { PhotoAlbums } from './components/pages/Photos/PhotoAlbums';
 import { AddAlbum } from './components/pages/Photos/AddAlbum';

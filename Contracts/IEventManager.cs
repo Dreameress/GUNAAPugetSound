@@ -8,12 +8,11 @@ namespace Contracts
 {
     public interface IEventManager : IRepositoryBase<Event>
     {
-        IEnumerable<Event> GetAll();
         IEnumerable<Event> GetByDateRange(DateTime start, DateTime end);
-        IEnumerable<Event> GetByMonth(string month, string year = null);
+        IEnumerable<Event> GetByMonth(int month, int? year);
         IEnumerable<Event> GetByYear(int year);
         Event GetById(int id);
-        IEnumerable<Album> GetAllAlbums();
+        IEnumerable<Event> GetAllEvents();
         void CreateEvent(Event calendarEvent, int accountId);
         void UpdateEvent(Event calendarEvent, int accountId);
         void DeleteEvent(Event calendarEvent);

@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Contracts;
+using GUNAAPugetSound.Services;
+using LoggerService;
+using Microsoft.Extensions.DependencyInjection;
+using Repository;
 
 namespace GUNAAPugetSound.Extensions
 {
@@ -23,14 +27,15 @@ namespace GUNAAPugetSound.Extensions
         //    });
         //}
 
-        //public static void ConfigureLoggerService(this IServiceCollection services)
-        //{
-        //    services.AddSingleton<ILoggerManager, LoggerManager>();
-        //}
+        public static void ConfigureLoggerService(this IServiceCollection services)
+        {
+            services.AddSingleton<ILoggerManager, LoggerManager>();
+        }
 
-        //public static void ConfigureRepositoryWrapper(this IServiceCollection services)
-        //{
-        //    services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
-        //}
+        public static void ConfigureRepositoryWrapper(this IServiceCollection services)
+        {
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+            services.AddScoped<IEmailService, EmailService>();
+        }
     }
 }

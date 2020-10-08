@@ -2,5 +2,6 @@
 {
     public class UpdateCommitteeContentRequest
     {
+        public string CommitteesSubHeader { get; set; }
     }
 }

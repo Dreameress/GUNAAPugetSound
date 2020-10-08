@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Contracts;
 using Entities.Models;
 using GUNAAPugetSound.Entities;
+using Microsoft.VisualBasic;
 
 namespace Repository
 {
@@ -14,49 +16,54 @@ namespace Repository
         {
         }
 
-        public IEnumerable<Event> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<Event> GetByDateRange(DateTime start, DateTime end)
         {
-            throw new NotImplementedException();
+            return RepositoryContext.Events.Where(e => e.Start.Date >= start.Date && e.End.Date <= end.Date);
         }
 
-        public IEnumerable<Event> GetByMonth(string month, string year = null)
+        public IEnumerable<Event> GetByMonth(int month, int? year = null)
         {
-            throw new NotImplementedException();
+            year ??= DateTime.Now.Year;
+            return RepositoryContext.Events.Where(e => e.Start.Month == month && e.Start.Year == year);
         }
 
         public IEnumerable<Event> GetByYear(int year)
         {
-            throw new NotImplementedException();
+            return RepositoryContext.Events.Where(e => e.Start.Year == year);
         }
 
         public Event GetById(int id)
         {
-            throw new NotImplementedException();
+            return RepositoryContext.Events.Find(id);
         }
 
-        public IEnumerable<Album> GetAllAlbums()
+        public IEnumerable<Event> GetAllEvents()
         {
-            throw new NotImplementedException();
+            return RepositoryContext.Events;
         }
 
         public void CreateEvent(Event calendarEvent, int accountId)
         {
-            throw new NotImplementedException();
+            calendarEvent.Created = DateTime.UtcNow;
+            calendarEvent.CreatedBy = accountId;
+            RepositoryContext.Events.Add(calendarEvent);
+            RepositoryContext.SaveChanges();
+
         }
 
         public void UpdateEvent(Event calendarEvent, int accountId)
         {
-            throw new NotImplementedException();
+            calendarEvent.Updated = DateTime.UtcNow;
+            calendarEvent.UpdatedBy = accountId;
+            RepositoryContext.Events.Update(calendarEvent);
+            RepositoryContext.SaveChanges();
+
         }
 
         public void DeleteEvent(Event calendarEvent)
         {
-            throw new NotImplementedException();
+            RepositoryContext.Events.Remove(calendarEvent);
+            RepositoryContext.SaveChanges();
         }
     }
 }

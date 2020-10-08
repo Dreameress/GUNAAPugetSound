@@ -1,5 +1,6 @@
 ﻿using System;
 using AutoMapper;
+using Contracts;
 using Entities.DTOs.Content;
 using GUNAAPugetSound.Entities;
 using GUNAAPugetSound.Helpers;
@@ -11,13 +12,13 @@ namespace GUNAAPugetSound.Services
     public interface IContentService
     {
         ContentResponse GetContent(ContentRequest model);
-        OfficerContentResponse GetOfficerContent(ContentRequest model);
-        CommitteeContentResponse GetCommitteeContent(ContentRequest model);
-        MembershipContentResponse GetMembershipContent(ContentRequest model);
-        ScholarshipContentResponse GetScholarshipContent(ContentRequest model);
-        AboutUsContentResponse GetAboutUsContent(ContentRequest model);
-        ContactUsContentResponse GetContactUsContent(ContentRequest model);
-        ContentResponse UpdateContent(int id, UpdateContentRequest model);
+        //OfficerContentResponse GetOfficerContent(ContentRequest model);
+        //CommitteeContentResponse GetCommitteeContent(ContentRequest model);
+        //MembershipContentResponse GetMembershipContent(ContentRequest model);
+        //ScholarshipContentResponse GetScholarshipContent(ContentRequest model);
+        //AboutUsContentResponse GetAboutUsContent(ContentRequest model);
+        //ContactUsContentResponse GetContactUsContent(ContentRequest model);
+        ContentResponse UpdateContent(int id, UpdateCalendarContentRequest model);
         ContentResponse UpdateOfficerContent(UpdateOfficerContentRequest model);
         ContentResponse UpdateCommitteeContent(UpdateCommitteeContentRequest model);
         ContentResponse UpdateMembershipContent(UpdateMembershipContentRequest model);
@@ -52,36 +53,36 @@ namespace GUNAAPugetSound.Services
             throw new NotImplementedException();
         }
 
-        public OfficerContentResponse GetOfficerContent(ContentRequest model)
-        {
-            throw new NotImplementedException();
-        }
+        //public OfficerContentResponse GetOfficerContent(ContentRequest model)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public CommitteeContentResponse GetCommitteeContent(ContentRequest model)
-        {
-            throw new NotImplementedException();
-        }
+        //public CommitteeContentResponse GetCommitteeContent(ContentRequest model)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public MembershipContentResponse GetMembershipContent(ContentRequest model)
-        {
-            throw new NotImplementedException();
-        }
+        //public MembershipContentResponse GetMembershipContent(ContentRequest model)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public ScholarshipContentResponse GetScholarshipContent(ContentRequest model)
-        {
-            throw new NotImplementedException();
-        }
+        //public ScholarshipContentResponse GetScholarshipContent(ContentRequest model)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public AboutUsContentResponse GetAboutUsContent(ContentRequest model)
-        {
-            throw new NotImplementedException();
-        }
-        public ContactUsContentResponse GetContactUsContent(ContentRequest model)
-        {
-            throw new NotImplementedException();
-        }
+        //public AboutUsContentResponse GetAboutUsContent(ContentRequest model)
+        //{
+        //    throw new NotImplementedException();
+        //}
+        //public ContactUsContentResponse GetContactUsContent(ContentRequest model)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public ContentResponse UpdateContent(int id, UpdateContentRequest model)
+        public ContentResponse UpdateContent(int id, UpdateCalendarContentRequest model)
         {
             throw new NotImplementedException();
         }

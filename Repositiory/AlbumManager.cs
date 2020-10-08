@@ -16,27 +16,34 @@ namespace Repository
 
         public Album GetAlbumByAlbumId(Guid albumId)
         {
-            throw new NotImplementedException();
+            return RepositoryContext.Albums.Find(albumId);
         }
 
         public IEnumerable<Album> GetAllAlbums()
         {
-            throw new NotImplementedException();
+            return RepositoryContext.Albums;
         }
 
         public void CreateAlbum(Album album, int accountId)
         {
-            throw new NotImplementedException();
+            album.Created = DateTime.UtcNow;
+            album.CreatedBy = accountId;
+            RepositoryContext.Albums.Add(album);
+            RepositoryContext.SaveChanges();
         }
 
         public void UpdateAlbum(Album album, int accountId)
         {
-            throw new NotImplementedException();
+            album.Modified = DateTime.UtcNow;
+            album.ModifiedBy = accountId;
+            RepositoryContext.Albums.Update(album);
+            RepositoryContext.SaveChanges();
         }
 
         public void DeleteAlbum(Album album)
         {
-            throw new NotImplementedException();
+            RepositoryContext.Albums.Remove(album);
+            RepositoryContext.SaveChanges();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Contracts;
 using Entities.Models;
@@ -14,79 +15,18 @@ namespace Repository
         {
         }
 
-        public Content GetContentById(int contentId)
+        public Content GetContent()
         {
-            throw new NotImplementedException();
+            return RepositoryContext.Content.FirstOrDefault();
         }
 
-        public Content GetContentByView(int viewId)
+        public Content UpdateContent(ref Content content, int accountId)
         {
-            throw new NotImplementedException();
-        }
-
-        public Content GetOfficerContent()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Content GetCommitteeContent()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Content GetMembershipContent()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Content GetScholarshipContent()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Content GetAboutUsContent()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Content GetContactUsContent()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateContent(Content content, int accountId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateOfficerContent(Content content, int accountId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateCommitteeContent(Content content, int accountId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateMembershipContent(Content content, int accountId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateScholarshipContent(Content content, int accountId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateAboutUsContent(Content content, int accountId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateContactUsContent(Content content, int accountId)
-        {
-            throw new NotImplementedException();
+            content.Updated = DateTime.UtcNow;
+            content.LastUpdatedUserId = accountId;
+            RepositoryContext.Update(content);
+            RepositoryContext.SaveChanges();
+            return content;
         }
     }
 }

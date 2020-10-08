@@ -8,6 +8,7 @@ using GUNAAPugetSound.Entities.Enums;
 using GUNAAPugetSound.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using BC = BCrypt.Net.BCrypt;
 
 namespace GUNAAPugetSound.Controllers
@@ -22,12 +23,12 @@ namespace GUNAAPugetSound.Controllers
         private readonly AppSettings _appSettings;
         private readonly IEmailService _emailService;
 
-        public AccountController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper, AppSettings appSettings, IEmailService emailService)
+        public AccountController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper, IOptions<AppSettings> appSettings, IEmailService emailService)
         {
             _logger = logger;
             _repository = repository;
             _mapper = mapper;
-            _appSettings = appSettings;
+            _appSettings = appSettings.Value;
             _emailService = emailService;
         }
         [HttpPost("authenticate")]

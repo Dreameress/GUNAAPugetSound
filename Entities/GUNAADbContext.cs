@@ -18,6 +18,8 @@ namespace GUNAAPugetSound.Entities
         public  DbSet<User> Users { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Content> Content { get; set; }
+        public DbSet<Officer> Officers { get; set; }
+        public DbSet<CommitteeMember> CommitteeMembers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -42,9 +44,9 @@ namespace GUNAAPugetSound.Entities
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
-                entity.Property(e => e.EndDate).IsRequired();
+                entity.Property(e => e.End).IsRequired();
 
-                entity.Property(e => e.StartDate).IsRequired();
+                entity.Property(e => e.Start).IsRequired();
 
                 entity.Property(e => e.Title).IsRequired();
             });

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using Contracts;
 using Entities.Models;
 using GUNAAPugetSound.Entities;
@@ -16,37 +16,42 @@ namespace Repository
 
         public Photo GetPhotoById(Guid id)
         {
-            throw new NotImplementedException();
+            return RepositoryContext.Photos.Find(id);
         }
 
         public IEnumerable<Photo> GetPhotosByAlbumId(Guid albumId)
         {
-            throw new NotImplementedException();
+            return RepositoryContext.Photos.Where(p => p.AlbumId == albumId);
         }
 
         public IEnumerable<Photo> GetAllPhotos()
         {
-            throw new NotImplementedException();
+            return RepositoryContext.Photos;
         }
 
         public void CreatePhoto(Photo photo, int accountId)
         {
-            throw new NotImplementedException();
+            photo.Created = DateTime.UtcNow;
+            photo.AddedBy = accountId;
+            RepositoryContext.Photos.Add(photo);
+            RepositoryContext.SaveChanges();
         }
 
         public void CreatePhotos(List<Photo> photos, int accountId)
         {
-            throw new NotImplementedException();
-        }
+            foreach (var photo in photos)
+            {
+                photo.Created = DateTime.UtcNow;
+                photo.AddedBy = accountId;
+                RepositoryContext.Photos.Add(photo);
+            }
 
-        public void UpdatePhoto(Photo photo, int accountId)
-        {
-            throw new NotImplementedException();
+            RepositoryContext.SaveChanges();
         }
 
         public void DeletePhoto(Photo photo)
         {
-            throw new NotImplementedException();
+            RepositoryContext.Photos.Remove(photo);
         }
     }
 }

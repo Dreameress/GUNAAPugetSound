@@ -1,4 +1,5 @@
-﻿using GUNAAPugetSound.Helpers;
+﻿using Contracts;
+using GUNAAPugetSound.Helpers;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using MimeKit.Text;
@@ -7,10 +8,6 @@ using SmtpClient = MailKit.Net.Smtp.SmtpClient;
 
 namespace GUNAAPugetSound.Services
 {
-    public interface IEmailService
-    {
-        void Send(string to, string subject, string html, string from = null);
-    }
 
     public class EmailService : IEmailService
     {
