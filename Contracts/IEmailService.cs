@@ -7,5 +7,6 @@ namespace Contracts
     public interface IEmailService
     {
         void Send(string to, string subject, string html, string from = null);
+        void SendScholarship(string subject, string html, string from = null);
     }
 }

@@ -13,8 +13,9 @@ namespace Contracts
         IEnumerable<Event> GetByYear(int year);
         Event GetById(int id);
         IEnumerable<Event> GetAllEvents();
-        void CreateEvent(Event calendarEvent, int accountId);
-        void UpdateEvent(Event calendarEvent, int accountId);
+        bool Exists(Event calendarEvent);
+        void CreateEvent(ref Event calendarEvent, int accountId);
+        void UpdateEvent(ref Event calendarEvent, int accountId);
         void DeleteEvent(Event calendarEvent);
     }
 }

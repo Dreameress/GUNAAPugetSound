@@ -42,7 +42,13 @@ namespace Repository
             return RepositoryContext.Events;
         }
 
-        public void CreateEvent(Event calendarEvent, int accountId)
+        public bool Exists(Event calendarEvent)
+        {
+            var inRangeEvents = GetByDateRange(calendarEvent.Start, calendarEvent.End);
+            return inRangeEvents.Any();
+        }
+
+        public void CreateEvent(ref Event calendarEvent, int accountId)
         {
             calendarEvent.Created = DateTime.UtcNow;
             calendarEvent.CreatedBy = accountId;
@@ -51,7 +57,7 @@ namespace Repository
 
         }
 
-        public void UpdateEvent(Event calendarEvent, int accountId)
+        public void UpdateEvent(ref Event calendarEvent, int accountId)
         {
             calendarEvent.Updated = DateTime.UtcNow;
             calendarEvent.UpdatedBy = accountId;

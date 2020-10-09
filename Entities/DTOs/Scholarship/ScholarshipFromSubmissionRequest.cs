@@ -1,8 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
 
-namespace GUNAAPugetSound.ViewModels
+namespace Entities.DTOs.Scholarship
 {
-    public class ScholarshipFormViewModel
+    class ScholarshipFromSubmissionRequest
     {
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "First Name is Required")]
@@ -102,12 +105,8 @@ namespace GUNAAPugetSound.ViewModels
 
         [DataType(DataType.Text)]
         public string Signature { get; set; }
-        [StringLength(1)]
         public bool Complete { get; set; }
         [DataType(DataType.DateTime)]
-        public bool CompleteTime { get; set; }
-
-        public string RetrunUrl { get; set; }
-
+        public DateTime? CompleteTime { get; set; }
     }
 }
