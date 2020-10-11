@@ -1,13 +1,13 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Text;
 using GUNAAPugetSound.Entities.Enums;
 
-namespace Entities.Models
+namespace Entities.DTOs.Officers
 {
-    public class Officer
+    public class OfficerResponse : BaseModel<OfficerResponse>
     {
-        [Key]
-        public Guid OfficerId { get; set; }
+        public Guid Id { get; set; }
         public OfficerRole Role { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

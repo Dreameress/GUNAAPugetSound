@@ -2,7 +2,7 @@
 
 namespace Entities.DTOs.Accounts
 {
-    public class ResetPasswordRequest
+    public class ResetPasswordRequest : BaseModel<ResetPasswordRequest>
     {
         [Required]
         public string Token { get; set; }

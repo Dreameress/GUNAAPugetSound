@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Contracts;
-using Entities.DTOs.Accounts;
+using Entities.DTOs.Scholarship;
 using GUNAAPugetSound.Helpers;
-using GUNAAPugetSound.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -31,7 +26,7 @@ namespace GUNAAPugetSound.Controllers
             _emailService = emailService;
         }
 
-        [HttpPost("authenticate")]
+        [HttpPost("submit")]
         public IActionResult SubmitScholarshipFrom(ScholarshipFromSubmissionRequest model)
         {
             //Create HTML Form with model data

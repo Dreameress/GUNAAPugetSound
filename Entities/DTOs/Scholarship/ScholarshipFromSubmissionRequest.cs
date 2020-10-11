@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities.DTOs.Scholarship
 {
-    class ScholarshipFromSubmissionRequest
+    public class ScholarshipFromSubmissionRequest : BaseModel<ScholarshipFromSubmissionRequest>
     {
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "First Name is Required")]

@@ -2,10 +2,8 @@
 using AutoMapper;
 using Contracts;
 using Entities.DTOs.Content;
-using Entities.Models;
 using GUNAAPugetSound.Entities.Enums;
 using GUNAAPugetSound.Helpers;
-using GUNAAPugetSound.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GUNAAPugetSound.Controllers
@@ -15,16 +13,14 @@ namespace GUNAAPugetSound.Controllers
     public class ContentController : BaseController
     {
         private ILoggerManager _logger;
-        private IRepositoryWrapper _repository;
+        private readonly IRepositoryWrapper _repository;
         private IMapper _mapper;
-        private readonly AppSettings _appSettings;
 
-        public ContentController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper, AppSettings appSettings, IEmailService emailService)
+        public ContentController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper, IEmailService emailService)
         {
             _logger = logger;
             _repository = repository;
             _mapper = mapper;
-            _appSettings = appSettings;
         }
 
         #region Get Content
@@ -47,8 +43,8 @@ namespace GUNAAPugetSound.Controllers
 
         #region Update Content
 
-        [Helpers.Authorize(Role.Admin)]
-        [HttpPut("{id:int}")]
+        [Authorize(Role.Admin)]
+        [HttpPut]
         public ActionResult<ContentResponse> UpdateHomeContent(UpdateHomeContentRequest model)
         {
             // only admins can update content
@@ -56,6 +52,11 @@ namespace GUNAAPugetSound.Controllers
                 return Unauthorized(new { message = "Unauthorized" });
 
             var content = _repository.Content.GetContent();
+            if (!string.IsNullOrEmpty(model.HomeMainHeader))
+            {
+                content.HomeMainHeader = model.HomeMainHeader;
+            }
+
             if (!string.IsNullOrEmpty(model.HomeSubHeader))
             {
                 content.HomeSubHeader = model.HomeSubHeader;
@@ -75,12 +76,41 @@ namespace GUNAAPugetSound.Controllers
                 content.HomeLine3 = model.HomeLine3;
             }
 
+            if (!string.IsNullOrEmpty(model.HomeLine4))
+            {
+                content.HomeLine4 = model.HomeLine4;
+            }
+
             _repository.Content.UpdateContent(ref content, Account.Id);
             return Ok(content);
         }
 
-        [Helpers.Authorize(Role.Admin)]
-        [HttpPut("{id:int}")]
+        [Authorize(Role.Admin)]
+        [HttpPut]
+        public ActionResult<ContentResponse> UpdateCalendarContent(UpdateCalendarContentRequest model)
+        {
+
+            // only admins can update content
+            if (Account.Role != Role.Admin)
+                return Unauthorized(new { message = "Unauthorized" });
+
+            var content = _repository.Content.GetContent();
+            if (!string.IsNullOrEmpty(model.CalendarMainHeader))
+            {
+                content.CalendarMainHeader = model.CalendarMainHeader;
+            }
+
+            if (!string.IsNullOrEmpty(model.CalendarSubHeader))
+            {
+                content.CalendarSubHeader = model.CalendarSubHeader;
+            }
+
+            _repository.Content.UpdateContent(ref content, Account.Id);
+            return Ok(content);
+        }
+
+        [Authorize(Role.Admin)]
+        [HttpPut]
         public ActionResult<ContentResponse> UpdateOfficerContent(UpdateOfficerContentRequest model)
         {
 
@@ -89,6 +119,12 @@ namespace GUNAAPugetSound.Controllers
                 return Unauthorized(new { message = "Unauthorized" });
 
             var content = _repository.Content.GetContent();
+
+            if (!string.IsNullOrEmpty(model.OfficersMainHeader))
+            {
+                content.OfficersMainHeader = model.OfficersMainHeader;
+            }
+
             if (!string.IsNullOrEmpty(model.OfficersSubHeader))
             {
                 content.OfficersSubHeader = model.OfficersSubHeader;
@@ -99,8 +135,8 @@ namespace GUNAAPugetSound.Controllers
         }
 
 
-        [Helpers.Authorize(Role.Admin)]
-        [HttpPut("{id:int}")]
+        [Authorize(Role.Admin)]
+        [HttpPut]
         public ActionResult<ContentResponse> UpdateCommitteeContent(UpdateCommitteeContentRequest model)
         {
 
@@ -109,6 +145,11 @@ namespace GUNAAPugetSound.Controllers
                 return Unauthorized(new { message = "Unauthorized" });
 
             var content = _repository.Content.GetContent();
+            if (!string.IsNullOrEmpty(model.CommitteesMainHeader))
+            {
+                content.CommitteesMainHeader = model.CommitteesMainHeader;
+            }
+
             if (!string.IsNullOrEmpty(model.CommitteesSubHeader))
             {
                 content.CommitteesSubHeader = model.CommitteesSubHeader;
@@ -119,8 +160,8 @@ namespace GUNAAPugetSound.Controllers
         }
 
 
-        [Helpers.Authorize(Role.Admin)]
-        [HttpPut("{id:int}")]
+        [Authorize(Role.Admin)]
+        [HttpPut]
         public ActionResult<ContentResponse> UpdateMembershipContent(UpdateMembershipContentRequest model)
         {
             // only admins can update content
@@ -128,6 +169,10 @@ namespace GUNAAPugetSound.Controllers
                 return Unauthorized(new { message = "Unauthorized" });
 
             var content = _repository.Content.GetContent();
+            if (!string.IsNullOrEmpty(model.MembershipMainHeader))
+            {
+                content.MembershipMainHeader = model.MembershipMainHeader;
+            }
             if (!string.IsNullOrEmpty(model.MembershipSubHeader))
             {
                 content.MembershipSubHeader = model.MembershipSubHeader;
@@ -178,8 +223,8 @@ namespace GUNAAPugetSound.Controllers
         }
 
 
-        [Helpers.Authorize(Role.Admin)]
-        [HttpPut("{id:int}")]
+        [Authorize(Role.Admin)]
+        [HttpPut]
         public ActionResult<ContentResponse> UpdateScholarshipContent(UpdateScholarshipContentRequest model)
         {
 
@@ -188,6 +233,10 @@ namespace GUNAAPugetSound.Controllers
                 return Unauthorized(new { message = "Unauthorized" });
 
             var content = _repository.Content.GetContent();
+            if (!string.IsNullOrEmpty(model.ScholarshipMainHeader))
+            {
+                content.ScholarshipMainHeader = model.ScholarshipMainHeader;
+            }
             if (!string.IsNullOrEmpty(model.ScholarshipSubHeader))
             {
                 content.ScholarshipSubHeader = model.ScholarshipSubHeader;
@@ -198,19 +247,28 @@ namespace GUNAAPugetSound.Controllers
                 content.ScholarshipLine1 = model.ScholarshipLine1;
             }
 
-            if (!string.IsNullOrEmpty(model.ScholarshipDocumentName1))
+            _repository.Content.UpdateContent(ref content, Account.Id);
+            return Ok(content);
+        }
+
+        [Authorize(Role.Admin)]
+        [HttpPut]
+        public ActionResult<ContentResponse> UpdatePhotoAlbumContent(UpdatePhotoContentRequest model)
+        {
+
+            // only admins can update content
+            if (Account.Role != Role.Admin)
+                return Unauthorized(new { message = "Unauthorized" });
+
+            var content = _repository.Content.GetContent();
+            if (!string.IsNullOrEmpty(model.PhotoMainHeader))
             {
-                content.ScholarshipDocumentName1 = model.ScholarshipDocumentName1;
+                content.PhotoMainHeader = model.PhotoMainHeader;
             }
 
-            if (!string.IsNullOrEmpty(model.ScholarshipDocumentName2))
+            if (!string.IsNullOrEmpty(model.PhotoSubHeader))
             {
-                content.ScholarshipDocumentName2 = model.ScholarshipDocumentName2;
-            }
-
-            if (!string.IsNullOrEmpty(model.ScholarshipDocumentName3))
-            {
-                content.ScholarshipDocumentName3 = model.ScholarshipDocumentName3;
+                content.PhotoSubHeader = model.PhotoSubHeader;
             }
 
             _repository.Content.UpdateContent(ref content, Account.Id);
@@ -218,8 +276,8 @@ namespace GUNAAPugetSound.Controllers
         }
 
 
-        [Helpers.Authorize(Role.Admin)]
-        [HttpPut("{id:int}")]
+        [Authorize(Role.Admin)]
+        [HttpPut]
         public ActionResult<ContentResponse> UpdateAboutUsContent(UpdateAboutUsContentRequest model)
         {
 
@@ -228,21 +286,39 @@ namespace GUNAAPugetSound.Controllers
                 return Unauthorized(new { message = "Unauthorized" });
 
             var content = _repository.Content.GetContent();
+            if (!string.IsNullOrEmpty(model.AboutUsHeader))
+            {
+                content.AboutUsHeader = model.AboutUsHeader;
+            }
+
             if (!string.IsNullOrEmpty(model.AboutUsSubHeader))
             {
                 content.AboutUsSubHeader = model.AboutUsSubHeader;
             }
 
-            if (!string.IsNullOrEmpty(model.AboutUsQuote))
+            if (!string.IsNullOrEmpty(model.AboutUsQuoteLine1))
             {
-                content.AboutUsQuote = model.AboutUsQuote;
+                content.AboutUsQuoteLine1 = model.AboutUsQuoteLine1;
+            }
+            if (!string.IsNullOrEmpty(model.AboutUsQuoteLine2))
+            {
+                content.AboutUsQuoteLine2 = model.AboutUsQuoteLine2;
             }
 
+            if (!string.IsNullOrEmpty(model.AboutUsQuoteLine3))
+            {
+                content.AboutUsQuoteLine3 = model.AboutUsQuoteLine3;
+            }
+
+            if (!string.IsNullOrEmpty(model.AboutUsQuoteLine4))
+            {
+                content.AboutUsQuoteLine4 = model.AboutUsQuoteLine4;
+            }
             _repository.Content.UpdateContent(ref content, Account.Id);
             return Ok(content);
         }
 
-        [Helpers.Authorize(Role.Admin)]
+        [Authorize(Role.Admin)]
         [HttpPut("{id:int}")]
         public ActionResult<ContentResponse> UpdateContactUsContent(UpdateContactUsContentRequest model)
         {
@@ -252,6 +328,11 @@ namespace GUNAAPugetSound.Controllers
                 return Unauthorized(new { message = "Unauthorized" });
 
             var content = _repository.Content.GetContent();
+            if (!string.IsNullOrEmpty(model.ContactUsHeader))
+            {
+                content.ContactUsHeader = model.ContactUsHeader;
+            }
+
             if (!string.IsNullOrEmpty(model.ContactUsSubHeader))
             {
                 content.ContactUsSubHeader = model.ContactUsSubHeader;
@@ -273,10 +354,19 @@ namespace GUNAAPugetSound.Controllers
                 content.ContactUsStreetAddress = model.ContactUsStreetAddress;
             }
 
-
-            if (!string.IsNullOrEmpty(model.ContactUsCityStateZip))
+            if (!string.IsNullOrEmpty(model.ContactUsCity))
             {
-                content.ContactUsCityStateZip = model.ContactUsCityStateZip;
+                content.ContactUsCity = model.ContactUsCity;
+            }
+
+            if (!string.IsNullOrEmpty(model.ContactUsState))
+            {
+                content.ContactUsState = model.ContactUsState;
+            }
+
+            if (!string.IsNullOrEmpty(model.ContactUsZipCode))
+            {
+                content.ContactUsZipCode = model.ContactUsZipCode;
             }
 
             _repository.Content.UpdateContent(ref content, Account.Id);

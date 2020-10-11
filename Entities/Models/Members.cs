@@ -1,10 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entities.Models
 {
     public class Member
     {
-        public Guid Id { get; set; }
+        [Key]
+        public Guid MemberId { get; set; }
 
         public string UserId { get; set; }
         public string NameFirst { get; set; }

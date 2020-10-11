@@ -2,7 +2,7 @@
 
 namespace Entities.DTOs.Accounts
 {
-    public class AuthenticateRequest
+    public class AuthenticateRequest : BaseModel<AuthenticateRequest>
     {
         [Required]
         [EmailAddress]

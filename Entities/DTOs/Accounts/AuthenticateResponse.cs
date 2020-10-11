@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Entities.DTOs.Accounts
 {
-    public class AuthenticateResponse
+    public class AuthenticateResponse : BaseModel<AuthenticateResponse>
     {
         public int Id { get; set; }
         public string Title { get; set; }

@@ -1,7 +1,13 @@
-﻿namespace Entities.DTOs.Content
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace Entities.DTOs.Content
 {
-    public class UpdateMembershipContentRequest
+    public class UpdateMembershipContentRequest : BaseModel<UpdateMembershipContentRequest>
     {
+        [Required]
+        public Guid Id { get; set; }
+        public string MembershipMainHeader { get; set; }
         public string MembershipSubHeader { get; set; }
         public string MemberShipName1 { get; set; }
         public string Membership1Amount1 { get; set; }

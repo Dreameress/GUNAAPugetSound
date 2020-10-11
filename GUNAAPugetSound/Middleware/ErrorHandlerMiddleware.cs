@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Contracts;
 using GUNAAPugetSound.Helpers;
 using Microsoft.AspNetCore.Http;
 
@@ -11,10 +12,12 @@ namespace GUNAAPugetSound.Middleware
     public class ErrorHandlerMiddleware
     {
         private readonly RequestDelegate _next;
+        private readonly ILoggerManager _logger;
 
-        public ErrorHandlerMiddleware(RequestDelegate next)
+        public ErrorHandlerMiddleware(RequestDelegate next, ILoggerManager logger)
         {
             _next = next;
+            _logger = logger;
         }
 
         public async Task Invoke(HttpContext context)
@@ -25,6 +28,7 @@ namespace GUNAAPugetSound.Middleware
             }
             catch (Exception error)
             {
+                
                 var response = context.Response;
                 response.ContentType = "application/json";
 
@@ -40,7 +44,7 @@ namespace GUNAAPugetSound.Middleware
                 };
 
                 var result = JsonSerializer.Serialize(new { message = error?.Message });
-                //_logger.LogError($"Something went wrong: {result}");
+                _logger.LogError($"Something went wrong: {result}");
                 await response.WriteAsync(result);
             }
         }

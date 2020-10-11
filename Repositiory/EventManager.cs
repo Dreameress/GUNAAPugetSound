@@ -21,7 +21,7 @@ namespace Repository
             return RepositoryContext.Events.Where(e => e.Start.Date >= start.Date && e.End.Date <= end.Date);
         }
 
-        public IEnumerable<Event> GetByMonth(int month, int? year = null)
+        public IEnumerable<Event> GetByMonth(int month, int? year)
         {
             year ??= DateTime.Now.Year;
             return RepositoryContext.Events.Where(e => e.Start.Month == month && e.Start.Year == year);
@@ -32,7 +32,7 @@ namespace Repository
             return RepositoryContext.Events.Where(e => e.Start.Year == year);
         }
 
-        public Event GetById(int id)
+        public Event GetById(Guid id)
         {
             return RepositoryContext.Events.Find(id);
         }

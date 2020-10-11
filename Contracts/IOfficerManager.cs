@@ -10,12 +10,12 @@ namespace Contracts
     public interface IOfficerManager : IRepositoryBase<Officer>
     {
         bool OfficerWithRoleExists(OfficerRole role);
-        Officer GetOfficerById(int id);
+        Officer GetOfficerById(Guid id);
         Officer GetOfficerByMemberId(int memberId);
         IEnumerable<Officer> GetAllOfficers();
         IEnumerable<Officer> GetActiveOfficers();
-        Officer CreateOfficer(Officer officer, int? accountId, int? memberId);
-        Officer UpdateOfficer(Officer officer, int accountId);
+        Officer AddOfficer(ref Officer officer, int? accountId, int? memberId);
+        Officer UpdateOfficer(ref Officer officer, int accountId, int? memberId);
         void DeactivateOfficer(Officer officer, int accountId);
     }
 }

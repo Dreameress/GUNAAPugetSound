@@ -1,7 +1,13 @@
-﻿namespace Entities.DTOs.Content
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace Entities.DTOs.Content
 {
-    public class UpdateCommitteeContentRequest
+    public class UpdateCommitteeContentRequest : BaseModel<UpdateCommitteeContentRequest>
     {
+        [Required]
+        public Guid Id { get; set; }
+        public string CommitteesMainHeader { get; set; }
         public string CommitteesSubHeader { get; set; }
     }
 }

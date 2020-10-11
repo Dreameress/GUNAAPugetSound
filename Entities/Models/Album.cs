@@ -5,7 +5,8 @@ namespace Entities.Models
 {
     public class Album
     {
-        public Guid Id { get; set; }
+        [Key]
+        public Guid AlbumId { get; set; }
 
         [Required, MaxLength(160)]
         [Display(Name = "Album Name")]

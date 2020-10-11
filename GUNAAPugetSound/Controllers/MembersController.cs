@@ -15,7 +15,7 @@ namespace GUNAAPugetSound.Controllers
     {
         public List<Member> MemberData => new[]
         {
-            new Member {NameFirst = "Charlene", NameLast = "F Davidson Jenkins", Id = Guid.NewGuid(), Position = OfficerRole.President.ToString()},
+            new Member {NameFirst = "Charlene", NameLast = "F Davidson Jenkins", MemberId = Guid.NewGuid(), Position = OfficerRole.President.ToString()},
             new Member
             {NameFirst = "Jeanie", NameLast = "Nelson", Position = OfficerRole.Secretary.ToString()},
             new Member{NameFirst = "Eva", NameLast = "Edwards", Position = OfficerRole.Treasurer.ToString(), Committee = CommitteeName.Hospitality.ToString()},

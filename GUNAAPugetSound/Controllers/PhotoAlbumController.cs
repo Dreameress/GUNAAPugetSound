@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using AutoMapper;
+using Contracts;
 using Entities.DTOs.Photos;
+using Entities.Models;
 using GUNAAPugetSound.Entities.Enums;
-using GUNAAPugetSound.Services;
+using GUNAAPugetSound.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GUNAAPugetSound.Controllers
@@ -11,45 +14,51 @@ namespace GUNAAPugetSound.Controllers
     [Route("api/[controller]")]
     public class PhotoAlbumsController : BaseController
     {
-        private readonly IPhotoService _photoService;
-        public PhotoAlbumsController(IPhotoService photoService)
+        private ILoggerManager _logger;
+        private IRepositoryWrapper _repository;
+        private IMapper _mapper;
+
+        public PhotoAlbumsController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper)
         {
-            _photoService = photoService;
+            _logger = logger;
+            _repository = repository;
+            _mapper = mapper;
         }
 
+
         #region Get Photos & Albums
-        [HttpGet]
-        public ActionResult<PhotosResponse> GetPhotoById(Guid id)
+        [HttpGet("{id:Guid}")]
+        public ActionResult<PhotoResponse> GetPhotoById(Guid id)
         {
-            PhotosResponse photo = _photoService.GetPhotoById(id);
+            var photo = _mapper.Map<PhotoResponse>( _repository.Photo.GetPhotoById(id));
             return Ok(photo);
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<PhotosResponse>> GetAllPhotos()
+        public ActionResult<IEnumerable<PhotoResponse>> GetAllPhotos()
         {
-            IEnumerable<PhotosResponse> photos = _photoService.GetAllPhotos();
+            var photos = _mapper.Map <IEnumerable<PhotoResponse>>( _repository.Photo.GetAllPhotos());
             return Ok(photos);
         }
 
-        [HttpGet]
-        public ActionResult<IEnumerable<PhotosResponse>> GetPhotosByAlbumId(Guid id)
+        [HttpGet("{id:Guid}")]
+        public ActionResult<IEnumerable<PhotoResponse>> GetPhotosByAlbumId(Guid id)
         {
-            IEnumerable<PhotosResponse> photos = _photoService.GetPhotosByAlbumId(id);
+            var photos = _mapper.Map<IEnumerable<PhotoResponse>>(_repository.Photo.GetPhotosByAlbumId(id));
             return Ok(photos);
         }
 
-        [HttpGet]
-        public ActionResult<PhotoAlbumResponse> GetAllPhotoAlbums(Guid id)
+        [HttpGet("{id:Guid}")]
+        public ActionResult<PhotoAlbumResponse> GetAlbumById(Guid id)
         {
-            PhotoAlbumResponse album = _photoService.GetAlbumByAlbumId(id);
+            var album = _mapper.Map<PhotoAlbumResponse>(_repository.Album.GetAlbumByAlbumId(id));
             return Ok(album);
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<PhotoAlbumResponse>> GetAllPhotoAlbums()
         {
-            IEnumerable<PhotoAlbumResponse> albums = _photoService.GetAllAlbums();
+            var albums = _mapper.Map<IEnumerable<PhotoAlbumResponse>>(_repository.Album.GetAllAlbums());
             return Ok(albums);
         }
 
@@ -59,58 +68,69 @@ namespace GUNAAPugetSound.Controllers
 
         [Helpers.Authorize(Role.Admin)]
         [HttpPost]
-        public ActionResult<PhotoAlbumResponse> CreateAlbum(CreateAlbumRequest model)
+        public ActionResult<PhotoAlbumResponse> CreateAlbum(CreatePhotoAlbumRequest model)
         {
             // only admins can create albums
-            var album = _photoService.CreateAlbum(model, Account.Id);
-            return Ok(album);
+            if (Account.Role != Role.Admin)
+                return Unauthorized(new { message = "Unauthorized" });
+
+            if (_repository.Album.AlbumNameExists(model.Name))
+                throw new AppException($"Album with this name already exists.");
+
+            var album = _mapper.Map<Album>(model);
+            _repository.Album.CreateAlbum(ref album, Account.Id);
+            // only admins can create albums
+            var photoAlbumResponse = _mapper.Map<PhotoAlbumResponse>(album);
+            return Ok(photoAlbumResponse);
         }
 
         [Helpers.Authorize(Role.Admin), DisableRequestSizeLimit]
         [HttpPost]
-        public ActionResult<PhotosResponse> AddPhoto([Bind("ImageId,Title,ImageName")] AddPhotoRequest model)
+        public ActionResult<PhotoResponse> AddPhoto([Bind("ImageId,Title,ImageName")] AddPhotoRequest model)
         {
-            // only admins can add a photo
-            var account = _photoService.CreatePhoto(model, Account.Id);
-            return Ok(account);
+            // only admins can create albums
+            if (Account.Role != Role.Admin)
+                return Unauthorized(new { message = "Unauthorized" });
+
+            var photo = _mapper.Map<Photo>(model);
+            _repository.Photo.CreatePhoto(ref photo, Account.Id);
+            // only admins can create albums
+            var photoResponse = _mapper.Map<PhotoResponse>(photo);
+            return Ok(photoResponse);
         }
 
         [Helpers.Authorize(Role.Admin), DisableRequestSizeLimit]
         [HttpPost]
-        public ActionResult<PhotosResponse> AddPhotos(List<AddPhotoRequest> model)
+        public ActionResult<List<PhotoResponse>> AddPhotos(List<AddPhotoRequest> model)
         {
+            // only admins can create albums
+            if (Account.Role != Role.Admin)
+                return Unauthorized(new { message = "Unauthorized" });
+            //map photos 
+            var photos = _mapper.Map<IEnumerable<Photo>>(model);
+            _repository.Photo.CreatePhotos(ref photos, Account.Id);
+
             // only admins can add photos
-            var account = _photoService.CreatePhotos(model, Account.Id);
-            return Ok(account);
+            var photosResponse = _mapper.Map<IEnumerable<PhotoResponse>>(photos);
+            return Ok(photosResponse);
         }
         #endregion
 
         #region Update Photos & Albums
-
-
         [Helpers.Authorize]
-        [HttpPut("{id:int}")]
-        public ActionResult<PhotoAlbumResponse> UpdateAlbum(int id, UpdatePhotoAlbumRequest model)
+        [HttpPut]
+        public ActionResult<PhotoAlbumResponse> UpdateAlbum(UpdatePhotoAlbumRequest model)
         {
             // only admins can update albums
             if (Account.Role != Role.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
-            var account = _photoService.UpdateAlbum(id, model, Account.Id);
-            return Ok(account);
-        }
+            var album = _repository.Album.GetAlbumByAlbumId(model.Id);
+            // copy model to account and save
+            _mapper.Map(model, album);
 
-
-        [Helpers.Authorize]
-        [HttpPut("{id:int}")]
-        public ActionResult<PhotosResponse> UpdatePhoto(int id, UpdatePhotosRequest model)
-        {
-            // only admins can update photos
-            if (Account.Role != Role.Admin)
-                return Unauthorized(new { message = "Unauthorized" });
-
-            var account = _photoService.UpdatePhoto(id, model, Account.Id);
-            return Ok(account);
+            _repository.Album.UpdateAlbum(ref album, Account.Id);
+            return Ok(album);
         }
         #endregion
 
@@ -124,7 +144,9 @@ namespace GUNAAPugetSound.Controllers
             if (Account.Role != Role.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
-            _photoService.DeletePhoto(id);
+            var photo = _repository.Photo.GetPhotoById(id);
+            _repository.Photo.DeletePhoto(photo);
+
             return Ok(new { message = "Photo deleted successfully" });
         }
 
@@ -136,7 +158,8 @@ namespace GUNAAPugetSound.Controllers
             if (Account.Role != Role.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
-            _photoService.DeleteAlbum(id);
+            var album = _repository.Album.GetAlbumByAlbumId(id);
+            _repository.Album.DeleteAlbum(album);
             return Ok(new { message = "Photo Album deleted successfully" });
         }
 

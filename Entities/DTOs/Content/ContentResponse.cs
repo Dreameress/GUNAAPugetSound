@@ -3,7 +3,7 @@ using Entities.Models;
 
 namespace Entities.DTOs.Content
 {
-    public class ContentResponse
+    public class ContentResponse : BaseModel<ContentResponse>
     {
         public Models.Content Content { get; set; }
         public IEnumerable<Officer> Officers { get; set; }

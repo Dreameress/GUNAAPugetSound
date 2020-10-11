@@ -15,7 +15,7 @@ namespace Repository
         {
         }
 
-        public CommitteeMember GetCommitteeMemberById(int id)
+        public CommitteeMember GetCommitteeMemberById(Guid id)
         {
             return RepositoryContext.CommitteeMembers.Find(id);
         }
@@ -52,8 +52,13 @@ namespace Repository
             return member;
         }
 
-        public CommitteeMember UpdateCommitteeMember(ref CommitteeMember member, int accountId)
+        public CommitteeMember UpdateCommitteeMember(ref CommitteeMember member, int accountId, int? memberId)
         {
+            if (memberId != null)
+            {
+                member.MemberId = memberId;
+            }
+
             member.Updated = DateTime.UtcNow;
             member.UpdatedBy = accountId;
             RepositoryContext.CommitteeMembers.Update(member);

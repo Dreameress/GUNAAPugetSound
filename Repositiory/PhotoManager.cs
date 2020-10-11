@@ -29,7 +29,7 @@ namespace Repository
             return RepositoryContext.Photos;
         }
 
-        public void CreatePhoto(Photo photo, int accountId)
+        public void CreatePhoto(ref Photo photo, int accountId)
         {
             photo.Created = DateTime.UtcNow;
             photo.AddedBy = accountId;
@@ -37,7 +37,7 @@ namespace Repository
             RepositoryContext.SaveChanges();
         }
 
-        public void CreatePhotos(List<Photo> photos, int accountId)
+        public void CreatePhotos(ref IEnumerable<Photo> photos, int accountId)
         {
             foreach (var photo in photos)
             {

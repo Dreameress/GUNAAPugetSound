@@ -2,7 +2,7 @@
 
 namespace Entities.DTOs.Accounts
 {
-    public class VerifyEmailRequest
+    public class VerifyEmailRequest : BaseModel<VerifyEmailRequest>
     {
         [Required]
         public string Token { get; set; }

@@ -20,7 +20,7 @@ namespace Repository
             return RepositoryContext.Officers.Any(x => x.Role == role);
         }
 
-        public Officer GetOfficerById(int id)
+        public Officer GetOfficerById(Guid id)
         {
             return RepositoryContext.Officers.Find(id);
         }
@@ -39,9 +39,9 @@ namespace Repository
             return RepositoryContext.Officers.Where(o => o.Active);
         }
 
-        public Officer CreateOfficer(Officer officer, int? accountId, int? memberId)
+        public Officer AddOfficer(ref Officer officer, int? accountId, int? memberId)
         {
-            officer.Created = DateTime.UtcNow;
+           
             if (accountId != null)
             {
                 officer.CreatedBy = accountId;
@@ -52,13 +52,19 @@ namespace Repository
                 officer.MemberId = memberId; 
             }
 
+            officer.Created = DateTime.UtcNow;
             RepositoryContext.Officers.Add(officer);
             RepositoryContext.SaveChanges();
             return officer;
         }
 
-        public Officer UpdateOfficer(Officer officer, int accountId)
+        public Officer UpdateOfficer(ref Officer officer, int accountId, int? memberId)
         {
+            if (memberId != null)
+            {
+                officer.MemberId = memberId;
+            }
+
             officer.Updated = DateTime.UtcNow;
             officer.UpdatedBy = accountId;
             RepositoryContext.Officers.Update(officer);

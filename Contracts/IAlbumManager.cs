@@ -8,10 +8,11 @@ namespace Contracts
 {
     public interface IAlbumManager : IRepositoryBase<Album>
     {
+        bool AlbumNameExists(string name);
         Album GetAlbumByAlbumId(Guid albumId);
         IEnumerable<Album> GetAllAlbums();
-        void CreateAlbum(Album album, int accountId);
-        void UpdateAlbum(Album album, int accountId);
+        void CreateAlbum(ref Album album, int accountId);
+        void UpdateAlbum(ref Album album, int accountId);
         void DeleteAlbum(Album album);
     }
 }

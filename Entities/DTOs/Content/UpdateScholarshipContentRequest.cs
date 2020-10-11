@@ -1,11 +1,14 @@
-﻿namespace Entities.DTOs.Content
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace Entities.DTOs.Content
 {
-    public class UpdateScholarshipContentRequest
-    { 
+    public class UpdateScholarshipContentRequest : BaseModel<UpdateScholarshipContentRequest>
+    {
+        [Required]
+        public Guid Id { get; set; }
+        public string ScholarshipMainHeader { get; set; }
         public string ScholarshipSubHeader { get; set; }
         public string ScholarshipLine1 { get; set; }
-        public string ScholarshipDocumentName1 { get; set; }
-        public string ScholarshipDocumentName2 { get; set; }
-        public string ScholarshipDocumentName3 { get; set; }
     }
 }

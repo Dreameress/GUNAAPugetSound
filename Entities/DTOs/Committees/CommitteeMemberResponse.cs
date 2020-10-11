@@ -1,14 +1,12 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using GUNAAPugetSound.Entities.Enums;
 
-namespace Entities.Models
+namespace Entities.DTOs.Committees
 {
-    public class Officer
+    public class CommitteeMemberResponse : BaseModel<CommitteeMemberResponse>
     {
-        [Key]
-        public Guid OfficerId { get; set; }
-        public OfficerRole Role { get; set; }
+        public Guid Id { get; set; }
+        public CommitteeName Committee { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public bool Active { get; set; }

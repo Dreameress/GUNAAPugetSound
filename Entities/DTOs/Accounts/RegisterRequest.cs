@@ -2,7 +2,7 @@
 
 namespace Entities.DTOs.Accounts
 {
-    public class RegisterRequest
+    public class RegisterRequest : BaseModel<RegisterRequest>
     {
         [Required]
         public string Title { get; set; }

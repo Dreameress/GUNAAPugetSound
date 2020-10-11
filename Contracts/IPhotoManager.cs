@@ -11,8 +11,8 @@ namespace Contracts
         Photo GetPhotoById(Guid id);
         IEnumerable<Photo> GetPhotosByAlbumId(Guid albumId);
         IEnumerable<Photo> GetAllPhotos();
-        void CreatePhoto(Photo photo, int accountId);
-        void CreatePhotos(List<Photo> photos, int accountId);
+        void CreatePhoto(ref Photo photo, int accountId);
+        void CreatePhotos(ref IEnumerable<Photo> photos, int accountId);
         void DeletePhoto(Photo photo);
     }
 }

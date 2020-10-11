@@ -11,7 +11,7 @@ namespace Contracts
         IEnumerable<Event> GetByDateRange(DateTime start, DateTime end);
         IEnumerable<Event> GetByMonth(int month, int? year);
         IEnumerable<Event> GetByYear(int year);
-        Event GetById(int id);
+        Event GetById(Guid id);
         IEnumerable<Event> GetAllEvents();
         bool Exists(Event calendarEvent);
         void CreateEvent(ref Event calendarEvent, int accountId);

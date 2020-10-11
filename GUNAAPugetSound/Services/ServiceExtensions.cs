@@ -1,10 +1,9 @@
 ﻿using Contracts;
-using GUNAAPugetSound.Services;
 using LoggerService;
 using Microsoft.Extensions.DependencyInjection;
 using Repository;
 
-namespace GUNAAPugetSound.Extensions
+namespace GUNAAPugetSound.Services
 {
     public static class ServiceExtensions
     {

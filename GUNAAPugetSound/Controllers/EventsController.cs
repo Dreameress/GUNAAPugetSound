@@ -21,26 +21,20 @@ namespace GUNAAPugetSound.Controllers
         private ILoggerManager _logger;
         private IRepositoryWrapper _repository;
         private IMapper _mapper;
-        private readonly AppSettings _appSettings;
 
-        public EventsController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper, AppSettings appSettings, IEmailService emailService)
+        public EventsController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper, IEmailService emailService)
         {
             _logger = logger;
             _repository = repository;
             _mapper = mapper;
-            _appSettings = appSettings;
         }
        
 
-        [Helpers.Authorize]
-        [HttpGet("{id:int}")]
-        public ActionResult<EventsResponse> GetById(int id)
+        [HttpGet("{id:Guid}")]
+        public ActionResult<EventsResponse> GetById(Guid id)
         {
-            // users can get their own account and admins can get any account
-            if (id != Account.Id && Account.Role != Role.Admin)
-                return Unauthorized(new { message = "Unauthorized" });
 
-            var account = _repository.Account.GetById(id);
+            var account = _mapper.Map<EventsResponse>(_repository.Event.GetById(id));
             return Ok(account);
         }
 
@@ -53,24 +47,24 @@ namespace GUNAAPugetSound.Controllers
 
 
         [HttpGet]
-        public ActionResult<IEnumerable<EventsResponse>> GetByDateRange(DateTime start, DateTime end)
+        public ActionResult<IEnumerable<EventsResponse>> GetByDateRange(EventsByRangeRequest model)
         {
-            var accounts = _mapper.Map<IList<EventsResponse>>(_repository.Event.GetByDateRange(start, end));
+            var accounts = _mapper.Map<IList<EventsResponse>>(_repository.Event.GetByDateRange(model.Start, model.End));
             return Ok(accounts);
         }
 
 
         [HttpGet]
-        public ActionResult<IEnumerable<EventsResponse>> GetByMonth(int month, int? year)
+        public ActionResult<IEnumerable<EventsResponse>> GetByMonth(EventsByMonthRequest model)
         {
-            var accounts = _mapper.Map<IList<EventsResponse>>(_repository.Event.GetByMonth(month, year));
+            var accounts = _mapper.Map<IList<EventsResponse>>(_repository.Event.GetByMonth(model.Month, model.Year));
             return Ok(accounts);
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<EventsResponse>> GetByYear(int year)
+        public ActionResult<IEnumerable<EventsResponse>> GetByYear(EventsByYearRequest model)
         {
-            var accounts = _mapper.Map<IList<EventsResponse>>(_repository.Event.GetByYear(year));
+            var accounts = _mapper.Map<IList<EventsResponse>>(_repository.Event.GetByYear(model.Year));
             return Ok(accounts);
         }
 
@@ -78,7 +72,10 @@ namespace GUNAAPugetSound.Controllers
         [Helpers.Authorize(Role.Admin)]
         [HttpPost]
         public ActionResult<EventsResponse> Create(CreateEventRequest model)
-        {
+        { 
+            // only admins can create albums
+            if (Account.Role != Role.Admin)
+                return Unauthorized(new { message = "Unauthorized" });
             // map model to new account object
             var calendarEvent = _mapper.Map<Event>(model);
             // validate
@@ -91,14 +88,14 @@ namespace GUNAAPugetSound.Controllers
         }
 
         [Helpers.Authorize(Role.Admin)]
-        [HttpPut("{id:int}")]
-        public ActionResult<EventsResponse> Update(int id, UpdateEventRequest model)
+        [HttpPut]
+        public ActionResult<EventsResponse> Update(UpdateEventRequest model)
         {
             // only admins can update events
             if (Account.Role != Role.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
-            var calendarEvent = _repository.Event.GetById(id);
+            var calendarEvent = _repository.Event.GetById(model.Id);
             // validate
             if(_repository.Event.Exists(calendarEvent))
                 throw new AppException($"Event overlaps existing events.");
@@ -113,17 +110,15 @@ namespace GUNAAPugetSound.Controllers
 
         [Helpers.Authorize(Role.Admin)]
         [HttpDelete("{id:int}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Guid id)
         {
             // users can delete their own account and admins can delete any account
-            if (id != Account.Id && Account.Role != Role.Admin)
+            if (Account.Role != Role.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
             var calendarEvent = _repository.Event.GetById(id);
-            _repository.Event.Delete(calendarEvent);
+            _repository.Event.DeleteEvent(calendarEvent);
             return Ok(new { message = "Event deleted successfully" });
         }
-
-
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Entities.DTOs.Accounts
 {
-    public class ForgotPasswordRequest
+    public class ForgotPasswordRequest : BaseModel<ForgotPasswordRequest>
     {
         [Required]
         [EmailAddress]

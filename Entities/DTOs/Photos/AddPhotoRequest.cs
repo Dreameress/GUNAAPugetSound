@@ -6,18 +6,8 @@ using Microsoft.AspNetCore.Http;
 
 namespace Entities.DTOs.Photos
 {
-    public class AddPhotoRequest
+    public class AddPhotoRequest : BaseModel<AddPhotoRequest>
     {
-        [Key]
-        public Guid Id { get; set; }
-
-        [Column(TypeName = "nvarchar(50)")]
-        public string Title { get; set; }
-
-        [Column(TypeName = "nvarchar(100)")]
-        [DisplayName("Image Name")]
-        public string ImageName { get; set; }
-
         [NotMapped]
         [DisplayName("Upload File")]
         public IFormFile ImageFile { get; set; }
@@ -26,7 +16,9 @@ namespace Entities.DTOs.Photos
         public Guid AlbumId { get; set; }
         [Required]
         public String Description { get; set; }
-        //public String ImagePath { get; set; }
-        //public String ThumbPath { get; set; }
+        [Required]
+        public String ImagePath { get; set; }
+        [Required]
+        public String ThumbPath { get; set; }
     }
 }

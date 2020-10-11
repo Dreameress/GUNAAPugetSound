@@ -3,7 +3,7 @@ using GUNAAPugetSound.Entities.Enums;
 
 namespace Entities.DTOs.Accounts
 {
-    public class CreateRequest
+    public class CreateRequest : BaseModel<CreateRequest>
     {
         [Required]
         public string Title { get; set; }

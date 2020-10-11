@@ -2,7 +2,7 @@
 
 namespace Entities.DTOs.Accounts
 {
-    public class AccountResponse
+    public class AccountResponse : BaseModel<AccountResponse>
     {
         public int Id { get; set; }
         public string Title { get; set; }

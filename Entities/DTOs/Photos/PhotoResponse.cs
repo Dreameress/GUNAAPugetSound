@@ -3,12 +3,11 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Entities.Models
+namespace Entities.DTOs.Photos
 {
-    public class Photo 
+    public class PhotoResponse : BaseModel<PhotoResponse>
     {
-        [Key]
-        public Guid PhotoId { get; set; }
+        public Guid Id { get; set; }
 
         public Guid AlbumId { get; set; }
 
