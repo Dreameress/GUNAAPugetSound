@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 GUNAAPugetSound/ClientApp/package-lock.json
+/GUNAAPugetSound/ClientApp/public/dist/wwwroot/content/images

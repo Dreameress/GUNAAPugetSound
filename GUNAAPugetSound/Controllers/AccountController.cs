@@ -35,14 +35,18 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<AuthenticateResponse> Authenticate(AuthenticateRequest model)
         {
             var account = _repository.Account.GetAccountByEmail(model.Email);
-
+            _logger.LogInfo($"Returned account data from database.");
+            
             if (account == null || !account.IsVerified || !BC.Verify(model.Password, account.PasswordHash))
                 throw new AppException("Email or password is incorrect");
+            
             _repository.Account.Authenticate(IpAddress(), _appSettings.Secret, ref account, out string jwtToken, out RefreshToken refreshToken);
             var response = _mapper.Map<AuthenticateResponse>(account);
             response.JwtToken = jwtToken;
             response.RefreshToken = refreshToken.Token;
             SetTokenCookie(response.RefreshToken);
+
+            _logger.LogInfo($"Set Cookie for auth token for account.");
             return Ok(response);
         }
 
@@ -51,10 +55,13 @@ namespace GUNAAPugetSound.Controllers
         {
             var refreshToken = Request.Cookies["refreshToken"];
             var account = _repository.Account.RefreshToken(refreshToken, IpAddress(), _appSettings.Secret, out string jwtToken, out RefreshToken newRefreshToken);
+            _logger.LogInfo($"Returned account data from database.");
+
             var response = _mapper.Map<AuthenticateResponse>(account);
             response.JwtToken = jwtToken;
             response.RefreshToken = newRefreshToken.Token;
             SetTokenCookie(response.RefreshToken);
+            _logger.LogInfo($"Set cookie for auth token for account.");
             return Ok(response);
         }
 
@@ -64,15 +71,18 @@ namespace GUNAAPugetSound.Controllers
         {
             // accept token from request body or cookie
             var token = model.Token ?? Request.Cookies["refreshToken"];
+            
 
             if (string.IsNullOrEmpty(token))
                 return BadRequest(new { message = "Token is required" });
+            _logger.LogInfo($"Returned token data from cookie");
 
             // users can revoke their own tokens and admins can revoke any tokens
             if (!Account.OwnsToken(token) && Account.Role != Role.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
-
+            
             _repository.Account.RevokeToken(token, IpAddress());
+            _logger.LogInfo($"Successfully revoked auth token.");
             return Ok(new { message = "Token revoked" });
         }
 
@@ -84,6 +94,8 @@ namespace GUNAAPugetSound.Controllers
             if (registered)
             {
                 _repository.Account.SendAlreadyRegisteredEmail(model.Email, Request.Headers["origin"], _emailService);
+
+                _logger.LogInfo("Successfully sent already registered email to user");
                 return Ok(new
                 {
                     message =
@@ -96,6 +108,7 @@ namespace GUNAAPugetSound.Controllers
             account.PasswordHash = BC.HashPassword(model.Password);
 
             _repository.Account.Register(model, Request.Headers["origin"], account, _emailService);
+            _logger.LogInfo($"Successfully registered user.");
             return Ok(new { message = "Registration successful, please check your email for verification instructions" });
         }
 
@@ -105,6 +118,7 @@ namespace GUNAAPugetSound.Controllers
             var account = _repository.Account.VerifyEmail(model.Token);
             if (account == null) throw new AppException("Verification failed");
             _repository.Account.SaveVerificationToken(model.Token, ref account);
+            _logger.LogInfo($"Successfully verified account.");
             return Ok(new { message = "Verification successful, you can now login" });
         }
 
@@ -112,6 +126,7 @@ namespace GUNAAPugetSound.Controllers
         public IActionResult ForgotPassword(ForgotPasswordRequest model)
         {
             _repository.Account.ForgotPassword(model, Request.Headers["origin"], _emailService);
+            _logger.LogInfo($"Successfully sent forgot password email.");
             return Ok(new { message = "Please check your email for password reset instructions" });
         }
 
@@ -121,6 +136,7 @@ namespace GUNAAPugetSound.Controllers
             var account = _repository.Account.ValidateResetToken(model.Token);
             if (account == null)
                 throw new AppException("Invalid token");
+            _logger.LogInfo($"Successfully validated reset token.");
             return Ok(new { message = "Token is valid" });
         }
 
@@ -132,7 +148,9 @@ namespace GUNAAPugetSound.Controllers
                 throw new AppException("Invalid token");
 
             _repository.Account.ResetPassword(model, account);
+            _logger.LogInfo($"Successfully reset password.");
             return Ok(new { message = "Password reset successful, you can now login" });
+
         }
 
         [Helpers.Authorize(Role.Admin)]

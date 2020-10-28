@@ -1,8 +1,11 @@
-﻿using AutoMapper;
+﻿using System.IO.Compression;
+using System.Text;
+using AutoMapper;
 using Contracts;
 using Entities.DTOs.Scholarship;
 using GUNAAPugetSound.Helpers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 namespace GUNAAPugetSound.Controllers
@@ -27,7 +30,7 @@ namespace GUNAAPugetSound.Controllers
         }
 
         [HttpPost("submit")]
-        public IActionResult SubmitScholarshipFrom(ScholarshipFromSubmissionRequest model)
+        public IActionResult SubmitScholarshipForm(ScholarshipFormSubmissionRequest model)
         {
             //Create HTML Form with model data
             string message;
@@ -43,12 +46,21 @@ namespace GUNAAPugetSound.Controllers
             //    message = $@"<p>Please use the below token to verify your email address with the <code>/accounts/verify-email</code> api route:</p>
             //                 <p><code>{account.VerificationToken}</code></p>";
             //}
-
+            var sb = new StringBuilder();
+      
             _emailService.SendScholarship(
                 subject: "GUNAA Puget Sound Scholarship Form Submission",
                 html: $@"<h4>Scholarship Form</h4>
                          <br />
-                         <p>Thanks for registering!</p>
+                         <p>Scholarship Form for {model.NameFirst + " " + model.NameLast}</p>]
+                         <p>Applicant's Name: {model.NameFirst + model.NameLast}</p>
+                         <p>Permanent Address: {model.Address}</p>
+                         <p>City: {model.City} | State: {model.State} | Zip: {model.ZipCode}
+                         <p>Phone: {model.Phone}</p>
+                         <p>Last School Attended: {model.LastSchool} | School Phone #: {model.SchoolPhone}</p>
+                         <p>School Address: {model.LastSchoolAddress}</p>
+                         <p>College Plans: {model.CompleteTime}</p>
+                         <p></p>
                          {message}"
             );
 

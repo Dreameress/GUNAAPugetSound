@@ -45,17 +45,21 @@
     <Compile Remove="Entities\**" />
     <Compile Remove="Migrations\**" />
     <Compile Remove="Models\**" />
+    <Compile Remove="Pages\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="Entities\**" />
     <Content Remove="Migrations\**" />
     <Content Remove="Models\**" />
+    <Content Remove="Pages\**" />
     <EmbeddedResource Remove="Entities\**" />
     <EmbeddedResource Remove="Migrations\**" />
     <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Pages\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="Entities\**" />
     <None Remove="Migrations\**" />
     <None Remove="Models\**" />
+    <None Remove="Pages\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 

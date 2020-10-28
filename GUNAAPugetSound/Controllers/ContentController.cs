@@ -35,6 +35,7 @@ namespace GUNAAPugetSound.Controllers
                 Events = _repository.Event.GetAllEvents(),
                 Albums = _repository.Album.GetAllAlbums()
             };
+            _logger.LogInfo("Returned content from database");
             return Ok(contentResponse);
         }
         #endregion
@@ -82,6 +83,7 @@ namespace GUNAAPugetSound.Controllers
             }
 
             _repository.Content.UpdateContent(ref content, Account.Id);
+            _logger.LogInfo("Updated home view content");
             return Ok(content);
         }
 
@@ -106,6 +108,7 @@ namespace GUNAAPugetSound.Controllers
             }
 
             _repository.Content.UpdateContent(ref content, Account.Id);
+            _logger.LogInfo("Updated calendar view content");
             return Ok(content);
         }
 
@@ -131,6 +134,7 @@ namespace GUNAAPugetSound.Controllers
             }
 
             _repository.Content.UpdateContent(ref content, Account.Id);
+            _logger.LogInfo("Updated officer view content");
             return Ok(content);
         }
 
@@ -156,6 +160,7 @@ namespace GUNAAPugetSound.Controllers
             }
 
             _repository.Content.UpdateContent(ref content, Account.Id);
+            _logger.LogInfo("Updated committee view content");
             return Ok(content);
         }
 
@@ -219,6 +224,7 @@ namespace GUNAAPugetSound.Controllers
             }
 
             _repository.Content.UpdateContent(ref content, Account.Id);
+            _logger.LogInfo("Updated membership view content");
             return Ok(content); 
         }
 
@@ -248,6 +254,7 @@ namespace GUNAAPugetSound.Controllers
             }
 
             _repository.Content.UpdateContent(ref content, Account.Id);
+            _logger.LogInfo("Updated scholarship view content");
             return Ok(content);
         }
 
@@ -272,6 +279,7 @@ namespace GUNAAPugetSound.Controllers
             }
 
             _repository.Content.UpdateContent(ref content, Account.Id);
+            _logger.LogInfo("Updated photo album view content");
             return Ok(content);
         }
 
@@ -315,6 +323,7 @@ namespace GUNAAPugetSound.Controllers
                 content.AboutUsQuoteLine4 = model.AboutUsQuoteLine4;
             }
             _repository.Content.UpdateContent(ref content, Account.Id);
+            _logger.LogInfo("Updated about us view content");
             return Ok(content);
         }
 
@@ -370,6 +379,7 @@ namespace GUNAAPugetSound.Controllers
             }
 
             _repository.Content.UpdateContent(ref content, Account.Id);
+            _logger.LogInfo("Updated contact us view content");
             return Ok(content);
         }
         #endregion

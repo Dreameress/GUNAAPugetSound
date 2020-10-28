@@ -31,6 +31,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<PhotoResponse> GetPhotoById(Guid id)
         {
             var photo = _mapper.Map<PhotoResponse>( _repository.Photo.GetPhotoById(id));
+            _logger.LogInfo("Returned Photo from database");
             return Ok(photo);
         }
 
@@ -38,6 +39,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<IEnumerable<PhotoResponse>> GetAllPhotos()
         {
             var photos = _mapper.Map <IEnumerable<PhotoResponse>>( _repository.Photo.GetAllPhotos());
+            _logger.LogInfo("Returned a list of Photos from database");
             return Ok(photos);
         }
 
@@ -45,6 +47,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<IEnumerable<PhotoResponse>> GetPhotosByAlbumId(Guid id)
         {
             var photos = _mapper.Map<IEnumerable<PhotoResponse>>(_repository.Photo.GetPhotosByAlbumId(id));
+            _logger.LogInfo("Returned all photos from album in database");
             return Ok(photos);
         }
 
@@ -52,6 +55,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<PhotoAlbumResponse> GetAlbumById(Guid id)
         {
             var album = _mapper.Map<PhotoAlbumResponse>(_repository.Album.GetAlbumByAlbumId(id));
+            _logger.LogInfo("Returned Album from database");
             return Ok(album);
         }
 
@@ -59,6 +63,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<IEnumerable<PhotoAlbumResponse>> GetAllPhotoAlbums()
         {
             var albums = _mapper.Map<IEnumerable<PhotoAlbumResponse>>(_repository.Album.GetAllAlbums());
+            _logger.LogInfo("Returned a list of all Albums from database");
             return Ok(albums);
         }
 
@@ -79,7 +84,7 @@ namespace GUNAAPugetSound.Controllers
 
             var album = _mapper.Map<Album>(model);
             _repository.Album.CreateAlbum(ref album, Account.Id);
-            // only admins can create albums
+            _logger.LogInfo("Created Photo Album");
             var photoAlbumResponse = _mapper.Map<PhotoAlbumResponse>(album);
             return Ok(photoAlbumResponse);
         }
@@ -96,6 +101,7 @@ namespace GUNAAPugetSound.Controllers
             _repository.Photo.CreatePhoto(ref photo, Account.Id);
             // only admins can create albums
             var photoResponse = _mapper.Map<PhotoResponse>(photo);
+            _logger.LogInfo("Added Photo to Photo Album");
             return Ok(photoResponse);
         }
 
@@ -112,6 +118,7 @@ namespace GUNAAPugetSound.Controllers
 
             // only admins can add photos
             var photosResponse = _mapper.Map<IEnumerable<PhotoResponse>>(photos);
+            _logger.LogInfo("Added multiple photos to Photo Album");
             return Ok(photosResponse);
         }
         #endregion
@@ -130,6 +137,7 @@ namespace GUNAAPugetSound.Controllers
             _mapper.Map(model, album);
 
             _repository.Album.UpdateAlbum(ref album, Account.Id);
+            _logger.LogInfo("Updated Photo Album");
             return Ok(album);
         }
         #endregion
@@ -146,7 +154,7 @@ namespace GUNAAPugetSound.Controllers
 
             var photo = _repository.Photo.GetPhotoById(id);
             _repository.Photo.DeletePhoto(photo);
-
+            _logger.LogInfo("Deleted Photo from Album");
             return Ok(new { message = "Photo deleted successfully" });
         }
 
@@ -160,6 +168,7 @@ namespace GUNAAPugetSound.Controllers
 
             var album = _repository.Album.GetAlbumByAlbumId(id);
             _repository.Album.DeleteAlbum(album);
+            _logger.LogInfo("Album deleted successfully");
             return Ok(new { message = "Photo Album deleted successfully" });
         }
 

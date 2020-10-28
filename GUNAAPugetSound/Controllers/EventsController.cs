@@ -35,6 +35,7 @@ namespace GUNAAPugetSound.Controllers
         {
 
             var account = _mapper.Map<EventsResponse>(_repository.Event.GetById(id));
+            _logger.LogInfo("Returned event data from database");
             return Ok(account);
         }
 
@@ -42,6 +43,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<IEnumerable<EventsResponse>> GetAll()
         {
             var accounts = _mapper.Map<IList<EventsResponse>>(_repository.Event.GetAllEvents());
+            _logger.LogInfo("Returned event data from database");
             return Ok(accounts);
         }
 
@@ -50,6 +52,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<IEnumerable<EventsResponse>> GetByDateRange(EventsByRangeRequest model)
         {
             var accounts = _mapper.Map<IList<EventsResponse>>(_repository.Event.GetByDateRange(model.Start, model.End));
+            _logger.LogInfo("Returned event data from database");
             return Ok(accounts);
         }
 
@@ -58,6 +61,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<IEnumerable<EventsResponse>> GetByMonth(EventsByMonthRequest model)
         {
             var accounts = _mapper.Map<IList<EventsResponse>>(_repository.Event.GetByMonth(model.Month, model.Year));
+            _logger.LogInfo("Returned event data from database");
             return Ok(accounts);
         }
 
@@ -83,6 +87,7 @@ namespace GUNAAPugetSound.Controllers
                 throw new AppException($"Event overlaps existing events.");
 
             _repository.Event.CreateEvent(ref calendarEvent, Account.Id);
+            _logger.LogInfo("Created event and added to database");
             var eventResponse = _mapper.Map<EventsResponse>(calendarEvent);
             return Ok(eventResponse);
         }
@@ -104,6 +109,7 @@ namespace GUNAAPugetSound.Controllers
             _mapper.Map(model, calendarEvent);
 
             _repository.Event.UpdateEvent(ref calendarEvent, Account.Id);
+            _logger.LogInfo("Updated event and added to database");
             var accountResponse = _mapper.Map<EventsResponse>(calendarEvent);
             return Ok(accountResponse);
         }
@@ -118,6 +124,7 @@ namespace GUNAAPugetSound.Controllers
 
             var calendarEvent = _repository.Event.GetById(id);
             _repository.Event.DeleteEvent(calendarEvent);
+            _logger.LogInfo("Deleted event from database");
             return Ok(new { message = "Event deleted successfully" });
         }
     }

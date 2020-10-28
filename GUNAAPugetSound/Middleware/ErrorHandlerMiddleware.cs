@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Contracts;
 using GUNAAPugetSound.Helpers;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 
 namespace GUNAAPugetSound.Middleware

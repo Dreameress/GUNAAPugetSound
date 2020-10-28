@@ -18,8 +18,8 @@ namespace GUNAAPugetSound.Controllers
     public class OfficersController : BaseController
     {
         private ILoggerManager _logger;
-        private IRepositoryWrapper _repository;
-        private IMapper _mapper;
+        private readonly IRepositoryWrapper _repository;
+        private readonly IMapper _mapper;
 
         public OfficersController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper, IEmailService emailService)
         {
@@ -33,6 +33,7 @@ namespace GUNAAPugetSound.Controllers
         {
 
             var officer = _mapper.Map<OfficerResponse>(_repository.Officer.GetOfficerById(id));
+            _logger.LogInfo("Returned officer member data from database");
             return Ok(officer);
         }
 
@@ -41,6 +42,7 @@ namespace GUNAAPugetSound.Controllers
         {
 
             var officer = _mapper.Map<OfficerResponse>(_repository.Officer.GetOfficerByMemberId(id));
+            _logger.LogInfo("Returned officer member data from database");
             return Ok(officer);
         }
 
@@ -48,6 +50,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<IEnumerable<OfficerResponse>> GetAllOfficers()
         {
             var officers = _mapper.Map<IList<OfficerResponse>>(_repository.Officer.GetAllOfficers());
+            _logger.LogInfo("Returned list of officer member data from database");
             return Ok(officers);
         }
 
@@ -55,6 +58,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<IEnumerable<OfficerResponse>> GetActiveOfficers()
         {
             var officers = _mapper.Map<IList<OfficerResponse>>(_repository.Officer.GetActiveOfficers());
+            _logger.LogInfo("Returned active officer member data from database");
             return Ok(officers);
         }
 
@@ -72,6 +76,7 @@ namespace GUNAAPugetSound.Controllers
                 throw new AppException($"This Officer Role is currently occupied.");
 
             _repository.Officer.AddOfficer(ref officer, Account.Id, model.MemberId);
+            _logger.LogInfo("Officer created and added to database");
             var officerResponse = _mapper.Map<OfficerResponse>(officer);
             return Ok(officerResponse);
         }
@@ -90,6 +95,7 @@ namespace GUNAAPugetSound.Controllers
             _mapper.Map(model, officer);
 
             _repository.Officer.UpdateOfficer(ref officer, Account.Id, model.MemberId);
+            _logger.LogInfo("Officer officer member data");
             var officerResponse = _mapper.Map<OfficerResponse>(officer);
             return Ok(officerResponse);
         }
@@ -104,6 +110,7 @@ namespace GUNAAPugetSound.Controllers
 
             var officer = _repository.Officer.GetOfficerById(id);
             _repository.Officer.DeactivateOfficer(officer, Account.Id);
+            _logger.LogInfo("Deactivated officer member");
             return Ok(new { message = "Officer deactivated successfully" });
         }
 
