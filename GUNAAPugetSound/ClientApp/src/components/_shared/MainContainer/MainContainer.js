@@ -6,6 +6,8 @@ const propTypes = {
   content: PropTypes.object.isRequired,
   officers: PropTypes.object,
   committees: PropTypes.object,
+  events: PropTypes.object,
+  photos: propTypes.object
 };
 
 const hide = {
@@ -17,7 +19,9 @@ const show = {
 };
 
 const MainContainer = ({content, officers, committees, ...otherProps}) => {
-export class MainContent extends Component {
+  
+};
+  export class MainContent extends Component {
   displayName = MainContent.name
   render() {
     return (

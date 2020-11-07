@@ -3,8 +3,6 @@ import { Route, Switch, Redirect, useLocation } from 'react-router-dom';
 
 import { Layout } from './components/_shared/Layout';
 import { Home } from './components/pages/Home/Home';
-import { FetchData } from './components/_shared/FetchData';
-import { Counter } from './components/_shared/Counter';
 import { Contact } from './components/pages/ContactUs/Contact';
 import { About } from './components/pages/About/About';
 import { Membership } from './components/pages/Membership/Membership';
@@ -49,8 +47,6 @@ function App() {
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/admin" roles={[Role.Admin]} component={Admin} />
           <Route path="/account" component={Account} />
-          <Route path='/counter' component={Counter} />
-          <Route path='/fetchdata' component={FetchData} />
           <Route path='/scholarship' component={Scholarship} />
           <Route path='/membership' component={Membership} />
           <Route path='/about' component={About} />

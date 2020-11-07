@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Entities.DTOs.Accounts;
+using Entities.DTOs.Content;
 using Entities.DTOs.Events;
 using Entities.Models;
 using GUNAAPugetSound.Entities;
@@ -34,7 +35,9 @@ namespace GUNAAPugetSound.Helpers
                     }
                 ));
 
-           
+            CreateMap<Content, ContentResponse>();
+
+
         }
     }
 }

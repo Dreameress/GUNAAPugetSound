@@ -1,4 +1,6 @@
 ﻿
+using System.Collections;
+using System.Linq;
 using AutoMapper;
 using Contracts;
 using Entities.DTOs.Content;
@@ -24,19 +26,20 @@ namespace GUNAAPugetSound.Controllers
         }
 
         #region Get Content
-        [HttpGet]
+        [HttpGet("get-content")]
         public ActionResult<ContentResponse> GetContent()
         {
-            ContentResponse contentResponse = new ContentResponse
+            var content = _mapper.Map<ContentResponse>(
+                           new ContentResponse
             {
                 Content = _repository.Content.GetContent(),
-                Officers = _repository.Officer.GetActiveOfficers(),
-                CommitteeMembers = _repository.CommitteeMember.GetActiveCommitteeMembers(),
-                Events = _repository.Event.GetAllEvents(),
-                Albums = _repository.Album.GetAllAlbums()
-            };
+                Officers = _repository.Officer.GetActiveOfficers().ToList(),
+                CommitteeMembers = _repository.CommitteeMember.GetActiveCommitteeMembers().ToList(),
+                Events = _repository.Event.GetAllEvents().ToList(),
+                Albums = _repository.Album.GetAllAlbums().ToList()
+            });
             _logger.LogInfo("Returned content from database");
-            return Ok(contentResponse);
+            return Ok(content);
         }
         #endregion
 
@@ -45,7 +48,7 @@ namespace GUNAAPugetSound.Controllers
         #region Update Content
 
         [Authorize(Role.Admin)]
-        [HttpPut]
+        [HttpPut("update-home")]
         public ActionResult<ContentResponse> UpdateHomeContent(UpdateHomeContentRequest model)
         {
             // only admins can update content
@@ -88,7 +91,7 @@ namespace GUNAAPugetSound.Controllers
         }
 
         [Authorize(Role.Admin)]
-        [HttpPut]
+        [HttpPut("update-calendar")]
         public ActionResult<ContentResponse> UpdateCalendarContent(UpdateCalendarContentRequest model)
         {
 
@@ -113,7 +116,7 @@ namespace GUNAAPugetSound.Controllers
         }
 
         [Authorize(Role.Admin)]
-        [HttpPut]
+        [HttpPut("update-officer")]
         public ActionResult<ContentResponse> UpdateOfficerContent(UpdateOfficerContentRequest model)
         {
 
@@ -140,7 +143,7 @@ namespace GUNAAPugetSound.Controllers
 
 
         [Authorize(Role.Admin)]
-        [HttpPut]
+        [HttpPut("update-committee")]
         public ActionResult<ContentResponse> UpdateCommitteeContent(UpdateCommitteeContentRequest model)
         {
 
@@ -166,7 +169,8 @@ namespace GUNAAPugetSound.Controllers
 
 
         [Authorize(Role.Admin)]
-        [HttpPut]
+        [HttpPut("update-membership")]
+
         public ActionResult<ContentResponse> UpdateMembershipContent(UpdateMembershipContentRequest model)
         {
             // only admins can update content
@@ -230,7 +234,7 @@ namespace GUNAAPugetSound.Controllers
 
 
         [Authorize(Role.Admin)]
-        [HttpPut]
+        [HttpPut("update-scholarship")]
         public ActionResult<ContentResponse> UpdateScholarshipContent(UpdateScholarshipContentRequest model)
         {
 
@@ -259,7 +263,7 @@ namespace GUNAAPugetSound.Controllers
         }
 
         [Authorize(Role.Admin)]
-        [HttpPut]
+        [HttpPut("update-photo")]
         public ActionResult<ContentResponse> UpdatePhotoAlbumContent(UpdatePhotoContentRequest model)
         {
 
@@ -285,7 +289,7 @@ namespace GUNAAPugetSound.Controllers
 
 
         [Authorize(Role.Admin)]
-        [HttpPut]
+        [HttpPut("update-about")]
         public ActionResult<ContentResponse> UpdateAboutUsContent(UpdateAboutUsContentRequest model)
         {
 
@@ -328,7 +332,7 @@ namespace GUNAAPugetSound.Controllers
         }
 
         [Authorize(Role.Admin)]
-        [HttpPut("{id:int}")]
+        [HttpPut("update-contact")]
         public ActionResult<ContentResponse> UpdateContactUsContent(UpdateContactUsContentRequest model)
         {
 

@@ -1,0 +1,16 @@
+2020-11-02 12:38:35.3541 ERROR Something went wrong: {"message":"Invalid token"}
+2020-11-02 12:50:32.6399 INFO Returned content from database
+2020-11-02 12:51:11.9127 ERROR Something went wrong: {"message":"There is already an open DataReader associated with this Command which must be closed first."}
+2020-11-02 13:12:18.0239 ERROR Something went wrong: {"message":"Invalid token"}
+2020-11-02 13:12:50.2216 INFO Returned content from database
+2020-11-02 13:14:09.6159 ERROR Something went wrong: {"message":"There is already an open DataReader associated with this Command which must be closed first."}
+2020-11-02 13:14:32.7175 INFO Returned content from database
+2020-11-02 13:14:56.1756 ERROR Something went wrong: {"message":"There is already an open DataReader associated with this Command which must be closed first."}
+2020-11-02 15:31:50.0710 ERROR Something went wrong: {"message":"Invalid token"}
+2020-11-02 15:57:33.6414 INFO Returned content from database
+2020-11-02 16:42:53.1973 ERROR Something went wrong: {"message":"Invalid token"}
+2020-11-02 16:43:09.5862 INFO Returned content from database
+2020-11-02 17:25:02.2443 ERROR Something went wrong: {"message":"Invalid token"}
+2020-11-02 17:25:28.0197 INFO Returned account data from database.
+2020-11-02 17:25:48.5158 INFO Set Cookie for auth token for account.
+2020-11-02 17:27:35.8537 INFO Updated home view content

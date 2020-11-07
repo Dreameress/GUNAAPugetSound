@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using Contracts;
 using Entities.DTOs.Committees;
@@ -48,7 +49,7 @@ namespace GUNAAPugetSound.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<CommitteeMemberResponse>> GetAllCommitteeMembers()
         {
-            var members = _mapper.Map<IList<CommitteeMemberResponse>>(_repository.CommitteeMember.GetAllCommitteeMembers());
+            var members = _mapper.Map<IList<CommitteeMemberResponse>>(_repository.CommitteeMember.GetAllCommitteeMembers().ToList());
             _logger.LogInfo("Returned list of committee member data from database");
             return Ok(members);
         }
@@ -57,7 +58,7 @@ namespace GUNAAPugetSound.Controllers
         public ActionResult<IEnumerable<CommitteeMemberResponse>> GetActiveCommitteeMembers()
         {
             var members =
-                _mapper.Map<IList<CommitteeMemberResponse>>(_repository.CommitteeMember.GetActiveCommitteeMembers());
+                _mapper.Map<IList<CommitteeMemberResponse>>(_repository.CommitteeMember.GetActiveCommitteeMembers().ToList());
             _logger.LogInfo("Returned active committee member data from database");
             return Ok(members);
         }
