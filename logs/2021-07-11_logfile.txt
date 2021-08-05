@@ -1,0 +1,83 @@
+2021-07-11 13:30:37.1767 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-11 13:40:55.7702 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-11 13:50:18.3089 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-11 13:57:24.3793 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-11 14:06:17.9210 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-11 14:07:22.4376 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-11 14:09:03.5634 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-11 14:10:44.3823 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-11 15:44:03.7422 ERROR Something went wrong: {"message":"Invalid token"}
+2021-07-11 15:45:20.4113 ERROR Something went wrong: {"message":"Authentication failed."}
+2021-07-11 16:01:53.5445 ERROR Something went wrong: {"message":"Authentication failed."}
+2021-07-11 16:04:59.2671 ERROR Something went wrong: {"message":"Authentication failed."}
+2021-07-11 16:05:48.4667 INFO Successfully registered user.
+2021-07-11 16:25:32.3380 ERROR Something went wrong: {"message":"Unable to resolve service for type \u0027Microsoft.AspNetCore.Http.IHttpContextAccessor\u0027 while attempting to activate \u0027GUNAAPugetSound.Controllers.AccountController\u0027."}
+2021-07-11 16:37:42.7756 ERROR Something went wrong: {"message":"Invalid token"}
+2021-07-11 16:39:04.9469 INFO Successfully registered user.
+2021-07-11 16:52:52.4303 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 16:53:54.6712 INFO Successfully registered user.
+2021-07-11 17:26:37.0407 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 17:26:38.2910 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 17:26:39.5829 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 17:27:11.7647 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 17:31:01.0519 INFO Successfully verified account.
+2021-07-11 17:31:34.1808 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 17:31:37.1220 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 17:31:47.4210 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 17:32:06.4817 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 17:32:10.8250 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 19:15:11.9163 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 19:15:14.1391 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: ))"}
+2021-07-11 19:17:04.3174 ERROR Something went wrong: {"message":"Invalid token"}
+2021-07-11 19:18:15.4790 ERROR Something went wrong: {"message":"Invalid token"}
+2021-07-11 19:19:16.3479 INFO Returned account data from database.
+2021-07-11 19:19:22.8441 ERROR Something went wrong: {"message":"Email or password is incorrect"}
+2021-07-11 19:19:29.8112 INFO Returned account data from database.
+2021-07-11 19:19:43.1615 ERROR Something went wrong: {"message":"Email or password is incorrect"}
+2021-07-11 19:19:54.3565 INFO Returned account data from database.
+2021-07-11 19:20:09.1206 INFO Set Cookie for auth token for account.
+2021-07-11 19:23:04.9184 INFO Returned a list of Photos from database
+2021-07-11 19:32:37.8880 INFO Returned account data from database.
+2021-07-11 19:32:38.0154 INFO Set cookie for auth token for account.
+2021-07-11 19:33:40.5924 INFO Returned account data from database.
+2021-07-11 19:33:40.5924 INFO Set cookie for auth token for account.
+2021-07-11 19:39:42.8962 INFO Returned account data from database.
+2021-07-11 19:39:43.0230 INFO Set cookie for auth token for account.
+2021-07-11 19:40:07.0478 INFO Returned account data from database.
+2021-07-11 19:40:07.0478 INFO Set cookie for auth token for account.
+2021-07-11 19:41:51.8409 INFO Returned account data from database.
+2021-07-11 19:41:51.9041 INFO Set cookie for auth token for account.
+2021-07-11 19:52:50.7724 INFO Returned account data from database.
+2021-07-11 19:52:50.8284 INFO Set cookie for auth token for account.
+2021-07-11 20:00:34.4409 INFO Returned account data from database.
+2021-07-11 20:00:34.4442 INFO Set cookie for auth token for account.
+2021-07-11 20:01:30.3655 INFO Returned account data from database.
+2021-07-11 20:01:30.3655 INFO Set cookie for auth token for account.
+2021-07-11 20:14:40.1923 INFO Returned account data from database.
+2021-07-11 20:14:40.2592 INFO Set cookie for auth token for account.
+2021-07-11 20:19:29.6261 INFO Returned account data from database.
+2021-07-11 20:19:29.6261 INFO Set cookie for auth token for account.
+2021-07-11 20:20:35.4599 INFO Returned account data from database.
+2021-07-11 20:20:35.4599 INFO Set cookie for auth token for account.
+2021-07-11 20:20:59.7415 INFO Returned account data from database.
+2021-07-11 20:20:59.7415 INFO Set cookie for auth token for account.
+2021-07-11 20:34:59.2403 INFO Returned account data from database.
+2021-07-11 20:34:59.2403 INFO Set cookie for auth token for account.
+2021-07-11 20:48:59.1102 INFO Returned account data from database.
+2021-07-11 20:48:59.1102 INFO Set cookie for auth token for account.
+2021-07-11 21:02:59.1115 INFO Returned account data from database.
+2021-07-11 21:02:59.1115 INFO Set cookie for auth token for account.
+2021-07-11 21:16:59.0936 INFO Returned account data from database.
+2021-07-11 21:16:59.0936 INFO Set cookie for auth token for account.
+2021-07-11 21:30:59.1091 INFO Returned account data from database.
+2021-07-11 21:30:59.1091 INFO Set cookie for auth token for account.
+2021-07-11 21:44:59.2670 INFO Returned account data from database.
+2021-07-11 21:44:59.2707 INFO Set cookie for auth token for account.
+2021-07-11 21:58:59.2711 INFO Returned account data from database.
+2021-07-11 21:58:59.2711 INFO Set cookie for auth token for account.
+2021-07-11 22:12:59.2612 INFO Returned account data from database.
+2021-07-11 22:12:59.2612 INFO Set cookie for auth token for account.
+2021-07-11 22:26:59.3518 INFO Returned account data from database.
+2021-07-11 22:26:59.3518 INFO Set cookie for auth token for account.
+2021-07-11 22:40:59.3464 INFO Returned account data from database.
+2021-07-11 22:40:59.3464 INFO Set cookie for auth token for account.

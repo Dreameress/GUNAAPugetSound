@@ -1,0 +1,13 @@
+2021-07-07 13:12:47.7581 ERROR Something went wrong: {"message":"Cannot open database \u0022GUNAASeattle\u0022 requested by the login. The login failed.\r\nLogin failed for user \u0027MicrosoftAccount\\snsdreameress@gmail.com\u0027."}
+2021-07-07 13:18:04.4754 ERROR Something went wrong: {"message":"Cannot open database \u0022GUNAASeattle\u0022 requested by the login. The login failed.\r\nLogin failed for user \u0027MicrosoftAccount\\snsdreameress@gmail.com\u0027."}
+2021-07-07 13:49:11.1815 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-07 13:52:29.1131 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-07 14:34:44.4489 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-07 14:51:44.0833 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-07 14:53:28.1529 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-07 17:48:13.1824 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-07 18:58:00.2240 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-07 18:59:17.5262 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-07 19:00:15.1311 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-07 19:05:10.7752 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}
+2021-07-07 19:40:39.5486 ERROR Something went wrong: {"message":"Invalid object name \u0027Accounts\u0027."}

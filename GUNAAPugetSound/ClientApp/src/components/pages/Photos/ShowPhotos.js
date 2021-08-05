@@ -90,7 +90,7 @@ export class ShowPhotos extends Component {
       <h1>Photos</h1>
       <h4 className="red-header">Captured Moments from the GUNAA Events, Meetings, Fundraisers, and more</h4>
         <div className="panel-body  golden-content">
-          <div className="albumsConainer">
+          <div className="albumsContainer">
             {gallery}
           </div>
         </div>

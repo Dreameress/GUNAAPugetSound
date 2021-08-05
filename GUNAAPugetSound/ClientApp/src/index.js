@@ -2,7 +2,7 @@ import './styles/index.css';
 import './styles/site.css';
 import './styles/material.css';
 import './styles/bootstrap.css';
-import 'font-awesome/css/font-awesome.min.css'; 
+import 'font-awesome/css/font-awesome.min.css';
 import './styles/styles.less';
 
 
@@ -16,6 +16,13 @@ import { App } from './App';
 
 import registerServiceWorker from './registerServiceWorker';
 
+import repositoryReducer from './store/reducers/repositoryReducer';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+
+const store = createStore(repositoryReducer, applyMiddleware(thunk));
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');
 
@@ -27,7 +34,10 @@ accountService.refreshToken().finally(startApp);
 function startApp() {
   render(
     <Router history={history} basename={baseUrl}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
+
     </Router>,
     rootElement);
 }

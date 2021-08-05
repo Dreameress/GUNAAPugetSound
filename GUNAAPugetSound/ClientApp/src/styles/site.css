@@ -324,14 +324,14 @@ body {
     float: left;
 }
 
-.albumsConainer {
+.albumsContainer {
     display: flex;
     font-size: 12px;
     flex-wrap:wrap;
     margin:-10px 0 0 -10px;
 }
 
-.albumsConainer > div {
+.albumsContainer > div {
     display: inline-block;
     margin:10px 0 0 10px;
     flex-grow: 1;

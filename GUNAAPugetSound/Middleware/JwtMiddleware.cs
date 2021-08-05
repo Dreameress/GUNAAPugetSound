@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data;
 using GUNAAPugetSound.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
@@ -22,7 +23,7 @@ namespace GUNAAPugetSound.Helpers
             _appSettings = appSettings.Value;
         }
 
-        public async Task Invoke(HttpContext context, GUNAADbContext dataContext)
+        public async Task Invoke(HttpContext context, GunaaDbContext dataContext)
         {
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
@@ -32,7 +33,7 @@ namespace GUNAAPugetSound.Helpers
             await _next(context);
         }
 
-        private async Task AttachAccountToContext(HttpContext context, GUNAADbContext dataContext, string token)
+        private async Task AttachAccountToContext(HttpContext context, GunaaDbContext dataContext, string token)
         {
             try
             {

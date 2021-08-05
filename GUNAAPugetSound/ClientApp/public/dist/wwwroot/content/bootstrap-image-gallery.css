@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
  * Bootstrap Image Gallery CSS
  * https://github.com/blueimp/Bootstrap-Image-Gallery
@@ -21,7 +21,7 @@
 	margin: 0;
 }
 .blueimp-gallery .modal-body img,
-.blueimp-gallery .modal-body .video-content video,
+.blueimp-gallery .modal-body .video-content video, 
 .blueimp-gallery .modal-body .video-content iframe,
 .blueimp-gallery .modal-body .video-content a {
 	max-width: 100%;

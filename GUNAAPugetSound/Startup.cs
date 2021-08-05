@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using AutoMapper;
+using Data;
 using GUNAAPugetSound.Helpers;
 using GUNAAPugetSound.Services;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +10,6 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using AutoMapper;
 using GUNAAPugetSound.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -40,7 +41,7 @@ namespace GUNAAPugetSound
             services.ConfigureCors();
             //services.ConfigureIISIntegration();
 
-            services.AddDbContext<GUNAADbContext>(options =>
+            services.AddDbContext<GunaaDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
@@ -53,7 +54,7 @@ namespace GUNAAPugetSound
 
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.ConfigureRepositoryWrapper();
-
+            services.AddHttpContextAccessor();
             services.AddHttpsRedirection(options =>
             {
                 options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;

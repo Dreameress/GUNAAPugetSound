@@ -1,0 +1,2 @@
+2021-04-03 14:31:17.3471 ERROR Something went wrong: {"message":"Invalid token"}
+2021-04-03 14:31:22.8451 ERROR Something went wrong: {"message":"Invalid token"}

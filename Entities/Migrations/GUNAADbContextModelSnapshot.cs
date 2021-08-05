@@ -148,37 +148,37 @@ namespace Entities.Migrations
                     b.HasData(
                         new
                         {
-                            CommitteeId = new Guid("f45f65f6-7772-47a7-9225-e2213542a14a"),
+                            CommitteeId = new Guid("867ab617-a751-47a5-a91f-2548b13f279a"),
                             Active = true,
                             Committee = 2,
-                            Created = new DateTime(2020, 10, 11, 9, 53, 19, 232, DateTimeKind.Utc).AddTicks(7553),
+                            Created = new DateTime(2021, 7, 11, 21, 37, 16, 562, DateTimeKind.Utc).AddTicks(9204),
                             FirstName = "Don",
                             LastName = "Paul"
                         },
                         new
                         {
-                            CommitteeId = new Guid("d69d2d0a-ec85-48fc-a67b-d826704a636f"),
+                            CommitteeId = new Guid("13d30231-7488-4297-a5c6-5cba7a756ea7"),
                             Active = true,
                             Committee = 3,
-                            Created = new DateTime(2020, 10, 11, 9, 53, 19, 232, DateTimeKind.Utc).AddTicks(8572),
+                            Created = new DateTime(2021, 7, 11, 21, 37, 16, 562, DateTimeKind.Utc).AddTicks(9856),
                             FirstName = "Tammy",
                             LastName = "Richardson"
                         },
                         new
                         {
-                            CommitteeId = new Guid("1e4d2409-ae06-4e8d-a521-d8b6c3a74e42"),
+                            CommitteeId = new Guid("3165ab3c-7855-4380-bb1a-f42223f18e12"),
                             Active = true,
                             Committee = 4,
-                            Created = new DateTime(2020, 10, 11, 9, 53, 19, 232, DateTimeKind.Utc).AddTicks(8601),
+                            Created = new DateTime(2021, 7, 11, 21, 37, 16, 562, DateTimeKind.Utc).AddTicks(9888),
                             FirstName = "Eva",
                             LastName = "Edwards"
                         },
                         new
                         {
-                            CommitteeId = new Guid("5b8495cc-b365-43ca-8240-cf87b34fdfea"),
+                            CommitteeId = new Guid("16a98d3d-dd76-4e62-9daa-9bbd31a12bd3"),
                             Active = true,
                             Committee = 1,
-                            Created = new DateTime(2020, 10, 11, 9, 53, 19, 232, DateTimeKind.Utc).AddTicks(8754),
+                            Created = new DateTime(2021, 7, 11, 21, 37, 16, 562, DateTimeKind.Utc).AddTicks(9893),
                             FirstName = "Marcus",
                             LastName = "Dabney"
                         });
@@ -329,7 +329,7 @@ namespace Entities.Migrations
                     b.HasData(
                         new
                         {
-                            ContentId = new Guid("7ca883ab-39dc-4471-858a-ccfd43a77127"),
+                            ContentId = new Guid("45fb8af8-019e-4063-ad8b-fd80dff7b6de"),
                             AboutUsHeader = "About Us",
                             AboutUsQuoteLine1 = "The purpose of the chapter is : (1) To maintain a working relationship with the University;",
                             AboutUsQuoteLine2 = "(2) To promote interest in the University among prospective students;",
@@ -347,7 +347,7 @@ namespace Entities.Migrations
                             ContactUsState = "Washington",
                             ContactUsStreetAddress = "Post Office Box 18321",
                             ContactUsZipCode = "98118",
-                            Created = new DateTime(2020, 10, 11, 9, 53, 19, 235, DateTimeKind.Utc).AddTicks(8807),
+                            Created = new DateTime(2021, 7, 11, 21, 37, 16, 564, DateTimeKind.Utc).AddTicks(1025),
                             HomeLine1 = "We would like to welcome all alumni and supporters living in and visiting the Seattle area. We welcome your support as we continue our mission of recruiting students to our alma mater. ",
                             HomeLine2 = "If you are in the Puget Sound area and interested in attending Grambling State University or currently attending Grambling State University, please reach out to us for information on the scholarships we provide.",
                             HomeLine3 = "Go Tigers!!!",
@@ -518,36 +518,36 @@ namespace Entities.Migrations
                     b.HasData(
                         new
                         {
-                            OfficerId = new Guid("8e65ed99-a9d1-4022-a4f5-767562665fa3"),
+                            OfficerId = new Guid("02dea90d-1134-476d-8589-b0943e350f6d"),
                             Active = true,
-                            Created = new DateTime(2020, 10, 11, 9, 53, 19, 230, DateTimeKind.Utc).AddTicks(1025),
+                            Created = new DateTime(2021, 7, 11, 21, 37, 16, 561, DateTimeKind.Utc).AddTicks(3864),
                             FirstName = "Charlene",
                             LastName = "Francisco",
                             Role = 1
                         },
                         new
                         {
-                            OfficerId = new Guid("0d48e946-776a-42a2-bea6-4446e505a766"),
+                            OfficerId = new Guid("ae8c0841-0eaa-4f50-a501-9078f0a44dfc"),
                             Active = true,
-                            Created = new DateTime(2020, 10, 11, 9, 53, 19, 230, DateTimeKind.Utc).AddTicks(2201),
+                            Created = new DateTime(2021, 7, 11, 21, 37, 16, 561, DateTimeKind.Utc).AddTicks(4301),
                             FirstName = "Jeanie",
                             LastName = "Nelson",
                             Role = 3
                         },
                         new
                         {
-                            OfficerId = new Guid("83dcbf6c-38e0-4728-b0eb-95d391222a5b"),
+                            OfficerId = new Guid("501ec580-0870-413b-bb33-c098fcaf1433"),
                             Active = true,
-                            Created = new DateTime(2020, 10, 11, 9, 53, 19, 230, DateTimeKind.Utc).AddTicks(2237),
+                            Created = new DateTime(2021, 7, 11, 21, 37, 16, 561, DateTimeKind.Utc).AddTicks(4318),
                             FirstName = "Eva",
                             LastName = "Edwards",
                             Role = 4
                         },
                         new
                         {
-                            OfficerId = new Guid("5bbba11e-6520-4bba-9587-19d6a0359e9a"),
+                            OfficerId = new Guid("131b7bb6-0bc0-4e94-a4a3-018cb8eb59fd"),
                             Active = true,
-                            Created = new DateTime(2020, 10, 11, 9, 53, 19, 230, DateTimeKind.Utc).AddTicks(2263),
+                            Created = new DateTime(2021, 7, 11, 21, 37, 16, 561, DateTimeKind.Utc).AddTicks(4321),
                             FirstName = "Beverly",
                             LastName = "Hopkins",
                             Role = 2

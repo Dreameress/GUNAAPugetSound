@@ -8,6 +8,7 @@ using GUNAAPugetSound.Entities.Enums;
 using GUNAAPugetSound.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
 using BC = BCrypt.Net.BCrypt;
 
@@ -22,14 +23,16 @@ namespace GUNAAPugetSound.Controllers
         private IMapper _mapper;
         private readonly AppSettings _appSettings;
         private readonly IEmailService _emailService;
+        private IHttpContextAccessor _httpContextAccessor; 
 
-        public AccountController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper, IOptions<AppSettings> appSettings, IEmailService emailService)
+        public AccountController(ILoggerManager logger, IRepositoryWrapper repository, IMapper mapper, IOptions<AppSettings> appSettings, IEmailService emailService, IHttpContextAccessor contextAccessor)
         {
             _logger = logger;
             _repository = repository;
             _mapper = mapper;
             _appSettings = appSettings.Value;
             _emailService = emailService;
+            _httpContextAccessor = contextAccessor; 
         }
         [HttpPost("authenticate")]
         public ActionResult<AuthenticateResponse> Authenticate(AuthenticateRequest model)
@@ -106,8 +109,12 @@ namespace GUNAAPugetSound.Controllers
             var account = _mapper.Map<Account>(model); 
             // hash password
             account.PasswordHash = BC.HashPassword(model.Password);
+            var host1 = Request.Headers["origin"];
+            var host2 = Request.Headers["origin"].ToString();
+            var hasOrigin = this.Request.Headers.TryGetValue("Origin", out var origin);
+            var host3 = Request.Host.HasValue ? Request.Host.Value : "";
 
-            _repository.Account.Register(model, Request.Headers["origin"], account, _emailService);
+            _repository.Account.Register(model, host3, account, _emailService);
             _logger.LogInfo($"Successfully registered user.");
             return Ok(new { message = "Registration successful, please check your email for verification instructions" });
         }

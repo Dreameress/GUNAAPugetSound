@@ -18,7 +18,7 @@ export class Membership extends Component {
                 </dl>
                 <dl className="text-center   golden-content">
                     <dt>GUNAA Puget Sound Chapter</dt>
-                    <dd>Local Dues Regular Members $40</dd>
+                    <dd>Local Dues Regular Members $50</dd>
                     <dd>Local Dues Associate Members (family/friends) $35</dd>
                 </dl>
                 <p className="text-center   golden-content">

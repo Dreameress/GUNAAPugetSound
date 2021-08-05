@@ -6,10 +6,12 @@ using Entities.DTOs.Photos;
 using Entities.Models;
 using GUNAAPugetSound.Entities.Enums;
 using GUNAAPugetSound.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GUNAAPugetSound.Controllers
 {
+    [AllowAnonymous]
     [ApiController]
     [Route("api/[controller]")]
     public class PhotoAlbumsController : BaseController
@@ -27,45 +29,45 @@ namespace GUNAAPugetSound.Controllers
 
 
         #region Get Photos & Albums
-        [HttpGet("{id:Guid}")]
-        public ActionResult<PhotoResponse> GetPhotoById(Guid id)
-        {
-            var photo = _mapper.Map<PhotoResponse>( _repository.Photo.GetPhotoById(id));
-            _logger.LogInfo("Returned Photo from database");
-            return Ok(photo);
-        }
+        //[HttpGet("{id:Guid}")]
+        //public ActionResult<PhotoResponse> GetPhotoById(Guid id)
+        //{
+        //    var photo = _mapper.Map<PhotoResponse>( _repository.Photo.GetPhotoById(id));
+        //    _logger.LogInfo("Returned Photo from database");
+        //    return Ok(photo);
+        //}
 
-        [HttpGet]
+        [HttpGet("photos")]
         public ActionResult<IEnumerable<PhotoResponse>> GetAllPhotos()
         {
-            var photos = _mapper.Map <IEnumerable<PhotoResponse>>( _repository.Photo.GetAllPhotos());
+            var photos = _mapper.Map<IEnumerable<PhotoResponse>>(_repository.Photo.GetAllPhotos());
             _logger.LogInfo("Returned a list of Photos from database");
             return Ok(photos);
         }
 
-        [HttpGet("{id:Guid}")]
-        public ActionResult<IEnumerable<PhotoResponse>> GetPhotosByAlbumId(Guid id)
-        {
-            var photos = _mapper.Map<IEnumerable<PhotoResponse>>(_repository.Photo.GetPhotosByAlbumId(id));
-            _logger.LogInfo("Returned all photos from album in database");
-            return Ok(photos);
-        }
+        //[HttpGet("{id:Guid}")]
+        //public ActionResult<IEnumerable<PhotoResponse>> GetPhotosByAlbumId(Guid id)
+        //{
+        //    var photos = _mapper.Map<IEnumerable<PhotoResponse>>(_repository.Photo.GetPhotosByAlbumId(id));
+        //    _logger.LogInfo("Returned all photos from album in database");
+        //    return Ok(photos);
+        //}
 
-        [HttpGet("{id:Guid}")]
-        public ActionResult<PhotoAlbumResponse> GetAlbumById(Guid id)
-        {
-            var album = _mapper.Map<PhotoAlbumResponse>(_repository.Album.GetAlbumByAlbumId(id));
-            _logger.LogInfo("Returned Album from database");
-            return Ok(album);
-        }
+        //[HttpGet("{id:Guid}")]
+        //public ActionResult<PhotoAlbumResponse> GetAlbumById(Guid id)
+        //{
+        //    var album = _mapper.Map<PhotoAlbumResponse>(_repository.Album.GetAlbumByAlbumId(id));
+        //    _logger.LogInfo("Returned Album from database");
+        //    return Ok(album);
+        //}
 
-        [HttpGet]
-        public ActionResult<IEnumerable<PhotoAlbumResponse>> GetAllPhotoAlbums()
-        {
-            var albums = _mapper.Map<IEnumerable<PhotoAlbumResponse>>(_repository.Album.GetAllAlbums());
-            _logger.LogInfo("Returned a list of all Albums from database");
-            return Ok(albums);
-        }
+        //[HttpGet]
+        //public ActionResult<IEnumerable<PhotoAlbumResponse>> GetAllPhotoAlbums()
+        //{
+        //    var albums = _mapper.Map<IEnumerable<PhotoAlbumResponse>>(_repository.Album.GetAllAlbums());
+        //    _logger.LogInfo("Returned a list of all Albums from database");
+        //    return Ok(albums);
+        //}
 
         #endregion
 

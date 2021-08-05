@@ -41,6 +41,7 @@ namespace GUNAAPugetSound.Middleware
                     KeyNotFoundException e =>
                     // not found error
                     (int) HttpStatusCode.NotFound,
+                    //Internal Server error
                     _ => (int) HttpStatusCode.InternalServerError
                 };
 

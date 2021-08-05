@@ -24,7 +24,7 @@ export class FetchData extends Component {
       <h4 class="red-header">Captured Moments from the GUNAA Events, Meetings, Fundraisers, and more</h4>
   
   <div class="panel-body  golden-content">
-      <div class="albumsConainer">
+      <div class="albumsContainer">
       </div>
 
   

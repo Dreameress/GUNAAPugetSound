@@ -4,7 +4,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import ContainerHeader from './ContainerHeader';
+import ContainerHeader from './ContainerHeader/ContainerHeader';
+import NavigationButtons from './NavigationButtons/NavigationButtons';
 
 storiesOf('Molecules', module)
 
@@ -16,4 +17,9 @@ storiesOf('Molecules', module)
 .add('ContainerHeader with no Header Message', () => (
     <ContainerHeader
     headerText="Welcome" /> 
+))
+
+
+.add('NavigationButtons with no props', () => (
+    <NavigationButtons /> 
 ))

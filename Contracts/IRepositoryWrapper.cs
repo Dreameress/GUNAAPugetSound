@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Contracts
 {
@@ -13,6 +14,6 @@ namespace Contracts
         IEventManager Event { get; set; }
         IOfficerManager Officer { get; set; }
         IPhotoManager Photo { get; set; }
-        void Save();
+        Task SaveAsync();
     }
 }
