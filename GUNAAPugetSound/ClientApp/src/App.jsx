@@ -11,7 +11,7 @@ import { Committees } from './components/pages/Committees/Committees';
 import { Calendar } from './components/pages/Calendar/Calendar';
 import { Login } from './components/pages/Account/Login';
 import { Register } from './components/pages/Account/Register';
-import { PhotoAlbumList } from './components/pages/Photos/PhotoAlbumList';
+import { PhotoAlbumList } from './components/pages/PhotoAlbum/PhotoAlbumList';
 import { AddAlbum } from './components/pages/Photos/AddAlbum';
 import { EditAlbum } from './components/pages/Photos/EditAlbum';
 import { AlbumDetails } from './components/pages/Photos/AlbumDetails';
