@@ -5,7 +5,6 @@ import './styles/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './styles/styles.less';
 
-
 import React from 'react';
 import { Router } from 'react-router-dom';
 import { render } from 'react-dom';
@@ -37,7 +36,6 @@ function startApp() {
       <Provider store={store}>
         <App />
       </Provider>
-
     </Router>,
     rootElement);
 }

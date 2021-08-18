@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import MainHeader from './MainHeader/MainHeader';
 import SubHeader from './SubHeader/SubHeader';
 import HeaderImage, { Device } from './HeaderImage/HeaderImage';
-
+import Icon from './Icon';
 storiesOf('Atoms', module)
 // .add('Header with data', () => (
 // <MainHeader>Welcome</MainHeader>
@@ -28,3 +28,9 @@ storiesOf('Atoms', module)
 .add('Navigation Background for Web', () => <HeaderImage WEB></HeaderImage>)
 
 .add('Navigation Background for Web (Default)', () => <HeaderImage ></HeaderImage>)
+
+.add('Icon Email', () => <Icon email />)
+.add('Icon Twitter', () => <Icon twitter />)
+.add('Icon Facebook', () => <Icon facebook />)
+.add('Icon Instagram', () => <Icon instagram />)
+.add('Icon Donate', () => <Icon donate />)

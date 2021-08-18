@@ -18,16 +18,21 @@
     right: 0;
     z-index: 1;
 }*/
+.btn:hover, .btn:focus {
+    color: #D54133 !important;
+    font-weight: 600;
+}
+.top-right-nav-btn
+{
+    margin-top: 20px;
+    margin-left: 8px;
+}
 
 .loading 
 {
     width: 50px;
     margin: auto;
 
-}
-#login {
-    float: right;
-    margin: -4% -4%;
 }
 
 .loggedIn {
@@ -68,6 +73,13 @@
     {
         height: 340px !important;
     }
+
+    .secondaryNav
+    {
+        margin: 0px auto;
+        max-width: 710px;
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 990px) {
@@ -83,7 +95,6 @@
     {
         height: 300px !important;
     }
-
 
     .login {
         float: right;
@@ -120,19 +131,16 @@
         padding: 10px 15px;
         margin: 8px -15px;
         border: none !important;
-        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1);
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
     }
 
-    #login {
-        position: absolute;
-        transform: translate(-48%, -50%);
-    }
+}
 
-    .login {
-        position: absolute;
-        left: 65.5%;
-    }
+.secondaryNav {
+    margin: 0px auto;
+    max-width: 710px;
+    display: block;
 }
 
 #navHeader {
@@ -200,6 +208,8 @@
     text-align: center;
     margin: 0 auto;
     display: block;
+    min-width:80px;
+   
 }
 
 #scholarshipForm > form > div > div > input {
@@ -207,9 +217,7 @@
 }
 
 #logoContainer {
-    height: 149px;
-    margin: 0 auto;
-    width: 162px;
+    text-align: center
 }
 
 #logout {
@@ -278,6 +286,55 @@
     padding-bottom: 2%;
 }
 
+.footer-basic
+{
+    margin-top: 100px; 
+}
+
+.footer-list-item > a 
+{
+    flex: 0 0 100%;
+}
+
+.footer-list-item
+{
+    flex-wrap: wrap;
+    display: inline-flex;
+}
+
+.footer-list li:hover > a,  .footer-list li:focus > a,  .footer-list li:focus-within > a
+{
+    color: #D54133;
+    font-weight: 600;
+}
+
+
+
+/*Buttons */
+
+.btn-default-gold, .btn-default-gold:hover
+{
+    color: black;
+    background-color: #ECC954;
+    border-color: #ECC954 !important;
+    font-weight: 600 !important;
+}
+
+.btn-default-red
+{
+    color: black;
+    background-color: #D54133;
+    border-color: #D54133;
+}
+
+.btn-default-red-gold
+{
+    color: #D54133;
+    background-color: #ECC954;
+    border-color: #ECC954;
+}
+
+
 html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
@@ -295,7 +352,7 @@ body {
 }
 
 .form-horizontal {
-    width: 70%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
 }
