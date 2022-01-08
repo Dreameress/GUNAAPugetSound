@@ -14,7 +14,7 @@ namespace Data
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Member> Members { get; set; }
-        //public DbSet<MigrationHistory> MigrationHistory { get; set; }
+        public DbSet<MigrationHistory> MigrationHistory { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Content> Content { get; set; }
         public DbSet<Officer> Officers { get; set; }

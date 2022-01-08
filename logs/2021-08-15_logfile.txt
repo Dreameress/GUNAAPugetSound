@@ -1,0 +1,3 @@
+2021-08-15 22:33:43.0312 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-15 22:39:12.2989 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-15 22:40:41.4056 ERROR Something went wrong: {"message":"Invalid token"}

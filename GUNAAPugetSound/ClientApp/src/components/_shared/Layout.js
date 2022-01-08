@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Grid, Row } from 'react-bootstrap';
-import { NavMenu } from './navigation/NavMenu';
+import { NavMenu }  from './navigation/NavMenu.js';
 import Icon from './../atoms/Icon';
 import Footer from './../organisms/Footer';
 export class Layout extends Component {

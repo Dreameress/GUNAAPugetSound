@@ -3,7 +3,6 @@ import { NavLink, Link } from "react-router-dom";
 import AuthService from "../../../services/AuthService";
 import { GeneralNavLink } from "./GeneralNavLink";
 import { MobileNavLink } from "./MobileNavLink";
-import Icon from './../../atoms/Icon';
 
 const img = "../dist/wwwroot/content/images/gunaasprites.png";
 const tigerImg = "../dist/wwwroot/content/images/Tiger.jpg";
@@ -221,16 +220,17 @@ export class NavMenu extends Component {
                         to="login"
                         className="btn btn-default-gold top-right-nav-btn">
                         Login
-                        <Icon login style={{ fontSize: 10, marginLeft: 5 }} />
+                        {/* <Icon login style={{ fontSize: 10, marginLeft: 5 }} /> */}
                     </Link>
                     <Link
                         to="register"
                         className="btn btn-default-gold top-right-nav-btn">
                         Register
-                        <Icon register style={{ fontSize: 10, marginLeft: 5 }} />
+                        {/* <Icon register style={{ fontSize: 10, marginLeft: 5 }} /> */}
                     </Link>
                 </div>
             
         );
     }
 }
+export default NavMenu;

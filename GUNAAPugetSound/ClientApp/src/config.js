@@ -1,7 +1,7 @@
 export const config = {
     prefix: '!',
-    baseUrl: 'https://localhost:5001/api',
-    apiUrl: 'https://localhost:5001/api',
+    baseUrl: 'https://localhost:44330/api',
+    apiUrl: 'https://localhost:44330/api',
     //https://localhost:44330/api
     accounts: {
       authenticate: '/accounts',

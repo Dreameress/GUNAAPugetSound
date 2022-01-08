@@ -1,0 +1,2 @@
+2021-08-19 18:39:33.8436 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: \n\r\n))"}
+2021-08-19 18:39:33.9974 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: \n\r\n))"}

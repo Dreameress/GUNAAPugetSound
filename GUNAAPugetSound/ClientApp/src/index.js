@@ -1,9 +1,9 @@
-import './styles/index.css';
-import './styles/site.css';
-import './styles/material.css';
-import './styles/bootstrap.css';
+import './../src/styles/index.css';
+import './../src/styles/site.css';
+import './../src/styles/material.css';
+import './../src/styles/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css';
-import './styles/styles.less';
+import './../src/styles/styles.less';
 
 import React from 'react';
 import { Router } from 'react-router-dom';

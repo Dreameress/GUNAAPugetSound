@@ -1,0 +1,17 @@
+2021-08-16 14:12:01.5479 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-16 14:15:56.8731 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-16 14:17:59.1587 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-16 14:19:31.5064 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-16 14:20:06.7051 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: (node:129012) [DEP0111] DeprecationWarning: Access to process.binding(\u0027http_parser\u0027) is deprecated.\n\r\n))"}
+2021-08-16 14:21:38.3584 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: (node:120724) [DEP0111] DeprecationWarning: Access to process.binding(\u0027http_parser\u0027) is deprecated.\n\r\n))"}
+2021-08-16 14:22:31.0021 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: (node:120724) [DEP0111] DeprecationWarning: Access to process.binding(\u0027http_parser\u0027) is deprecated.\n\r\n))"}
+2021-08-16 14:22:31.0742 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: (node:120724) [DEP0111] DeprecationWarning: Access to process.binding(\u0027http_parser\u0027) is deprecated.\n\r\n))"}
+2021-08-16 14:22:55.6189 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: (node:120724) [DEP0111] DeprecationWarning: Access to process.binding(\u0027http_parser\u0027) is deprecated.\n\r\n))"}
+2021-08-16 14:23:00.3699 ERROR Something went wrong: {"message":"One or more errors occurred. (One or more errors occurred. (The NPM script \u0027start\u0027 exited without indicating that the create-react-app server was listening for requests. The error output was: (node:120724) [DEP0111] DeprecationWarning: Access to process.binding(\u0027http_parser\u0027) is deprecated.\n\r\n))"}
+2021-08-16 14:47:31.4905 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-16 15:23:23.5385 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-16 15:28:43.4573 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-16 15:39:05.9073 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-16 16:41:52.8338 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-16 16:45:33.3084 ERROR Something went wrong: {"message":"Invalid token"}
+2021-08-16 16:51:43.0486 ERROR Something went wrong: {"message":"Invalid token"}
