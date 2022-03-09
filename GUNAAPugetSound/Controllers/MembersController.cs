@@ -15,15 +15,69 @@ namespace GUNAAPugetSound.Controllers
     {
         public List<Member> MemberData => new[]
         {
-            new Member {NameFirst = "Charlene", NameLast = "F Davidson Jenkins", MemberId = Guid.NewGuid(), Position = OfficerRole.President.ToString()},
             new Member
-            {NameFirst = "Jeanie", NameLast = "Nelson", Position = OfficerRole.Secretary.ToString()},
-            new Member{NameFirst = "Eva", NameLast = "Edwards", Position = OfficerRole.Treasurer.ToString(), Committee = CommitteeName.Hospitality.ToString()},
-            new Member{NameFirst = "Beverly", NameLast = "Hopkins", Position = OfficerRole.Parliamentarian.ToString()},
-            new Member{NameFirst = "TBD", NameLast = "", Position = OfficerRole.VicePresident.ToString()},
-            new Member{NameFirst = "Marcus", NameLast = "Dabney", Position = OfficerRole.None.ToString(), Committee = CommitteeName.ScholarshipChair.ToString()},
-            new Member{NameFirst = "Don", NameLast = "Paul", Position = OfficerRole.None.ToString(),Committee = CommitteeName.Fundraising.ToString()},
-            new Member{NameFirst = "Tammy",NameLast = "Richardson",Position = OfficerRole.None.ToString(),Committee = CommitteeName.Membership.ToString()}
+            {
+                NameFirst = "Charlene", 
+                NameLast = "F Davidson Jenkins", 
+                MemberId = Guid.NewGuid(), 
+                Position = OfficerRole.President.ToString(), 
+                OfficerRole = OfficerRole.President
+            },
+            new Member
+            {
+                NameFirst = "Jeanie", 
+                NameLast = "Nelson", 
+                Position = OfficerRole.Secretary.ToString(), 
+                OfficerRole = OfficerRole.Secretary
+            },
+            new Member
+            {
+                NameFirst = "Eva", 
+                NameLast = "Edwards", 
+                Position = OfficerRole.Treasurer.ToString(), 
+                Committee = CommitteeName.Hospitality.ToString(), 
+                CommitteeName = CommitteeName.Hospitality, 
+                OfficerRole = OfficerRole.Treasurer, 
+
+            },
+            new Member
+            {
+                NameFirst = "Beverly", 
+                NameLast = "Hopkins", 
+                Position = OfficerRole.Parliamentarian.ToString(), 
+                OfficerRole = OfficerRole.Parliamentarian
+            },
+
+            new Member
+            {
+                NameFirst = "Marcus", 
+                NameLast = "Dabney", 
+                Committee = "Scholarship Chair", 
+                CommitteeName = CommitteeName.ScholarshipChair
+            },
+            new Member
+            {
+                NameFirst = "Lashonda", 
+                NameLast = "Hurst", 
+                Committee = CommitteeName.Fundraising.ToString(), 
+                CommitteeName = CommitteeName.Fundraising
+            },
+            new Member
+            {
+                NameFirst = "Tammy",
+                NameLast = "Richardson",
+                Position = "Vice President",
+                OfficerRole = OfficerRole.VicePresident,
+                Committee = CommitteeName.Membership.ToString(), 
+                CommitteeName = CommitteeName.Membership
+            },
+            new Member
+            {
+                NameFirst = "Erakwandra",
+                NameLast = "Joseph",
+                Committee = "Social Committee",
+                CommitteeName = CommitteeName.SocialCommittee
+            }
 
         }.ToList();
 
@@ -36,13 +90,13 @@ namespace GUNAAPugetSound.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Member> Officers(int startDateIndex)
         {
-            return MemberData.OrderBy(x => x.Position).Where(y => y.Position != OfficerRole.None.ToString());
+            return MemberData.OrderBy(x => x.OfficerRole).Where(y => y.OfficerRole != null);
         }
 
         [HttpGet("[action]")]
         public IEnumerable<Member> CommitteeMembers(int startDateIndex)
         {
-            return MemberData.Where(r => r.Committee != CommitteeName.None.ToString());
+            return MemberData.OrderBy(c => c.CommitteeName). Where(r => r.Committee != null);
         }
     }
 }

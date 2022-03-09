@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using GUNAAPugetSound.Entities.Enums;
 
 namespace Entities.Models
 {
@@ -18,9 +19,13 @@ namespace Entities.Models
         public string Twitter { get; set; }
         public string Facebook { get; set; }
         public string Instagram { get; set; }
+        public OfficerRole? OfficerRole { get; set; }
+
+        public CommitteeName? CommitteeName { get; set; }
 
         public string Position { get; set; }
 
         public string Committee { get; set; }
+
     }
 }

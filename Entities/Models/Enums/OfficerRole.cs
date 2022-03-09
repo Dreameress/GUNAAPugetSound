@@ -7,11 +7,10 @@ namespace GUNAAPugetSound.Entities.Enums
 {
     public enum OfficerRole
     {
-        None,
         President,
         VicePresident,
-        Secretary,
         Treasurer,
+        Secretary,
         Parliamentarian
 
     }

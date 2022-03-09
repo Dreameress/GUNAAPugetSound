@@ -107,7 +107,7 @@ export class NavMenu extends Component {
                             <GeneralNavLink page="COMMITTEES" linkTo="/committees" />
                             <GeneralNavLink page="MEMBERSHIP" linkTo="/membership" />
                             <GeneralNavLink page="SCHOLARSHIP" linkTo="/scholarship" />
-                            <GeneralNavLink page="PHOTOS" linkTo="/photoAlbums" />
+                            {/* <GeneralNavLink page="PHOTOS" linkTo="/photoAlbums" /> */}
                             <GeneralNavLink page="ABOUT" linkTo="/about" />
                             <GeneralNavLink page="CONTACT" linkTo="/contact" />
                         </ul>
@@ -117,9 +117,9 @@ export class NavMenu extends Component {
                         <div id="logoContainer" className="col-sm-12 col-md-4">
                             <img id="headerTigerLogoWeb" src={tigerImg} alt="" />
                         </div>
-                        <div className="col-sm-12 col-md-4">
+                        {/* <div className="col-sm-12 col-md-4">
                         {loginButton}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -165,11 +165,11 @@ export class NavMenu extends Component {
                                 />
                             </div>
                             <div className="row">
-                                <MobileNavLink
+                                {/* <MobileNavLink
                                     page="PHOTOS"
                                     linkTo="/photoAlbums"
                                     src="../dist/wwwroot/content/images/calendar.svg"
-                                />
+                                /> */}
                                 <MobileNavLink
                                     page="ABOUT"
                                     linkTo="/about"

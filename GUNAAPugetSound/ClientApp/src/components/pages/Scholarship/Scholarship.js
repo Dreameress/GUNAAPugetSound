@@ -16,14 +16,15 @@ export class Scholarship extends Component {
                     awards two scholarships annually to students who plan to attend Grambling State University.
                        </p>
                 <p className="text-center">
-                    <a href="../dist/wwwroot/content/GUNAA 2018 Scholarship Application.docx" download>Download Scholarship Application</a> |
-                           <a href="/" asp-controller="Forms" asp-action="ScholarshipForm">Fill Out Scholarship Application</a>
+                    <a href="/content/documents/GUNAAScholarshipApplication2020.docx"
+                     download>Download Scholarship Application</a> 
+                    |<a href="/" asp-controller="Forms" asp-action="ScholarshipForm">Fill Out Scholarship Application</a> 
                 </p>
                 <p className="text-center">
-                    <a href="../dist/wwwroot/content/GUNAA 2018 Scholarship Letter.docx" download>Download Scholarship Letter</a>
+                    <a href="/content/documents/GUNAAScholarshipLetter2020.docx" download>Download Scholarship Letter</a>
                 </p>
                 <p className="text-center">
-                    <a href="../dist/wwwroot/content/Content/GUNAA 2018 Scholarship Flyer.docx" download>Download Scholarship Flyer</a>
+                    <a href="/content/documents/GUNAAScholarshipFlyer2020.docx" download>Download Scholarship Flyer</a>
                 </p>
             </div>
         </div>

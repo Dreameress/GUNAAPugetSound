@@ -7,10 +7,10 @@ namespace GUNAAPugetSound.Entities.Enums
 {
     public enum CommitteeName
     {
-        None,
         ScholarshipChair,
-        Fundraising,
         Membership,
+        Fundraising,
+        SocialCommittee,
         Hospitality
 
     }
